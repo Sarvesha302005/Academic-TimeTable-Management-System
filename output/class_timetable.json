@@ -1,0 +1,470 @@
+{
+  "Y3S1": [
+    {
+      "course": "EC302",
+      "course_name": "Signals and Systems",
+      "type": "L",
+      "day": "Mon",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "teacher": "Dr. Meera",
+      "room": "TR1"
+    },
+    {
+      "course": "EC302",
+      "course_name": "Signals and Systems",
+      "type": "P",
+      "day": "Mon",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "teacher": "Dr. Priya",
+      "room": "L4"
+    },
+    {
+      "course": "EC301",
+      "course_name": "Microprocessors",
+      "type": "L",
+      "day": "Tue",
+      "start_time": "09:00",
+      "end_time": "10:00",
+      "teacher": "Dr. Karthik",
+      "room": "TR1"
+    },
+    {
+      "course": "EC301",
+      "course_name": "Microprocessors",
+      "type": "L",
+      "day": "Tue",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "teacher": "Dr. Karthik",
+      "room": "TR1"
+    },
+    {
+      "course": "EC303",
+      "course_name": "Communication Systems",
+      "type": "L",
+      "day": "Tue",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "teacher": "Prof. Suresh",
+      "room": "TR1"
+    },
+    {
+      "course": "EC303",
+      "course_name": "Communication Systems",
+      "type": "L",
+      "day": "Tue",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "teacher": "Prof. Suresh",
+      "room": "TR1"
+    },
+    {
+      "course": "EC303",
+      "course_name": "Communication Systems",
+      "type": "P",
+      "day": "Tue",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "teacher": "Prof. Suresh",
+      "room": "L4"
+    },
+    {
+      "course": "EC303",
+      "course_name": "Communication Systems",
+      "type": "T",
+      "day": "Wed",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "teacher": "Prof. Suresh",
+      "room": "TR1"
+    },
+    {
+      "course": "EC302",
+      "course_name": "Signals and Systems",
+      "type": "L",
+      "day": "Wed",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "teacher": "Prof. Arjun",
+      "room": "TR1"
+    },
+    {
+      "course": "EC301",
+      "course_name": "Microprocessors",
+      "type": "T",
+      "day": "Wed",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "teacher": "Dr. Karthik",
+      "room": "TR1"
+    },
+    {
+      "course": "EC303",
+      "course_name": "Communication Systems",
+      "type": "L",
+      "day": "Wed",
+      "start_time": "15:00",
+      "end_time": "16:00",
+      "teacher": "Prof. Arjun",
+      "room": "TR1"
+    },
+    {
+      "course": "EC302",
+      "course_name": "Signals and Systems",
+      "type": "L",
+      "day": "Fri",
+      "start_time": "09:00",
+      "end_time": "10:00",
+      "teacher": "Prof. Suresh",
+      "room": "TR1"
+    },
+    {
+      "course": "EC301",
+      "course_name": "Microprocessors",
+      "type": "P",
+      "day": "Fri",
+      "start_time": "11:00",
+      "end_time": "13:00",
+      "teacher": "Dr. Meera",
+      "room": "L1"
+    },
+    {
+      "course": "EC301",
+      "course_name": "Microprocessors",
+      "type": "L",
+      "day": "Fri",
+      "start_time": "15:00",
+      "end_time": "16:00",
+      "teacher": "Dr. Meera",
+      "room": "TR1"
+    }
+  ],
+  "Y3S2": [
+    {
+      "course": "EC303",
+      "course_name": "Communication Systems",
+      "type": "L",
+      "day": "Mon",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "teacher": "Prof. Suresh",
+      "room": "TR2"
+    },
+    {
+      "course": "EC302",
+      "course_name": "Signals and Systems",
+      "type": "L",
+      "day": "Mon",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "teacher": "Dr. Meera",
+      "room": "TR2"
+    },
+    {
+      "course": "EC302",
+      "course_name": "Signals and Systems",
+      "type": "L",
+      "day": "Mon",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "teacher": "Prof. Arjun",
+      "room": "TR2"
+    },
+    {
+      "course": "EC303",
+      "course_name": "Communication Systems",
+      "type": "P",
+      "day": "Tue",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "teacher": "Prof. Arjun",
+      "room": "L1"
+    },
+    {
+      "course": "EC303",
+      "course_name": "Communication Systems",
+      "type": "L",
+      "day": "Wed",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "teacher": "Prof. Suresh",
+      "room": "TR2"
+    },
+    {
+      "course": "EC303",
+      "course_name": "Communication Systems",
+      "type": "T",
+      "day": "Wed",
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "teacher": "Prof. Arjun",
+      "room": "TR2"
+    },
+    {
+      "course": "EC301",
+      "course_name": "Microprocessors",
+      "type": "L",
+      "day": "Thu",
+      "start_time": "09:00",
+      "end_time": "10:00",
+      "teacher": "Dr. Meera",
+      "room": "TR2"
+    },
+    {
+      "course": "EC301",
+      "course_name": "Microprocessors",
+      "type": "P",
+      "day": "Thu",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "teacher": "Prof. Suresh",
+      "room": "L4"
+    },
+    {
+      "course": "EC301",
+      "course_name": "Microprocessors",
+      "type": "T",
+      "day": "Thu",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "teacher": "Dr. Karthik",
+      "room": "TR2"
+    },
+    {
+      "course": "EC303",
+      "course_name": "Communication Systems",
+      "type": "L",
+      "day": "Thu",
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "teacher": "Prof. Suresh",
+      "room": "TR2"
+    },
+    {
+      "course": "EC301",
+      "course_name": "Microprocessors",
+      "type": "L",
+      "day": "Fri",
+      "start_time": "09:00",
+      "end_time": "10:00",
+      "teacher": "Dr. Meera",
+      "room": "TR2"
+    },
+    {
+      "course": "EC302",
+      "course_name": "Signals and Systems",
+      "type": "L",
+      "day": "Fri",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "teacher": "Dr. Meera",
+      "room": "TR2"
+    },
+    {
+      "course": "EC301",
+      "course_name": "Microprocessors",
+      "type": "L",
+      "day": "Fri",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "teacher": "Prof. Suresh",
+      "room": "TR2"
+    },
+    {
+      "course": "EC302",
+      "course_name": "Signals and Systems",
+      "type": "P",
+      "day": "Fri",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "teacher": "Dr. Priya",
+      "room": "L4"
+    }
+  ],
+  "Y5S1": [
+    {
+      "course": "EC502",
+      "course_name": "Embedded Systems",
+      "type": "L",
+      "day": "Mon",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "teacher": "Prof. Arjun",
+      "room": "TR3"
+    },
+    {
+      "course": "EC501",
+      "course_name": "VLSI Design",
+      "type": "L",
+      "day": "Tue",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "teacher": "Dr. Priya",
+      "room": "TR3"
+    },
+    {
+      "course": "EC501",
+      "course_name": "VLSI Design",
+      "type": "P",
+      "day": "Tue",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "teacher": "Dr. Karthik",
+      "room": "L2"
+    },
+    {
+      "course": "EC502",
+      "course_name": "Embedded Systems",
+      "type": "L",
+      "day": "Wed",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "teacher": "Dr. Karthik",
+      "room": "TR3"
+    },
+    {
+      "course": "EC501",
+      "course_name": "VLSI Design",
+      "type": "T",
+      "day": "Wed",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "teacher": "Dr. Meera",
+      "room": "TR3"
+    },
+    {
+      "course": "EC502",
+      "course_name": "Embedded Systems",
+      "type": "P",
+      "day": "Wed",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "teacher": "Dr. Karthik",
+      "room": "L3"
+    },
+    {
+      "course": "EC501",
+      "course_name": "VLSI Design",
+      "type": "L",
+      "day": "Thu",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "teacher": "Dr. Karthik",
+      "room": "TR3"
+    },
+    {
+      "course": "EC501",
+      "course_name": "VLSI Design",
+      "type": "L",
+      "day": "Thu",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "teacher": "Dr. Karthik",
+      "room": "TR3"
+    },
+    {
+      "course": "EC502",
+      "course_name": "Embedded Systems",
+      "type": "L",
+      "day": "Fri",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "teacher": "Dr. Priya",
+      "room": "TR3"
+    }
+  ],
+  "Y5S2": [
+    {
+      "course": "EC501",
+      "course_name": "VLSI Design",
+      "type": "L",
+      "day": "Mon",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "teacher": "Dr. Karthik",
+      "room": "TR4"
+    },
+    {
+      "course": "EC501",
+      "course_name": "VLSI Design",
+      "type": "L",
+      "day": "Mon",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "teacher": "Dr. Karthik",
+      "room": "TR4"
+    },
+    {
+      "course": "EC501",
+      "course_name": "VLSI Design",
+      "type": "T",
+      "day": "Tue",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "teacher": "Dr. Priya",
+      "room": "TR4"
+    },
+    {
+      "course": "EC501",
+      "course_name": "VLSI Design",
+      "type": "L",
+      "day": "Tue",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "teacher": "Dr. Karthik",
+      "room": "TR4"
+    },
+    {
+      "course": "EC502",
+      "course_name": "Embedded Systems",
+      "type": "L",
+      "day": "Wed",
+      "start_time": "09:00",
+      "end_time": "10:00",
+      "teacher": "Dr. Karthik",
+      "room": "TR4"
+    },
+    {
+      "course": "EC502",
+      "course_name": "Embedded Systems",
+      "type": "L",
+      "day": "Thu",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "teacher": "Dr. Priya",
+      "room": "TR4"
+    },
+    {
+      "course": "EC502",
+      "course_name": "Embedded Systems",
+      "type": "P",
+      "day": "Thu",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "teacher": "Prof. Arjun",
+      "room": "L1"
+    },
+    {
+      "course": "EC501",
+      "course_name": "VLSI Design",
+      "type": "P",
+      "day": "Fri",
+      "start_time": "09:00",
+      "end_time": "11:00",
+      "teacher": "Dr. Priya",
+      "room": "L4"
+    },
+    {
+      "course": "EC502",
+      "course_name": "Embedded Systems",
+      "type": "L",
+      "day": "Fri",
+      "start_time": "15:00",
+      "end_time": "16:00",
+      "teacher": "Dr. Karthik",
+      "room": "TR4"
+    }
+  ]
+}

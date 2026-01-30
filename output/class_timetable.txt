@@ -1,0 +1,70 @@
+========================================================================================================================
+CLASS-WISE TIMETABLE
+========================================================================================================================
+
+
+Y3S1
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Mon        12:00      13:00      EC302           L     Dr. Meera            TR1       
+Mon        14:00      16:00      EC302           P     Dr. Priya            L4        
+Tue        09:00      10:00      EC301           L     Dr. Karthik          TR1       
+Tue        10:00      11:00      EC301           L     Dr. Karthik          TR1       
+Tue        11:00      12:00      EC303           L     Prof. Suresh         TR1       
+Tue        12:00      13:00      EC303           L     Prof. Suresh         TR1       
+Tue        14:00      16:00      EC303           P     Prof. Suresh         L4        
+Wed        10:00      11:00      EC303           T     Prof. Suresh         TR1       
+Wed        11:00      12:00      EC302           L     Prof. Arjun          TR1       
+Wed        12:00      13:00      EC301           T     Dr. Karthik          TR1       
+Wed        15:00      16:00      EC303           L     Prof. Arjun          TR1       
+Fri        09:00      10:00      EC302           L     Prof. Suresh         TR1       
+Fri        11:00      13:00      EC301           P     Dr. Meera            L1        
+Fri        15:00      16:00      EC301           L     Dr. Meera            TR1       
+
+Y3S2
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Mon        10:00      11:00      EC303           L     Prof. Suresh         TR2       
+Mon        11:00      12:00      EC302           L     Dr. Meera            TR2       
+Mon        12:00      13:00      EC302           L     Prof. Arjun          TR2       
+Tue        14:00      16:00      EC303           P     Prof. Arjun          L1        
+Wed        11:00      12:00      EC303           L     Prof. Suresh         TR2       
+Wed        14:00      15:00      EC303           T     Prof. Arjun          TR2       
+Thu        09:00      10:00      EC301           L     Dr. Meera            TR2       
+Thu        10:00      12:00      EC301           P     Prof. Suresh         L4        
+Thu        12:00      13:00      EC301           T     Dr. Karthik          TR2       
+Thu        14:00      15:00      EC303           L     Prof. Suresh         TR2       
+Fri        09:00      10:00      EC301           L     Dr. Meera            TR2       
+Fri        10:00      11:00      EC302           L     Dr. Meera            TR2       
+Fri        11:00      12:00      EC301           L     Prof. Suresh         TR2       
+Fri        14:00      16:00      EC302           P     Dr. Priya            L4        
+
+Y5S1
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Mon        10:00      11:00      EC502           L     Prof. Arjun          TR3       
+Tue        12:00      13:00      EC501           L     Dr. Priya            TR3       
+Tue        14:00      16:00      EC501           P     Dr. Karthik          L2        
+Wed        10:00      11:00      EC502           L     Dr. Karthik          TR3       
+Wed        12:00      13:00      EC501           T     Dr. Meera            TR3       
+Wed        14:00      16:00      EC502           P     Dr. Karthik          L3        
+Thu        10:00      11:00      EC501           L     Dr. Karthik          TR3       
+Thu        11:00      12:00      EC501           L     Dr. Karthik          TR3       
+Fri        11:00      12:00      EC502           L     Dr. Priya            TR3       
+
+Y5S2
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Mon        11:00      12:00      EC501           L     Dr. Karthik          TR4       
+Mon        12:00      13:00      EC501           L     Dr. Karthik          TR4       
+Tue        10:00      11:00      EC501           T     Dr. Priya            TR4       
+Tue        12:00      13:00      EC501           L     Dr. Karthik          TR4       
+Wed        09:00      10:00      EC502           L     Dr. Karthik          TR4       
+Thu        12:00      13:00      EC502           L     Dr. Priya            TR4       
+Thu        14:00      16:00      EC502           P     Prof. Arjun          L1        
+Fri        09:00      11:00      EC501           P     Dr. Priya            L4        
+Fri        15:00      16:00      EC502           L     Dr. Karthik          TR4       

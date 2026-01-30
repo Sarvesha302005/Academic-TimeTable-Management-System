@@ -1,0 +1,123 @@
+{
+  "courses": {
+    "EC301": {
+      "name": "Microprocessors",
+      "L": 3,
+      "T": 1,
+      "P": 2,
+      "lab": true,
+      "year": 3,
+      "sem": 5
+    },
+    "EC302": {
+      "name": "Signals and Systems",
+      "L": 3,
+      "T": 0,
+      "P": 2,
+      "lab": true,
+      "year": 3,
+      "sem": 5
+    },
+    "EC303": {
+      "name": "Communication Systems",
+      "L": 3,
+      "T": 1,
+      "P": 2,
+      "lab": true,
+      "year": 3,
+      "sem": 5
+    },
+    "EC501": {
+      "name": "VLSI Design",
+      "L": 3,
+      "T": 1,
+      "P": 2,
+      "lab": true,
+      "year": 5,
+      "sem": 9
+    },
+    "EC502": {
+      "name": "Embedded Systems",
+      "L": 3,
+      "T": 0,
+      "P": 2,
+      "lab": true,
+      "year": 5,
+      "sem": 9
+    }
+  },
+
+  "teachers": [
+    {
+      "id": "T1",
+      "name": "Dr. Meera",
+      "min": 6,
+      "max": 18,
+      "prefs": ["EC301", "EC302", "EC501"]
+    },
+    {
+      "id": "T2",
+      "name": "Prof. Suresh",
+      "min": 6,
+      "max": 18,
+      "prefs": ["EC303", "EC302", "EC301"]
+    },
+    {
+      "id": "T3",
+      "name": "Dr. Karthik",
+      "min": 6,
+      "max": 18,
+      "prefs": ["EC501", "EC502", "EC301"]
+    },
+    {
+      "id": "T4",
+      "name": "Prof. Arjun",
+      "min": 6,
+      "max": 18,
+      "prefs": ["EC303", "EC502", "EC302"]
+    },
+    {
+      "id": "T5",
+      "name": "Dr. Priya",
+      "min": 6,
+      "max": 18,
+      "prefs": ["EC502", "EC501", "EC302"]
+    }
+  ],
+
+  "classes": [
+    { "id": "Y3S1", "year": 3, "sems": [5], "strength": 50 },
+    { "id": "Y3S2", "year": 3, "sems": [5], "strength": 50 },
+    { "id": "Y5S1", "year": 5, "sems": [9], "strength": 45 },
+    { "id": "Y5S2", "year": 5, "sems": [9], "strength": 45 }
+  ],
+
+  "schedule": {
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+    "hours": ["09:00", "10:00", "11:00", "12:00", "14:00", "15:00"]
+  },
+
+  "fixed_rooms": {
+    "Y3S1": "TR1",
+    "Y3S2": "TR2",
+    "Y5S1": "TR3",
+    "Y5S2": "TR4"
+  },
+
+  "rooms": {
+    "theory": ["TR1", "TR2", "TR3", "TR4", "TR5"],
+    "lab": ["L1", "L2", "L3", "L4"]
+  },
+
+  "room_capacities": {
+    "TR1": 80,
+    "TR2": 80,
+    "TR3": 80,
+    "TR4": 80,
+    "TR5": 60,
+    "L1": 50,
+    "L2": 50,
+    "L3": 50,
+    "L4": 50
+  }
+}
