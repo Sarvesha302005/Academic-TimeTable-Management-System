@@ -1,4 +1,4 @@
-# CSE Timetable Scheduler
+# Timetable Scheduler
 
 Constraint-based timetable generator using **OR-Tools CP-SAT**.
 
