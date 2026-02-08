@@ -168,7 +168,6 @@
 //         });
 //       }
 
-//       const faculty = await Faculty.findOne({ clerkUserId: req.userId });
 //       if (!faculty) {
 //         return res.status(404).json({
 //           success: false,
@@ -413,7 +412,12 @@ class TimetableController {
         });
       }
 
-      const faculty = await Faculty.findOne({ clerkUserId: req.userId });
+      const faculty = await Faculty.findOne({
+        $or: [
+          { facultyId: req.user.facultyId },
+          { email: req.user.email }
+        ]
+      });
 
       if (!faculty) {
         return res.status(404).json({
