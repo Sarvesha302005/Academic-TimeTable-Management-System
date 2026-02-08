@@ -1,232 +1,3 @@
-// const timetableService = require('../services/timetableService');
-// const Timetable = require('../models/Timetable');
-// const Faculty = require('../models/Faculty');
-// const AcademicCalendar = require('../models/AcademicCalendar');
-
-// class TimetableController {
-
-//   // ================= ADMIN =================
-
-//   // Generate timetable (Admin)
-//   async generateTimetable(req, res, next) {
-//     try {
-//       const { academicCalendarId } = req.body;
-
-//       if (!academicCalendarId) {
-//         return res.status(400).json({
-//           success: false,
-//           error: 'Academic calendar ID is required'
-//         });
-//       }
-
-//       // Run scheduler (saves timetable to DB)
-//       const result = await timetableService.generateTimetable(academicCalendarId);
-
-//       // Fetch populated timetable
-//       const timetable = await Timetable.findOne({
-//         academicCalendar: academicCalendarId
-//       })
-//         .populate('entries.slot')
-//         .populate('entries.course')
-//         .populate('entries.faculty')
-//         .populate('entries.room')
-//         .populate('academicCalendar');
-
-//       if (!timetable) {
-//         return res.status(500).json({
-//           success: false,
-//           error: 'Timetable generated but not found in database'
-//         });
-//       }
-
-//       res.status(200).json({
-//         success: true,
-//         message: 'Timetable generated successfully',
-//         data: timetable,
-//         generationTime: result.generationTime,
-//         validation: result.validation
-//       });
-
-//     } catch (error) {
-//       next(error);
-//     }
-//   }
-
-//   // Get timetable (Admin view)
-//   async getTimetable(req, res, next) {
-//     try {
-//       const { academicCalendarId } = req.query;
-
-//       if (!academicCalendarId) {
-//         return res.status(400).json({
-//           success: false,
-//           error: 'Academic calendar ID is required'
-//         });
-//       }
-
-//       const timetable = await Timetable.findOne({
-//         academicCalendar: academicCalendarId
-//       })
-//         .populate('entries.slot')
-//         .populate('entries.course')
-//         .populate('entries.faculty')
-//         .populate('entries.room')
-//         .populate('academicCalendar');
-
-//       if (!timetable) {
-//         return res.status(404).json({
-//           success: false,
-//           error: 'Timetable not found'
-//         });
-//       }
-
-//       res.status(200).json({
-//         success: true,
-//         data: timetable
-//       });
-
-//     } catch (error) {
-//       next(error);
-//     }
-//   }
-
-//   // Get timetable statistics (Admin)
-//   async getTimetableStatistics(req, res, next) {
-//     try {
-//       const { academicCalendarId } = req.query;
-
-//       if (!academicCalendarId) {
-//         return res.status(400).json({
-//           success: false,
-//           error: 'Academic calendar ID is required'
-//         });
-//       }
-
-//       const timetable = await Timetable.findOne({
-//         academicCalendar: academicCalendarId,
-//         status: { $in: ['generated', 'locked'] }
-//       });
-
-//       if (!timetable) {
-//         return res.status(404).json({
-//           success: false,
-//           error: 'Timetable not found'
-//         });
-//       }
-
-//       res.status(200).json({
-//         success: true,
-//         data: timetable.statistics
-//       });
-
-//     } catch (error) {
-//       next(error);
-//     }
-//   }
-
-//   // Get conflicts (Admin)
-//   async getConflicts(req, res, next) {
-//     try {
-//       const { academicCalendarId } = req.query;
-
-//       if (!academicCalendarId) {
-//         return res.status(400).json({
-//           success: false,
-//           error: 'Academic calendar ID is required'
-//         });
-//       }
-
-//       const timetable = await Timetable.findOne({ academicCalendar: academicCalendarId });
-
-//       if (!timetable) {
-//         return res.status(404).json({
-//           success: false,
-//           error: 'Timetable not found'
-//         });
-//       }
-
-//       res.status(200).json({
-//         success: true,
-//         data: timetable.conflicts || []
-//       });
-
-//     } catch (error) {
-//       next(error);
-//     }
-//   }
-
-//   // ================= FACULTY =================
-
-//   async getFacultyTimetable(req, res, next) {
-//     try {
-//       const { academicCalendarId } = req.query;
-
-//       if (!academicCalendarId) {
-//         return res.status(400).json({
-//           success: false,
-//           error: 'Academic calendar ID is required'
-//         });
-//       }
-
-//       if (!faculty) {
-//         return res.status(404).json({
-//           success: false,
-//           error: 'Faculty profile not found'
-//         });
-//       }
-
-//       const timetable = await Timetable.findOne({
-//         academicCalendar: academicCalendarId,
-//         'entries.faculty': faculty._id
-//       })
-//         .populate('entries.slot')
-//         .populate('entries.course')
-//         .populate('entries.room');
-
-//       if (!timetable) {
-//         return res.status(404).json({
-//           success: false,
-//           error: 'Timetable not found'
-//         });
-//       }
-
-//       res.status(200).json({
-//         success: true,
-//         data: timetable
-//       });
-
-//     } catch (error) {
-//       next(error);
-//     }
-//   }
-
-//   // ================= COMMON =================
-
-//   async getActiveCalendar(req, res, next) {
-//     try {
-//       const calendar = await AcademicCalendar.findOne({ isActive: true });
-
-//       if (!calendar) {
-//         return res.status(404).json({
-//           success: false,
-//           error: 'No active academic calendar found'
-//         });
-//       }
-
-//       res.status(200).json({
-//         success: true,
-//         data: calendar
-//       });
-
-//     } catch (error) {
-//       next(error);
-//     }
-//   }
-// }
-
-// module.exports = new TimetableController();
-
-
 const timetableService = require('../services/timetableService');
 const Timetable = require('../models/Timetable');
 const Faculty = require('../models/Faculty');
@@ -236,7 +7,7 @@ class TimetableController {
 
   // ================= ADMIN =================
 
-  // Generate timetable (Admin) - UPDATED
+  // Generate timetable (Admin)
   async generateTimetable(req, res, next) {
     try {
       const { academicCalendarId } = req.body;
@@ -396,7 +167,6 @@ class TimetableController {
   // ================= FACULTY =================
 
   /**
-   * ✅ CORRECT faculty timetable
    * - fetch full timetable
    * - filter entries in JS (safe & reliable)
    * - return day-wise formatted data
@@ -426,7 +196,7 @@ class TimetableController {
         });
       }
 
-      // 🔑 Fetch FULL timetable (no risky query filters)
+      // Fetch FULL timetable
       const timetable = await Timetable.findOne({ academicCalendar: academicCalendarId })
         .sort({ updatedAt: -1 })
         .populate('entries.slot')
@@ -441,7 +211,7 @@ class TimetableController {
         });
       }
 
-      // 🔑 Filter entries for THIS faculty
+      // Filter entries for THIS faculty
       const facultyEntries = timetable.entries.filter(
         e => e.faculty && e.faculty._id.toString() === faculty._id.toString()
       );
@@ -459,7 +229,7 @@ class TimetableController {
         });
       }
 
-      // 🔑 Format day-wise
+      // Format day-wise
       const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
       const formatted = {};
 
