@@ -9,6 +9,8 @@ Demonstrates all constraints for a real CSE timetable with:
 - Realistic constraints
 
 Configuration loaded from: config.json
+
+With Verified Possible Test Cases and Repair Mechanism via `forbiddenAssignments` for iterative improvement.
 """
 
 import sys
