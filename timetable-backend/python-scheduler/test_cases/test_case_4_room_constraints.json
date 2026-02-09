@@ -1,0 +1,126 @@
+{
+    "description": "Test Case 5: Room Capacity & Same Theory Room - Tests room capacity and fixed theory room per class",
+    "expected_outcome": "Classes assigned to rooms matching capacity, all theory sessions of a class use same room",
+    "constraints_tested": [
+        "Room capacity",
+        "Same room for lectures",
+        "Fixed rooms"
+    ],
+    "courses": {
+        "CS501-A": {
+            "name": "Advanced Algorithms",
+            "L": 4,
+            "T": 1,
+            "P": 0,
+            "year": 1,
+            "sem": 1,
+            "isElective": false
+        },
+        "CS502-A": {
+            "name": "Discrete Math",
+            "L": 4,
+            "T": 1,
+            "P": 0,
+            "year": 1,
+            "sem": 1,
+            "isElective": false
+        },
+        "CS501-B": {
+            "name": "Advanced Algorithms",
+            "L": 4,
+            "T": 1,
+            "P": 0,
+            "year": 1,
+            "sem": 1,
+            "isElective": false
+        },
+        "CS502-B": {
+            "name": "Discrete Math",
+            "L": 4,
+            "T": 1,
+            "P": 0,
+            "year": 1,
+            "sem": 1,
+            "isElective": false
+        }
+    },
+    "teachers": [
+        {
+            "id": "T1",
+            "name": "Dr. Algo",
+            "min": 8,
+            "max": 20,
+            "prefs": {
+                "CS501": 1
+            },
+            "fallbackCourses": []
+        },
+        {
+            "id": "T2",
+            "name": "Dr. Math",
+            "min": 8,
+            "max": 20,
+            "prefs": {
+                "CS502": 1
+            },
+            "fallbackCourses": []
+        }
+    ],
+    "classes": [
+        {
+            "id": "Y1-A",
+            "year": 1,
+            "sems": [
+                1
+            ],
+            "strength": 60,
+            "courses": [
+                "CS501-A",
+                "CS502-A"
+            ]
+        },
+        {
+            "id": "Y1-B",
+            "year": 1,
+            "sems": [
+                1
+            ],
+            "strength": 45,
+            "courses": [
+                "CS501-B",
+                "CS502-B"
+            ]
+        }
+    ],
+    "schedule": {
+        "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+        ],
+        "hours": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "14:00",
+            "15:00",
+            "16:00"
+        ]
+    },
+    "rooms": {
+        "theory": [
+            "SMALL-30",
+            "MED-50",
+            "LARGE-70"
+        ],
+        "lab": []
+    },
+    "room_capacities": {
+        "SMALL-30": 30,
+        "MED-50": 50,
+        "LARGE-70": 70
+    }
+}

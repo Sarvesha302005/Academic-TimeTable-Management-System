@@ -1,0 +1,165 @@
+{
+    "description": "Test Case 7: Teacher Section Limits - Tests 1 course per section, max 2 sections per course",
+    "expected_outcome": "A teacher can handle only 1 course per section, max 2 sections for same course",
+    "constraints_tested": [
+        "Single teacher per course",
+        "One course per section per teacher",
+        "Max 2 sections per course per teacher"
+    ],
+    "courses": {
+        "CS701-A": {
+            "name": "Software Engineering",
+            "L": 3,
+            "T": 0,
+            "P": 2,
+            "year": 3,
+            "sem": 5,
+            "isElective": false
+        },
+        "CS702-A": {
+            "name": "Testing",
+            "L": 2,
+            "T": 1,
+            "P": 0,
+            "year": 3,
+            "sem": 5,
+            "isElective": false
+        },
+        "CS701-B": {
+            "name": "Software Engineering",
+            "L": 3,
+            "T": 0,
+            "P": 2,
+            "year": 3,
+            "sem": 5,
+            "isElective": false
+        },
+        "CS702-B": {
+            "name": "Testing",
+            "L": 2,
+            "T": 1,
+            "P": 0,
+            "year": 3,
+            "sem": 5,
+            "isElective": false
+        },
+        "CS701-C": {
+            "name": "Software Engineering",
+            "L": 3,
+            "T": 0,
+            "P": 2,
+            "year": 3,
+            "sem": 5,
+            "isElective": false
+        },
+        "CS702-C": {
+            "name": "Testing",
+            "L": 2,
+            "T": 1,
+            "P": 0,
+            "year": 3,
+            "sem": 5,
+            "isElective": false
+        }
+    },
+    "teachers": [
+        {
+            "id": "T1",
+            "name": "Dr. SE Expert",
+            "min": 8,
+            "max": 20,
+            "prefs": {
+                "CS701": 1
+            },
+            "fallbackCourses": []
+        },
+        {
+            "id": "T2",
+            "name": "Dr. Tester",
+            "min": 8,
+            "max": 20,
+            "prefs": {
+                "CS702": 1
+            },
+            "fallbackCourses": []
+        },
+        {
+            "id": "T3",
+            "name": "Dr. Backup SE",
+            "min": 6,
+            "max": 20,
+            "prefs": {
+                "CS701": 2
+            },
+            "fallbackCourses": [
+                "CS702"
+            ]
+        }
+    ],
+    "classes": [
+        {
+            "id": "Y3-A",
+            "year": 3,
+            "sems": [
+                5
+            ],
+            "strength": 40,
+            "courses": [
+                "CS701-A",
+                "CS702-A"
+            ]
+        },
+        {
+            "id": "Y3-B",
+            "year": 3,
+            "sems": [
+                5
+            ],
+            "strength": 40,
+            "courses": [
+                "CS701-B",
+                "CS702-B"
+            ]
+        },
+        {
+            "id": "Y3-C",
+            "year": 3,
+            "sems": [
+                5
+            ],
+            "strength": 40,
+            "courses": [
+                "CS701-C",
+                "CS702-C"
+            ]
+        }
+    ],
+    "schedule": {
+        "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+        ],
+        "hours": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "14:00",
+            "15:00",
+            "16:00"
+        ]
+    },
+    "rooms": {
+        "theory": [
+            "R701",
+            "R702",
+            "R703"
+        ],
+        "lab": [
+            "SE-LAB"
+        ]
+    }
+}

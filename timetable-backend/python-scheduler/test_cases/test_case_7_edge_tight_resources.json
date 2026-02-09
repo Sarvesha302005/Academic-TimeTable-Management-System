@@ -1,0 +1,109 @@
+{
+    "description": "Test Case 9: Edge Case - Very Tight Resource Constraints (May be infeasible or require relaxed constraints)",
+    "expected_outcome": "Scheduler should detect infeasibility or find a solution with minimal constraint violations",
+    "constraints_tested": [
+        "Resource saturation",
+        "Constraint relaxation",
+        "Error handling"
+    ],
+    "courses": {
+        "CS901-A": {
+            "name": "Course 1",
+            "L": 4,
+            "T": 1,
+            "P": 2,
+            "year": 1,
+            "sem": 1,
+            "isElective": false
+        },
+        "CS902-A": {
+            "name": "Course 2",
+            "L": 4,
+            "T": 1,
+            "P": 2,
+            "year": 1,
+            "sem": 1,
+            "isElective": false
+        },
+        "CS903-A": {
+            "name": "Course 3",
+            "L": 4,
+            "T": 1,
+            "P": 2,
+            "year": 1,
+            "sem": 1,
+            "isElective": false
+        },
+        "CS904-A": {
+            "name": "Course 4",
+            "L": 4,
+            "T": 1,
+            "P": 2,
+            "year": 1,
+            "sem": 1,
+            "isElective": false
+        },
+        "CS905-A": {
+            "name": "Course 5",
+            "L": 4,
+            "T": 1,
+            "P": 2,
+            "year": 1,
+            "sem": 1,
+            "isElective": false
+        }
+    },
+    "teachers": [
+        {
+            "id": "T1",
+            "name": "Only Teacher",
+            "min": 10,
+            "max": 25,
+            "prefs": {},
+            "fallbackCourses": []
+        }
+    ],
+    "classes": [
+        {
+            "id": "Y1-A",
+            "year": 1,
+            "sems": [
+                1
+            ],
+            "strength": 50,
+            "courses": [
+                "CS901-A",
+                "CS902-A",
+                "CS903-A",
+                "CS904-A",
+                "CS905-A"
+            ]
+        }
+    ],
+    "schedule": {
+        "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+        ],
+        "hours": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "14:00",
+            "15:00",
+            "16:00"
+        ]
+    },
+    "rooms": {
+        "theory": [
+            "ONLY-ROOM"
+        ],
+        "lab": [
+            "ONLY-LAB"
+        ]
+    }
+}

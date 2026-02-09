@@ -1,0 +1,176 @@
+{
+  "Y3-A": [
+    {
+      "course": "CS701-A",
+      "type": "L",
+      "slot": "Wednesday_14:00",
+      "teacher": "Dr. Tester",
+      "room": "R701"
+    },
+    {
+      "course": "CS701-A",
+      "type": "L",
+      "slot": "Thursday_14:00",
+      "teacher": "Dr. Tester",
+      "room": "R701"
+    },
+    {
+      "course": "CS701-A",
+      "type": "L",
+      "slot": "Friday_12:00",
+      "teacher": "Dr. Tester",
+      "room": "R701"
+    },
+    {
+      "course": "CS701-A",
+      "type": "P",
+      "slot": "Monday_09:00",
+      "teacher": "Dr. Tester",
+      "room": "SE-LAB"
+    },
+    {
+      "course": "CS701-A",
+      "type": "P",
+      "slot": "Monday_10:00",
+      "teacher": "Dr. Tester",
+      "room": "SE-LAB"
+    },
+    {
+      "course": "CS702-A",
+      "type": "L",
+      "slot": "Tuesday_10:00",
+      "teacher": "Dr. Backup SE",
+      "room": "R701"
+    },
+    {
+      "course": "CS702-A",
+      "type": "L",
+      "slot": "Wednesday_09:00",
+      "teacher": "Dr. Backup SE",
+      "room": "R701"
+    },
+    {
+      "course": "CS702-A",
+      "type": "T",
+      "slot": "Monday_14:00",
+      "teacher": "Dr. Backup SE",
+      "room": "R701"
+    }
+  ],
+  "Y3-B": [
+    {
+      "course": "CS701-B",
+      "type": "L",
+      "slot": "Wednesday_10:00",
+      "teacher": "Dr. SE Expert",
+      "room": "R703"
+    },
+    {
+      "course": "CS701-B",
+      "type": "L",
+      "slot": "Wednesday_12:00",
+      "teacher": "Dr. SE Expert",
+      "room": "R703"
+    },
+    {
+      "course": "CS701-B",
+      "type": "L",
+      "slot": "Friday_09:00",
+      "teacher": "Dr. SE Expert",
+      "room": "R703"
+    },
+    {
+      "course": "CS701-B",
+      "type": "P",
+      "slot": "Tuesday_11:00",
+      "teacher": "Dr. SE Expert",
+      "room": "SE-LAB"
+    },
+    {
+      "course": "CS701-B",
+      "type": "P",
+      "slot": "Tuesday_12:00",
+      "teacher": "Dr. SE Expert",
+      "room": "SE-LAB"
+    },
+    {
+      "course": "CS702-B",
+      "type": "L",
+      "slot": "Thursday_12:00",
+      "teacher": "Dr. Tester",
+      "room": "R703"
+    },
+    {
+      "course": "CS702-B",
+      "type": "L",
+      "slot": "Thursday_15:00",
+      "teacher": "Dr. Tester",
+      "room": "R703"
+    },
+    {
+      "course": "CS702-B",
+      "type": "T",
+      "slot": "Monday_12:00",
+      "teacher": "Dr. Tester",
+      "room": "R703"
+    }
+  ],
+  "Y3-C": [
+    {
+      "course": "CS701-C",
+      "type": "L",
+      "slot": "Monday_10:00",
+      "teacher": "Dr. Backup SE",
+      "room": "R703"
+    },
+    {
+      "course": "CS701-C",
+      "type": "L",
+      "slot": "Tuesday_14:00",
+      "teacher": "Dr. Backup SE",
+      "room": "R703"
+    },
+    {
+      "course": "CS701-C",
+      "type": "L",
+      "slot": "Tuesday_16:00",
+      "teacher": "Dr. Backup SE",
+      "room": "R703"
+    },
+    {
+      "course": "CS701-C",
+      "type": "P",
+      "slot": "Monday_15:00",
+      "teacher": "Dr. Backup SE",
+      "room": "SE-LAB"
+    },
+    {
+      "course": "CS701-C",
+      "type": "P",
+      "slot": "Monday_16:00",
+      "teacher": "Dr. Backup SE",
+      "room": "SE-LAB"
+    },
+    {
+      "course": "CS702-C",
+      "type": "L",
+      "slot": "Tuesday_15:00",
+      "teacher": "Dr. SE Expert",
+      "room": "R703"
+    },
+    {
+      "course": "CS702-C",
+      "type": "L",
+      "slot": "Thursday_14:00",
+      "teacher": "Dr. SE Expert",
+      "room": "R703"
+    },
+    {
+      "course": "CS702-C",
+      "type": "T",
+      "slot": "Thursday_16:00",
+      "teacher": "Dr. SE Expert",
+      "room": "R703"
+    }
+  ]
+}

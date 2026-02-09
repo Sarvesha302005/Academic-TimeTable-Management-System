@@ -1,0 +1,159 @@
+{
+    "description": "Test Case 2: Teacher Workload Constraints - Tests min/max hour limits",
+    "expected_outcome": "Each teacher should have between 8-20 hours (soft) with hard max of 25",
+    "constraints_tested": [
+        "Teacher workload min/max",
+        "Single teacher per course"
+    ],
+    "courses": {
+        "CS201-A": {
+            "name": "Algorithms",
+            "L": 3,
+            "T": 1,
+            "P": 2,
+            "year": 2,
+            "sem": 3,
+            "isElective": false
+        },
+        "CS202-A": {
+            "name": "OS",
+            "L": 3,
+            "T": 0,
+            "P": 2,
+            "year": 2,
+            "sem": 3,
+            "isElective": false
+        },
+        "CS203-A": {
+            "name": "DBMS",
+            "L": 3,
+            "T": 1,
+            "P": 2,
+            "year": 2,
+            "sem": 3,
+            "isElective": false
+        },
+        "CS201-B": {
+            "name": "Algorithms",
+            "L": 3,
+            "T": 1,
+            "P": 2,
+            "year": 2,
+            "sem": 3,
+            "isElective": false
+        },
+        "CS202-B": {
+            "name": "OS",
+            "L": 3,
+            "T": 0,
+            "P": 2,
+            "year": 2,
+            "sem": 3,
+            "isElective": false
+        },
+        "CS203-B": {
+            "name": "DBMS",
+            "L": 3,
+            "T": 1,
+            "P": 2,
+            "year": 2,
+            "sem": 3,
+            "isElective": false
+        }
+    },
+    "teachers": [
+        {
+            "id": "T1",
+            "name": "Dr. Alpha",
+            "min": 8,
+            "max": 20,
+            "prefs": {
+                "CS201": 1
+            },
+            "fallbackCourses": [
+                "CS202"
+            ]
+        },
+        {
+            "id": "T2",
+            "name": "Dr. Beta",
+            "min": 8,
+            "max": 20,
+            "prefs": {
+                "CS202": 1
+            },
+            "fallbackCourses": [
+                "CS203"
+            ]
+        },
+        {
+            "id": "T3",
+            "name": "Dr. Gamma",
+            "min": 8,
+            "max": 20,
+            "prefs": {
+                "CS203": 1
+            },
+            "fallbackCourses": [
+                "CS201"
+            ]
+        }
+    ],
+    "classes": [
+        {
+            "id": "Y2-A",
+            "year": 2,
+            "sems": [
+                3
+            ],
+            "strength": 50,
+            "courses": [
+                "CS201-A",
+                "CS202-A",
+                "CS203-A"
+            ]
+        },
+        {
+            "id": "Y2-B",
+            "year": 2,
+            "sems": [
+                3
+            ],
+            "strength": 50,
+            "courses": [
+                "CS201-B",
+                "CS202-B",
+                "CS203-B"
+            ]
+        }
+    ],
+    "schedule": {
+        "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+        ],
+        "hours": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "14:00",
+            "15:00",
+            "16:00"
+        ]
+    },
+    "rooms": {
+        "theory": [
+            "R201",
+            "R202",
+            "R203"
+        ],
+        "lab": [
+            "LAB1",
+            "LAB2"
+        ]
+    }
+}
