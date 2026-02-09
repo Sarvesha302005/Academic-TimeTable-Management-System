@@ -203,23 +203,68 @@ class AdminController {
      TIMETABLE LOCK / UNLOCK
   ========================= */
   async lockTimetable(req, res) {
-    const timetable = await Timetable.findOne({ status: 'generated' });
-    if (!timetable) return res.status(404).json({ success: false, error: 'No timetable found' });
+    try {
+      console.log('Lock request body:', JSON.stringify(req.body));
+      let academicCalendarId = req.body.academicCalendarId || req.body;
+      
+      // If academicCalendarId is still an object, try to extract the actual ID
+      if (typeof academicCalendarId === 'object' && academicCalendarId.academicCalendarId) {
+        academicCalendarId = academicCalendarId.academicCalendarId;
+      }
+      
+      console.log('Extracted academicCalendarId:', academicCalendarId, 'Type:', typeof academicCalendarId);
+      
+      if (!academicCalendarId || typeof academicCalendarId !== 'string') {
+        return res.status(400).json({ success: false, error: 'academicCalendarId must be a string' });
+      }
 
-    timetable.status = 'locked';
-    await timetable.save();
+      // Find the latest generated timetable for the requested academic calendar
+      const timetable = await Timetable.findOne({ academicCalendar: academicCalendarId, status: 'generated' }).sort({ updatedAt: -1 });
+      if (!timetable) return res.status(404).json({ success: false, error: 'No generated timetable found for this academic calendar' });
 
-    res.json({ success: true, data: timetable });
+      timetable.status = 'locked';
+      timetable.lockedAt = new Date();
+      // prefer user id from auth middleware if available
+      timetable.lockedBy = (req.userId || (req.user && req.user._id) || 'unknown').toString();
+      await timetable.save();
+
+      res.json({ success: true, data: timetable });
+    } catch (error) {
+      console.error('Error in lockTimetable:', error);
+      res.status(500).json({ success: false, error: error.message || 'Failed to lock timetable' });
+    }
   }
 
   async unlockTimetable(req, res) {
-    const timetable = await Timetable.findOne({ status: 'locked' });
-    if (!timetable) return res.status(404).json({ success: false, error: 'No locked timetable' });
+    try {
+      console.log('Unlock request body:', JSON.stringify(req.body));
+      let academicCalendarId = req.body.academicCalendarId || req.body;
+      
+      // If academicCalendarId is still an object, try to extract the actual ID
+      if (typeof academicCalendarId === 'object' && academicCalendarId.academicCalendarId) {
+        academicCalendarId = academicCalendarId.academicCalendarId;
+      }
+      
+      console.log('Extracted academicCalendarId:', academicCalendarId, 'Type:', typeof academicCalendarId);
+      
+      if (!academicCalendarId || typeof academicCalendarId !== 'string') {
+        return res.status(400).json({ success: false, error: 'academicCalendarId must be a string' });
+      }
 
-    timetable.status = 'generated';
-    await timetable.save();
+      // Find the latest locked timetable for the requested academic calendar
+      const timetable = await Timetable.findOne({ academicCalendar: academicCalendarId, status: 'locked' }).sort({ updatedAt: -1 });
+      if (!timetable) return res.status(404).json({ success: false, error: 'No locked timetable found for this academic calendar' });
 
-    res.json({ success: true, data: timetable });
+      timetable.status = 'generated';
+      timetable.lockedAt = undefined;
+      timetable.lockedBy = undefined;
+      await timetable.save();
+
+      res.json({ success: true, data: timetable });
+    } catch (error) {
+      console.error('Error in unlockTimetable:', error);
+      res.status(500).json({ success: false, error: error.message || 'Failed to unlock timetable' });
+    }
   }
 }
 
