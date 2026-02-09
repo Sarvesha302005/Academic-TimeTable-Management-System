@@ -3,68 +3,74 @@ CLASS-WISE TIMETABLE
 ========================================================================================================================
 
 
-Y3S1
+FY-A
 ------------------------------------------------------------------------------------------------------------------------
 Day        Start      End        Course          Type  Teacher              Room      
 ------------------------------------------------------------------------------------------------------------------------
-Mon        12:00      13:00      EC302           L     Dr. Meera            TR1       
-Mon        14:00      16:00      EC302           P     Dr. Priya            L4        
-Tue        09:00      10:00      EC301           L     Dr. Karthik          TR1       
-Tue        10:00      11:00      EC301           L     Dr. Karthik          TR1       
-Tue        11:00      12:00      EC303           L     Prof. Suresh         TR1       
-Tue        12:00      13:00      EC303           L     Prof. Suresh         TR1       
-Tue        14:00      16:00      EC303           P     Prof. Suresh         L4        
-Wed        10:00      11:00      EC303           T     Prof. Suresh         TR1       
-Wed        11:00      12:00      EC302           L     Prof. Arjun          TR1       
-Wed        12:00      13:00      EC301           T     Dr. Karthik          TR1       
-Wed        15:00      16:00      EC303           L     Prof. Arjun          TR1       
-Fri        09:00      10:00      EC302           L     Prof. Suresh         TR1       
-Fri        11:00      13:00      EC301           P     Dr. Meera            L1        
-Fri        15:00      16:00      EC301           L     Dr. Meera            TR1       
+Mon        11:00      12:00      MTH101          T     Dr. Rajesh Verma     Hall-A    
+Mon        14:00      15:00      PHY101          T     Dr. Vikram Singh     Hall-A    
+Tue        09:00      11:00      CSE101          P     Dr. Vikram Singh     CompLab2  
+Wed        11:00      12:00      CSE101          L     Dr. Vikram Singh     Hall-A    
+Wed        14:00      15:00      PHY101          L     Prof. Sunita Rao     Hall-A    
+Thu        12:00      13:00      CSE101          L     Prof. Neha Kapoor    Hall-A    
+Thu        15:00      17:00      PHY101          P     Dr. Vikram Singh     PhysicsLab
+Fri        14:00      15:00      MTH101          L     Dr. Anil Mathur      Hall-A    
+Fri        16:00      17:00      PHY101          L     Prof. Sunita Rao     Hall-A    
+Sat        12:00      13:00      MTH101          L     Dr. Anil Mathur      Hall-A    
+Sat        15:00      16:00      PHY101          L     Prof. Sunita Rao     Hall-A    
+Sat        16:00      17:00      MTH101          L     Dr. Anil Mathur      Hall-A    
 
-Y3S2
+FY-B
 ------------------------------------------------------------------------------------------------------------------------
 Day        Start      End        Course          Type  Teacher              Room      
 ------------------------------------------------------------------------------------------------------------------------
-Mon        10:00      11:00      EC303           L     Prof. Suresh         TR2       
-Mon        11:00      12:00      EC302           L     Dr. Meera            TR2       
-Mon        12:00      13:00      EC302           L     Prof. Arjun          TR2       
-Tue        14:00      16:00      EC303           P     Prof. Arjun          L1        
-Wed        11:00      12:00      EC303           L     Prof. Suresh         TR2       
-Wed        14:00      15:00      EC303           T     Prof. Arjun          TR2       
-Thu        09:00      10:00      EC301           L     Dr. Meera            TR2       
-Thu        10:00      12:00      EC301           P     Prof. Suresh         L4        
-Thu        12:00      13:00      EC301           T     Dr. Karthik          TR2       
-Thu        14:00      15:00      EC303           L     Prof. Suresh         TR2       
-Fri        09:00      10:00      EC301           L     Dr. Meera            TR2       
-Fri        10:00      11:00      EC302           L     Dr. Meera            TR2       
-Fri        11:00      12:00      EC301           L     Prof. Suresh         TR2       
-Fri        14:00      16:00      EC302           P     Dr. Priya            L4        
+Mon        09:00      10:00      PHY101          L     Dr. Vikram Singh     Hall-B    
+Mon        10:00      11:00      PHY101          L     Prof. Sunita Rao     Hall-B    
+Mon        14:00      15:00      PHY101          L     Prof. Sunita Rao     Hall-B    
+Tue        14:00      15:00      CSE101          L     Prof. Neha Kapoor    Hall-B    
+Tue        15:00      16:00      MTH101          L     Dr. Rajesh Verma     Hall-B    
+Wed        09:00      10:00      MTH101          T     Dr. Rajesh Verma     Hall-B    
+Wed        10:00      11:00      MTH101          L     Dr. Rajesh Verma     Hall-B    
+Thu        09:00      11:00      PHY101          P     Prof. Sunita Rao     CompLab2  
+Thu        12:00      13:00      CSE101          L     Prof. Kavitha Menon  Hall-B    
+Fri        14:00      15:00      PHY101          T     Dr. Vikram Singh     Hall-B    
+Sat        09:00      11:00      CSE101          P     Dr. Vikram Singh     CompLab2  
+Sat        11:00      12:00      MTH101          L     Dr. Rajesh Verma     Hall-B    
 
-Y5S1
+SY-A
 ------------------------------------------------------------------------------------------------------------------------
 Day        Start      End        Course          Type  Teacher              Room      
 ------------------------------------------------------------------------------------------------------------------------
-Mon        10:00      11:00      EC502           L     Prof. Arjun          TR3       
-Tue        12:00      13:00      EC501           L     Dr. Priya            TR3       
-Tue        14:00      16:00      EC501           P     Dr. Karthik          L2        
-Wed        10:00      11:00      EC502           L     Dr. Karthik          TR3       
-Wed        12:00      13:00      EC501           T     Dr. Meera            TR3       
-Wed        14:00      16:00      EC502           P     Dr. Karthik          L3        
-Thu        10:00      11:00      EC501           L     Dr. Karthik          TR3       
-Thu        11:00      12:00      EC501           L     Dr. Karthik          TR3       
-Fri        11:00      12:00      EC502           L     Dr. Priya            TR3       
+Mon        11:00      13:00      CSE202          P     Prof. Sunita Rao     CompLab2  
+Tue        12:00      13:00      CSE201          T     Prof. Kavitha Menon  Hall-C    
+Tue        16:00      17:00      MTH201          L     Dr. Anil Mathur      Hall-C    
+Wed        15:00      16:00      CSE201          L     Prof. Kavitha Menon  Hall-C    
+Thu        09:00      10:00      MTH201          T     Dr. Anil Mathur      Hall-C    
+Thu        12:00      13:00      CSE202          L     Prof. Sunita Rao     Hall-C    
+Thu        14:00      15:00      CSE202          L     Prof. Kavitha Menon  Hall-C    
+Fri        09:00      10:00      MTH201          L     Dr. Anil Mathur      Hall-C    
+Fri        11:00      12:00      MTH201          L     Dr. Rajesh Verma     Hall-C    
+Fri        16:00      17:00      CSE201          L     Prof. Kavitha Menon  Hall-C    
+Sat        10:00      11:00      CSE202          L     Prof. Kavitha Menon  Hall-C    
+Sat        11:00      12:00      CSE201          L     Prof. Kavitha Menon  Hall-C    
+Sat        12:00      13:00      CSE202          T     Prof. Sunita Rao     Hall-C    
+Sat        15:00      17:00      CSE201          P     Prof. Kavitha Menon  PhysicsLab
 
-Y5S2
+SY-B
 ------------------------------------------------------------------------------------------------------------------------
 Day        Start      End        Course          Type  Teacher              Room      
 ------------------------------------------------------------------------------------------------------------------------
-Mon        11:00      12:00      EC501           L     Dr. Karthik          TR4       
-Mon        12:00      13:00      EC501           L     Dr. Karthik          TR4       
-Tue        10:00      11:00      EC501           T     Dr. Priya            TR4       
-Tue        12:00      13:00      EC501           L     Dr. Karthik          TR4       
-Wed        09:00      10:00      EC502           L     Dr. Karthik          TR4       
-Thu        12:00      13:00      EC502           L     Dr. Priya            TR4       
-Thu        14:00      16:00      EC502           P     Prof. Arjun          L1        
-Fri        09:00      11:00      EC501           P     Dr. Priya            L4        
-Fri        15:00      16:00      EC502           L     Dr. Karthik          TR4       
+Mon        12:00      13:00      MTH201          L     Dr. Rajesh Verma     Hall-D    
+Mon        14:00      16:00      CSE201          P     Prof. Neha Kapoor    CompLab2  
+Tue        10:00      11:00      CSE201          L     Prof. Neha Kapoor    Hall-D    
+Tue        15:00      16:00      MTH201          T     Dr. Anil Mathur      Hall-D    
+Wed        09:00      10:00      CSE202          T     Prof. Kavitha Menon  Hall-D    
+Wed        16:00      17:00      CSE202          L     Prof. Kavitha Menon  Hall-D    
+Fri        11:00      13:00      CSE202          P     Prof. Sunita Rao     CompLab2  
+Fri        15:00      16:00      CSE202          L     Prof. Sunita Rao     Hall-D    
+Fri        16:00      17:00      CSE201          L     Prof. Neha Kapoor    Hall-D    
+Sat        09:00      10:00      MTH201          L     Dr. Rajesh Verma     Hall-D    
+Sat        10:00      11:00      MTH201          L     Dr. Rajesh Verma     Hall-D    
+Sat        11:00      12:00      CSE201          L     Prof. Neha Kapoor    Hall-D    
+Sat        12:00      13:00      CSE202          L     Prof. Kavitha Menon  Hall-D    
+Sat        14:00      15:00      CSE201          T     Prof. Kavitha Menon  Hall-D    

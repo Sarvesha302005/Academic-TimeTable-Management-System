@@ -1,572 +1,614 @@
 {
-  "Dr. Meera": [
+  "Dr. Anil Mathur": [
     {
-      "class": "Y3S1",
-      "course": "EC301",
-      "course_name": "Microprocessors",
+      "class": "FY-A",
+      "course": "MTH101",
+      "course_name": "Engineering Mathematics",
       "type": "L",
       "day": "Fri",
-      "start_time": "15:00",
-      "end_time": "16:00",
-      "room": "TR1"
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "room": "Hall-A"
     },
     {
-      "class": "Y3S1",
-      "course": "EC301",
-      "course_name": "Microprocessors",
-      "type": "P",
-      "day": "Fri",
-      "start_time": "11:00",
-      "end_time": "12:00",
-      "room": "L1"
-    },
-    {
-      "class": "Y3S1",
-      "course": "EC301",
-      "course_name": "Microprocessors",
-      "type": "P",
-      "day": "Fri",
+      "class": "FY-A",
+      "course": "MTH101",
+      "course_name": "Engineering Mathematics",
+      "type": "L",
+      "day": "Sat",
       "start_time": "12:00",
       "end_time": "13:00",
-      "room": "L1"
+      "room": "Hall-A"
     },
     {
-      "class": "Y3S1",
-      "course": "EC302",
-      "course_name": "Signals and Systems",
+      "class": "FY-A",
+      "course": "MTH101",
+      "course_name": "Engineering Mathematics",
       "type": "L",
-      "day": "Mon",
-      "start_time": "12:00",
-      "end_time": "13:00",
-      "room": "TR1"
+      "day": "Sat",
+      "start_time": "16:00",
+      "end_time": "17:00",
+      "room": "Hall-A"
     },
     {
-      "class": "Y3S2",
-      "course": "EC301",
-      "course_name": "Microprocessors",
+      "class": "SY-A",
+      "course": "MTH201",
+      "course_name": "Advanced Mathematics",
       "type": "L",
+      "day": "Tue",
+      "start_time": "16:00",
+      "end_time": "17:00",
+      "room": "Hall-C"
+    },
+    {
+      "class": "SY-A",
+      "course": "MTH201",
+      "course_name": "Advanced Mathematics",
+      "type": "L",
+      "day": "Fri",
+      "start_time": "09:00",
+      "end_time": "10:00",
+      "room": "Hall-C"
+    },
+    {
+      "class": "SY-A",
+      "course": "MTH201",
+      "course_name": "Advanced Mathematics",
+      "type": "T",
       "day": "Thu",
       "start_time": "09:00",
       "end_time": "10:00",
-      "room": "TR2"
+      "room": "Hall-C"
     },
     {
-      "class": "Y3S2",
-      "course": "EC301",
-      "course_name": "Microprocessors",
-      "type": "L",
-      "day": "Fri",
-      "start_time": "09:00",
-      "end_time": "10:00",
-      "room": "TR2"
-    },
-    {
-      "class": "Y3S2",
-      "course": "EC302",
-      "course_name": "Signals and Systems",
-      "type": "L",
-      "day": "Mon",
-      "start_time": "11:00",
-      "end_time": "12:00",
-      "room": "TR2"
-    },
-    {
-      "class": "Y3S2",
-      "course": "EC302",
-      "course_name": "Signals and Systems",
-      "type": "L",
-      "day": "Fri",
-      "start_time": "10:00",
-      "end_time": "11:00",
-      "room": "TR2"
-    },
-    {
-      "class": "Y5S1",
-      "course": "EC501",
-      "course_name": "VLSI Design",
+      "class": "SY-B",
+      "course": "MTH201",
+      "course_name": "Advanced Mathematics",
       "type": "T",
-      "day": "Wed",
-      "start_time": "12:00",
-      "end_time": "13:00",
-      "room": "TR3"
+      "day": "Tue",
+      "start_time": "15:00",
+      "end_time": "16:00",
+      "room": "Hall-D"
     }
   ],
-  "Prof. Suresh": [
+  "Prof. Sunita Rao": [
     {
-      "class": "Y3S1",
-      "course": "EC302",
-      "course_name": "Signals and Systems",
+      "class": "FY-A",
+      "course": "PHY101",
+      "course_name": "Engineering Physics",
       "type": "L",
-      "day": "Fri",
-      "start_time": "09:00",
-      "end_time": "10:00",
-      "room": "TR1"
-    },
-    {
-      "class": "Y3S1",
-      "course": "EC303",
-      "course_name": "Communication Systems",
-      "type": "L",
-      "day": "Tue",
-      "start_time": "11:00",
-      "end_time": "12:00",
-      "room": "TR1"
-    },
-    {
-      "class": "Y3S1",
-      "course": "EC303",
-      "course_name": "Communication Systems",
-      "type": "L",
-      "day": "Tue",
-      "start_time": "12:00",
-      "end_time": "13:00",
-      "room": "TR1"
-    },
-    {
-      "class": "Y3S1",
-      "course": "EC303",
-      "course_name": "Communication Systems",
-      "type": "T",
       "day": "Wed",
-      "start_time": "10:00",
-      "end_time": "11:00",
-      "room": "TR1"
-    },
-    {
-      "class": "Y3S1",
-      "course": "EC303",
-      "course_name": "Communication Systems",
-      "type": "P",
-      "day": "Tue",
       "start_time": "14:00",
       "end_time": "15:00",
-      "room": "L4"
+      "room": "Hall-A"
     },
     {
-      "class": "Y3S1",
-      "course": "EC303",
-      "course_name": "Communication Systems",
-      "type": "P",
-      "day": "Tue",
-      "start_time": "15:00",
-      "end_time": "16:00",
-      "room": "L4"
-    },
-    {
-      "class": "Y3S2",
-      "course": "EC301",
-      "course_name": "Microprocessors",
+      "class": "FY-A",
+      "course": "PHY101",
+      "course_name": "Engineering Physics",
       "type": "L",
       "day": "Fri",
-      "start_time": "11:00",
-      "end_time": "12:00",
-      "room": "TR2"
+      "start_time": "16:00",
+      "end_time": "17:00",
+      "room": "Hall-A"
     },
     {
-      "class": "Y3S2",
-      "course": "EC301",
-      "course_name": "Microprocessors",
-      "type": "P",
-      "day": "Thu",
-      "start_time": "10:00",
-      "end_time": "11:00",
-      "room": "L4"
+      "class": "FY-A",
+      "course": "PHY101",
+      "course_name": "Engineering Physics",
+      "type": "L",
+      "day": "Sat",
+      "start_time": "15:00",
+      "end_time": "16:00",
+      "room": "Hall-A"
     },
     {
-      "class": "Y3S2",
-      "course": "EC301",
-      "course_name": "Microprocessors",
-      "type": "P",
-      "day": "Thu",
-      "start_time": "11:00",
-      "end_time": "12:00",
-      "room": "L4"
-    },
-    {
-      "class": "Y3S2",
-      "course": "EC303",
-      "course_name": "Communication Systems",
+      "class": "FY-B",
+      "course": "PHY101",
+      "course_name": "Engineering Physics",
       "type": "L",
       "day": "Mon",
       "start_time": "10:00",
       "end_time": "11:00",
-      "room": "TR2"
+      "room": "Hall-B"
     },
     {
-      "class": "Y3S2",
-      "course": "EC303",
-      "course_name": "Communication Systems",
+      "class": "FY-B",
+      "course": "PHY101",
+      "course_name": "Engineering Physics",
       "type": "L",
-      "day": "Wed",
-      "start_time": "11:00",
-      "end_time": "12:00",
-      "room": "TR2"
-    },
-    {
-      "class": "Y3S2",
-      "course": "EC303",
-      "course_name": "Communication Systems",
-      "type": "L",
-      "day": "Thu",
+      "day": "Mon",
       "start_time": "14:00",
       "end_time": "15:00",
-      "room": "TR2"
+      "room": "Hall-B"
+    },
+    {
+      "class": "FY-B",
+      "course": "PHY101",
+      "course_name": "Engineering Physics",
+      "type": "P",
+      "day": "Thu",
+      "start_time": "09:00",
+      "end_time": "10:00",
+      "room": "CompLab2"
+    },
+    {
+      "class": "FY-B",
+      "course": "PHY101",
+      "course_name": "Engineering Physics",
+      "type": "P",
+      "day": "Thu",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "room": "CompLab2"
+    },
+    {
+      "class": "SY-A",
+      "course": "CSE202",
+      "course_name": "Digital Electronics",
+      "type": "L",
+      "day": "Thu",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "room": "Hall-C"
+    },
+    {
+      "class": "SY-A",
+      "course": "CSE202",
+      "course_name": "Digital Electronics",
+      "type": "T",
+      "day": "Sat",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "room": "Hall-C"
+    },
+    {
+      "class": "SY-A",
+      "course": "CSE202",
+      "course_name": "Digital Electronics",
+      "type": "P",
+      "day": "Mon",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "room": "CompLab2"
+    },
+    {
+      "class": "SY-A",
+      "course": "CSE202",
+      "course_name": "Digital Electronics",
+      "type": "P",
+      "day": "Mon",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "room": "CompLab2"
+    },
+    {
+      "class": "SY-B",
+      "course": "CSE202",
+      "course_name": "Digital Electronics",
+      "type": "L",
+      "day": "Fri",
+      "start_time": "15:00",
+      "end_time": "16:00",
+      "room": "Hall-D"
+    },
+    {
+      "class": "SY-B",
+      "course": "CSE202",
+      "course_name": "Digital Electronics",
+      "type": "P",
+      "day": "Fri",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "room": "CompLab2"
+    },
+    {
+      "class": "SY-B",
+      "course": "CSE202",
+      "course_name": "Digital Electronics",
+      "type": "P",
+      "day": "Fri",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "room": "CompLab2"
     }
   ],
-  "Dr. Karthik": [
+  "Dr. Vikram Singh": [
     {
-      "class": "Y3S1",
-      "course": "EC301",
-      "course_name": "Microprocessors",
+      "class": "FY-A",
+      "course": "PHY101",
+      "course_name": "Engineering Physics",
+      "type": "T",
+      "day": "Mon",
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "room": "Hall-A"
+    },
+    {
+      "class": "FY-A",
+      "course": "PHY101",
+      "course_name": "Engineering Physics",
+      "type": "P",
+      "day": "Thu",
+      "start_time": "15:00",
+      "end_time": "16:00",
+      "room": "PhysicsLab"
+    },
+    {
+      "class": "FY-A",
+      "course": "PHY101",
+      "course_name": "Engineering Physics",
+      "type": "P",
+      "day": "Thu",
+      "start_time": "16:00",
+      "end_time": "17:00",
+      "room": "PhysicsLab"
+    },
+    {
+      "class": "FY-A",
+      "course": "CSE101",
+      "course_name": "Computer Programming",
       "type": "L",
+      "day": "Wed",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "room": "Hall-A"
+    },
+    {
+      "class": "FY-A",
+      "course": "CSE101",
+      "course_name": "Computer Programming",
+      "type": "P",
       "day": "Tue",
       "start_time": "09:00",
       "end_time": "10:00",
-      "room": "TR1"
+      "room": "CompLab2"
     },
     {
-      "class": "Y3S1",
-      "course": "EC301",
-      "course_name": "Microprocessors",
-      "type": "L",
+      "class": "FY-A",
+      "course": "CSE101",
+      "course_name": "Computer Programming",
+      "type": "P",
       "day": "Tue",
       "start_time": "10:00",
       "end_time": "11:00",
-      "room": "TR1"
+      "room": "CompLab2"
     },
     {
-      "class": "Y3S1",
-      "course": "EC301",
-      "course_name": "Microprocessors",
-      "type": "T",
-      "day": "Wed",
-      "start_time": "12:00",
-      "end_time": "13:00",
-      "room": "TR1"
-    },
-    {
-      "class": "Y3S2",
-      "course": "EC301",
-      "course_name": "Microprocessors",
-      "type": "T",
-      "day": "Thu",
-      "start_time": "12:00",
-      "end_time": "13:00",
-      "room": "TR2"
-    },
-    {
-      "class": "Y5S1",
-      "course": "EC501",
-      "course_name": "VLSI Design",
-      "type": "L",
-      "day": "Thu",
-      "start_time": "10:00",
-      "end_time": "11:00",
-      "room": "TR3"
-    },
-    {
-      "class": "Y5S1",
-      "course": "EC501",
-      "course_name": "VLSI Design",
-      "type": "L",
-      "day": "Thu",
-      "start_time": "11:00",
-      "end_time": "12:00",
-      "room": "TR3"
-    },
-    {
-      "class": "Y5S1",
-      "course": "EC501",
-      "course_name": "VLSI Design",
-      "type": "P",
-      "day": "Tue",
-      "start_time": "14:00",
-      "end_time": "15:00",
-      "room": "L2"
-    },
-    {
-      "class": "Y5S1",
-      "course": "EC501",
-      "course_name": "VLSI Design",
-      "type": "P",
-      "day": "Tue",
-      "start_time": "15:00",
-      "end_time": "16:00",
-      "room": "L2"
-    },
-    {
-      "class": "Y5S1",
-      "course": "EC502",
-      "course_name": "Embedded Systems",
-      "type": "L",
-      "day": "Wed",
-      "start_time": "10:00",
-      "end_time": "11:00",
-      "room": "TR3"
-    },
-    {
-      "class": "Y5S1",
-      "course": "EC502",
-      "course_name": "Embedded Systems",
-      "type": "P",
-      "day": "Wed",
-      "start_time": "14:00",
-      "end_time": "15:00",
-      "room": "L3"
-    },
-    {
-      "class": "Y5S1",
-      "course": "EC502",
-      "course_name": "Embedded Systems",
-      "type": "P",
-      "day": "Wed",
-      "start_time": "15:00",
-      "end_time": "16:00",
-      "room": "L3"
-    },
-    {
-      "class": "Y5S2",
-      "course": "EC501",
-      "course_name": "VLSI Design",
+      "class": "FY-B",
+      "course": "PHY101",
+      "course_name": "Engineering Physics",
       "type": "L",
       "day": "Mon",
-      "start_time": "11:00",
-      "end_time": "12:00",
-      "room": "TR4"
-    },
-    {
-      "class": "Y5S2",
-      "course": "EC501",
-      "course_name": "VLSI Design",
-      "type": "L",
-      "day": "Mon",
-      "start_time": "12:00",
-      "end_time": "13:00",
-      "room": "TR4"
-    },
-    {
-      "class": "Y5S2",
-      "course": "EC501",
-      "course_name": "VLSI Design",
-      "type": "L",
-      "day": "Tue",
-      "start_time": "12:00",
-      "end_time": "13:00",
-      "room": "TR4"
-    },
-    {
-      "class": "Y5S2",
-      "course": "EC502",
-      "course_name": "Embedded Systems",
-      "type": "L",
-      "day": "Wed",
       "start_time": "09:00",
       "end_time": "10:00",
-      "room": "TR4"
+      "room": "Hall-B"
     },
     {
-      "class": "Y5S2",
-      "course": "EC502",
-      "course_name": "Embedded Systems",
-      "type": "L",
+      "class": "FY-B",
+      "course": "PHY101",
+      "course_name": "Engineering Physics",
+      "type": "T",
       "day": "Fri",
-      "start_time": "15:00",
-      "end_time": "16:00",
-      "room": "TR4"
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "room": "Hall-B"
+    },
+    {
+      "class": "FY-B",
+      "course": "CSE101",
+      "course_name": "Computer Programming",
+      "type": "P",
+      "day": "Sat",
+      "start_time": "09:00",
+      "end_time": "10:00",
+      "room": "CompLab2"
+    },
+    {
+      "class": "FY-B",
+      "course": "CSE101",
+      "course_name": "Computer Programming",
+      "type": "P",
+      "day": "Sat",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "room": "CompLab2"
     }
   ],
-  "Prof. Arjun": [
+  "Prof. Neha Kapoor": [
     {
-      "class": "Y3S1",
-      "course": "EC302",
-      "course_name": "Signals and Systems",
+      "class": "FY-A",
+      "course": "CSE101",
+      "course_name": "Computer Programming",
       "type": "L",
-      "day": "Wed",
-      "start_time": "11:00",
-      "end_time": "12:00",
-      "room": "TR1"
-    },
-    {
-      "class": "Y3S1",
-      "course": "EC303",
-      "course_name": "Communication Systems",
-      "type": "L",
-      "day": "Wed",
-      "start_time": "15:00",
-      "end_time": "16:00",
-      "room": "TR1"
-    },
-    {
-      "class": "Y3S2",
-      "course": "EC302",
-      "course_name": "Signals and Systems",
-      "type": "L",
-      "day": "Mon",
+      "day": "Thu",
       "start_time": "12:00",
       "end_time": "13:00",
-      "room": "TR2"
+      "room": "Hall-A"
     },
     {
-      "class": "Y3S2",
-      "course": "EC303",
-      "course_name": "Communication Systems",
-      "type": "T",
-      "day": "Wed",
-      "start_time": "14:00",
-      "end_time": "15:00",
-      "room": "TR2"
-    },
-    {
-      "class": "Y3S2",
-      "course": "EC303",
-      "course_name": "Communication Systems",
-      "type": "P",
-      "day": "Tue",
-      "start_time": "14:00",
-      "end_time": "15:00",
-      "room": "L1"
-    },
-    {
-      "class": "Y3S2",
-      "course": "EC303",
-      "course_name": "Communication Systems",
-      "type": "P",
-      "day": "Tue",
-      "start_time": "15:00",
-      "end_time": "16:00",
-      "room": "L1"
-    },
-    {
-      "class": "Y5S1",
-      "course": "EC502",
-      "course_name": "Embedded Systems",
+      "class": "FY-B",
+      "course": "CSE101",
+      "course_name": "Computer Programming",
       "type": "L",
-      "day": "Mon",
+      "day": "Tue",
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "room": "Hall-B"
+    },
+    {
+      "class": "SY-B",
+      "course": "CSE201",
+      "course_name": "Data Structures",
+      "type": "L",
+      "day": "Tue",
       "start_time": "10:00",
       "end_time": "11:00",
-      "room": "TR3"
+      "room": "Hall-D"
     },
     {
-      "class": "Y5S2",
-      "course": "EC502",
-      "course_name": "Embedded Systems",
+      "class": "SY-B",
+      "course": "CSE201",
+      "course_name": "Data Structures",
+      "type": "L",
+      "day": "Fri",
+      "start_time": "16:00",
+      "end_time": "17:00",
+      "room": "Hall-D"
+    },
+    {
+      "class": "SY-B",
+      "course": "CSE201",
+      "course_name": "Data Structures",
+      "type": "L",
+      "day": "Sat",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "room": "Hall-D"
+    },
+    {
+      "class": "SY-B",
+      "course": "CSE201",
+      "course_name": "Data Structures",
       "type": "P",
-      "day": "Thu",
+      "day": "Mon",
       "start_time": "14:00",
       "end_time": "15:00",
-      "room": "L1"
+      "room": "CompLab2"
     },
     {
-      "class": "Y5S2",
-      "course": "EC502",
-      "course_name": "Embedded Systems",
+      "class": "SY-B",
+      "course": "CSE201",
+      "course_name": "Data Structures",
       "type": "P",
-      "day": "Thu",
+      "day": "Mon",
       "start_time": "15:00",
       "end_time": "16:00",
-      "room": "L1"
+      "room": "CompLab2"
     }
   ],
-  "Dr. Priya": [
+  "Dr. Rajesh Verma": [
     {
-      "class": "Y3S1",
-      "course": "EC302",
-      "course_name": "Signals and Systems",
-      "type": "P",
+      "class": "FY-A",
+      "course": "MTH101",
+      "course_name": "Engineering Mathematics",
+      "type": "T",
       "day": "Mon",
-      "start_time": "14:00",
-      "end_time": "15:00",
-      "room": "L4"
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "room": "Hall-A"
     },
     {
-      "class": "Y3S1",
-      "course": "EC302",
-      "course_name": "Signals and Systems",
-      "type": "P",
-      "day": "Mon",
-      "start_time": "15:00",
-      "end_time": "16:00",
-      "room": "L4"
-    },
-    {
-      "class": "Y3S2",
-      "course": "EC302",
-      "course_name": "Signals and Systems",
-      "type": "P",
-      "day": "Fri",
-      "start_time": "14:00",
-      "end_time": "15:00",
-      "room": "L4"
-    },
-    {
-      "class": "Y3S2",
-      "course": "EC302",
-      "course_name": "Signals and Systems",
-      "type": "P",
-      "day": "Fri",
-      "start_time": "15:00",
-      "end_time": "16:00",
-      "room": "L4"
-    },
-    {
-      "class": "Y5S1",
-      "course": "EC501",
-      "course_name": "VLSI Design",
+      "class": "FY-B",
+      "course": "MTH101",
+      "course_name": "Engineering Mathematics",
       "type": "L",
       "day": "Tue",
-      "start_time": "12:00",
-      "end_time": "13:00",
-      "room": "TR3"
+      "start_time": "15:00",
+      "end_time": "16:00",
+      "room": "Hall-B"
     },
     {
-      "class": "Y5S1",
-      "course": "EC502",
-      "course_name": "Embedded Systems",
+      "class": "FY-B",
+      "course": "MTH101",
+      "course_name": "Engineering Mathematics",
+      "type": "L",
+      "day": "Wed",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "room": "Hall-B"
+    },
+    {
+      "class": "FY-B",
+      "course": "MTH101",
+      "course_name": "Engineering Mathematics",
+      "type": "L",
+      "day": "Sat",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "room": "Hall-B"
+    },
+    {
+      "class": "FY-B",
+      "course": "MTH101",
+      "course_name": "Engineering Mathematics",
+      "type": "T",
+      "day": "Wed",
+      "start_time": "09:00",
+      "end_time": "10:00",
+      "room": "Hall-B"
+    },
+    {
+      "class": "SY-A",
+      "course": "MTH201",
+      "course_name": "Advanced Mathematics",
       "type": "L",
       "day": "Fri",
       "start_time": "11:00",
       "end_time": "12:00",
-      "room": "TR3"
+      "room": "Hall-C"
     },
     {
-      "class": "Y5S2",
-      "course": "EC501",
-      "course_name": "VLSI Design",
-      "type": "T",
-      "day": "Tue",
-      "start_time": "10:00",
-      "end_time": "11:00",
-      "room": "TR4"
+      "class": "SY-B",
+      "course": "MTH201",
+      "course_name": "Advanced Mathematics",
+      "type": "L",
+      "day": "Mon",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "room": "Hall-D"
     },
     {
-      "class": "Y5S2",
-      "course": "EC501",
-      "course_name": "VLSI Design",
-      "type": "P",
-      "day": "Fri",
+      "class": "SY-B",
+      "course": "MTH201",
+      "course_name": "Advanced Mathematics",
+      "type": "L",
+      "day": "Sat",
       "start_time": "09:00",
       "end_time": "10:00",
-      "room": "L4"
+      "room": "Hall-D"
     },
     {
-      "class": "Y5S2",
-      "course": "EC501",
-      "course_name": "VLSI Design",
-      "type": "P",
-      "day": "Fri",
+      "class": "SY-B",
+      "course": "MTH201",
+      "course_name": "Advanced Mathematics",
+      "type": "L",
+      "day": "Sat",
       "start_time": "10:00",
       "end_time": "11:00",
-      "room": "L4"
-    },
+      "room": "Hall-D"
+    }
+  ],
+  "Prof. Kavitha Menon": [
     {
-      "class": "Y5S2",
-      "course": "EC502",
-      "course_name": "Embedded Systems",
+      "class": "FY-B",
+      "course": "CSE101",
+      "course_name": "Computer Programming",
       "type": "L",
       "day": "Thu",
       "start_time": "12:00",
       "end_time": "13:00",
-      "room": "TR4"
+      "room": "Hall-B"
+    },
+    {
+      "class": "SY-A",
+      "course": "CSE201",
+      "course_name": "Data Structures",
+      "type": "L",
+      "day": "Wed",
+      "start_time": "15:00",
+      "end_time": "16:00",
+      "room": "Hall-C"
+    },
+    {
+      "class": "SY-A",
+      "course": "CSE201",
+      "course_name": "Data Structures",
+      "type": "L",
+      "day": "Fri",
+      "start_time": "16:00",
+      "end_time": "17:00",
+      "room": "Hall-C"
+    },
+    {
+      "class": "SY-A",
+      "course": "CSE201",
+      "course_name": "Data Structures",
+      "type": "L",
+      "day": "Sat",
+      "start_time": "11:00",
+      "end_time": "12:00",
+      "room": "Hall-C"
+    },
+    {
+      "class": "SY-A",
+      "course": "CSE201",
+      "course_name": "Data Structures",
+      "type": "T",
+      "day": "Tue",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "room": "Hall-C"
+    },
+    {
+      "class": "SY-A",
+      "course": "CSE201",
+      "course_name": "Data Structures",
+      "type": "P",
+      "day": "Sat",
+      "start_time": "15:00",
+      "end_time": "16:00",
+      "room": "PhysicsLab"
+    },
+    {
+      "class": "SY-A",
+      "course": "CSE201",
+      "course_name": "Data Structures",
+      "type": "P",
+      "day": "Sat",
+      "start_time": "16:00",
+      "end_time": "17:00",
+      "room": "PhysicsLab"
+    },
+    {
+      "class": "SY-A",
+      "course": "CSE202",
+      "course_name": "Digital Electronics",
+      "type": "L",
+      "day": "Thu",
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "room": "Hall-C"
+    },
+    {
+      "class": "SY-A",
+      "course": "CSE202",
+      "course_name": "Digital Electronics",
+      "type": "L",
+      "day": "Sat",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "room": "Hall-C"
+    },
+    {
+      "class": "SY-B",
+      "course": "CSE201",
+      "course_name": "Data Structures",
+      "type": "T",
+      "day": "Sat",
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "room": "Hall-D"
+    },
+    {
+      "class": "SY-B",
+      "course": "CSE202",
+      "course_name": "Digital Electronics",
+      "type": "L",
+      "day": "Wed",
+      "start_time": "16:00",
+      "end_time": "17:00",
+      "room": "Hall-D"
+    },
+    {
+      "class": "SY-B",
+      "course": "CSE202",
+      "course_name": "Digital Electronics",
+      "type": "L",
+      "day": "Sat",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "room": "Hall-D"
+    },
+    {
+      "class": "SY-B",
+      "course": "CSE202",
+      "course_name": "Digital Electronics",
+      "type": "T",
+      "day": "Wed",
+      "start_time": "09:00",
+      "end_time": "10:00",
+      "room": "Hall-D"
     }
   ]
 }
