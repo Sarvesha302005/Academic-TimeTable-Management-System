@@ -1,0 +1,218 @@
+{
+  "Y3-A": [
+    {
+      "course": "CS701-A",
+      "course_name": "Software Engineering",
+      "type": "P",
+      "day": "Monday",
+      "start_time": "09:00",
+      "end_time": "11:00",
+      "teacher": "Dr. Tester",
+      "room": "SE-LAB"
+    },
+    {
+      "course": "CS702-A",
+      "course_name": "Testing",
+      "type": "T",
+      "day": "Monday",
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "teacher": "Dr. Backup SE",
+      "room": "R701"
+    },
+    {
+      "course": "CS702-A",
+      "course_name": "Testing",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "teacher": "Dr. Backup SE",
+      "room": "R701"
+    },
+    {
+      "course": "CS702-A",
+      "course_name": "Testing",
+      "type": "L",
+      "day": "Wednesday",
+      "start_time": "09:00",
+      "end_time": "10:00",
+      "teacher": "Dr. Backup SE",
+      "room": "R701"
+    },
+    {
+      "course": "CS701-A",
+      "course_name": "Software Engineering",
+      "type": "L",
+      "day": "Wednesday",
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "teacher": "Dr. Tester",
+      "room": "R701"
+    },
+    {
+      "course": "CS701-A",
+      "course_name": "Software Engineering",
+      "type": "L",
+      "day": "Thursday",
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "teacher": "Dr. Tester",
+      "room": "R701"
+    },
+    {
+      "course": "CS701-A",
+      "course_name": "Software Engineering",
+      "type": "L",
+      "day": "Friday",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "teacher": "Dr. Tester",
+      "room": "R701"
+    }
+  ],
+  "Y3-B": [
+    {
+      "course": "CS702-B",
+      "course_name": "Testing",
+      "type": "T",
+      "day": "Monday",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "teacher": "Dr. Tester",
+      "room": "R703"
+    },
+    {
+      "course": "CS701-B",
+      "course_name": "Software Engineering",
+      "type": "P",
+      "day": "Tuesday",
+      "start_time": "11:00",
+      "end_time": "13:00",
+      "teacher": "Dr. SE Expert",
+      "room": "SE-LAB"
+    },
+    {
+      "course": "CS701-B",
+      "course_name": "Software Engineering",
+      "type": "L",
+      "day": "Wednesday",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "teacher": "Dr. SE Expert",
+      "room": "R703"
+    },
+    {
+      "course": "CS701-B",
+      "course_name": "Software Engineering",
+      "type": "L",
+      "day": "Wednesday",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "teacher": "Dr. SE Expert",
+      "room": "R703"
+    },
+    {
+      "course": "CS702-B",
+      "course_name": "Testing",
+      "type": "L",
+      "day": "Thursday",
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "teacher": "Dr. Tester",
+      "room": "R703"
+    },
+    {
+      "course": "CS702-B",
+      "course_name": "Testing",
+      "type": "L",
+      "day": "Thursday",
+      "start_time": "15:00",
+      "end_time": "16:00",
+      "teacher": "Dr. Tester",
+      "room": "R703"
+    },
+    {
+      "course": "CS701-B",
+      "course_name": "Software Engineering",
+      "type": "L",
+      "day": "Friday",
+      "start_time": "09:00",
+      "end_time": "10:00",
+      "teacher": "Dr. SE Expert",
+      "room": "R703"
+    }
+  ],
+  "Y3-C": [
+    {
+      "course": "CS701-C",
+      "course_name": "Software Engineering",
+      "type": "L",
+      "day": "Monday",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "teacher": "Dr. Backup SE",
+      "room": "R703"
+    },
+    {
+      "course": "CS701-C",
+      "course_name": "Software Engineering",
+      "type": "P",
+      "day": "Monday",
+      "start_time": "15:00",
+      "end_time": "17:00",
+      "teacher": "Dr. Backup SE",
+      "room": "SE-LAB"
+    },
+    {
+      "course": "CS701-C",
+      "course_name": "Software Engineering",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "teacher": "Dr. Backup SE",
+      "room": "R703"
+    },
+    {
+      "course": "CS702-C",
+      "course_name": "Testing",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "15:00",
+      "end_time": "16:00",
+      "teacher": "Dr. SE Expert",
+      "room": "R703"
+    },
+    {
+      "course": "CS701-C",
+      "course_name": "Software Engineering",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "16:00",
+      "end_time": "17:00",
+      "teacher": "Dr. Backup SE",
+      "room": "R703"
+    },
+    {
+      "course": "CS702-C",
+      "course_name": "Testing",
+      "type": "L",
+      "day": "Thursday",
+      "start_time": "14:00",
+      "end_time": "15:00",
+      "teacher": "Dr. SE Expert",
+      "room": "R703"
+    },
+    {
+      "course": "CS702-C",
+      "course_name": "Testing",
+      "type": "T",
+      "day": "Thursday",
+      "start_time": "16:00",
+      "end_time": "17:00",
+      "teacher": "Dr. SE Expert",
+      "room": "R703"
+    }
+  ]
+}

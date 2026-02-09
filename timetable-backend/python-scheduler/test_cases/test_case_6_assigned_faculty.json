@@ -1,0 +1,109 @@
+{
+    "description": "Test Case 8: Assigned Faculty & Forbidden Assignments - Tests primary faculty assignment and repair mechanism",
+    "expected_outcome": "Courses with assignedFaculty should prefer that teacher; forbidden assignments should be excluded",
+    "constraints_tested": [
+        "Assigned faculty preference",
+        "Forbidden assignments",
+        "Fallback faculty support"
+    ],
+    "courses": {
+        "CS801-A": {
+            "name": "Computer Graphics",
+            "L": 3,
+            "T": 0,
+            "P": 2,
+            "year": 4,
+            "sem": 7,
+            "isElective": false,
+            "assignedFaculty": "T1"
+        },
+        "CS802-A": {
+            "name": "Game Development",
+            "L": 2,
+            "T": 1,
+            "P": 2,
+            "year": 4,
+            "sem": 7,
+            "isElective": false,
+            "assignedFaculty": "T2"
+        }
+    },
+    "teachers": [
+        {
+            "id": "T1",
+            "name": "Prof. Graphics",
+            "min": 5,
+            "max": 20,
+            "prefs": {
+                "CS801": 1
+            },
+            "fallbackCourses": [
+                "CS802"
+            ]
+        },
+        {
+            "id": "T2",
+            "name": "Prof. Games",
+            "min": 5,
+            "max": 20,
+            "prefs": {
+                "CS802": 1
+            },
+            "fallbackCourses": [
+                "CS801"
+            ]
+        },
+        {
+            "id": "T3",
+            "name": "Prof. Backup",
+            "min": 5,
+            "max": 20,
+            "prefs": {},
+            "fallbackCourses": [
+                "CS801",
+                "CS802"
+            ]
+        }
+    ],
+    "classes": [
+        {
+            "id": "Y4-A",
+            "year": 4,
+            "sems": [
+                7
+            ],
+            "strength": 35,
+            "courses": [
+                "CS801-A",
+                "CS802-A"
+            ]
+        }
+    ],
+    "schedule": {
+        "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+        ],
+        "hours": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "14:00",
+            "15:00",
+            "16:00"
+        ]
+    },
+    "rooms": {
+        "theory": [
+            "R801"
+        ],
+        "lab": [
+            "GRAPHICS-LAB"
+        ]
+    },
+    "forbiddenAssignments": []
+}

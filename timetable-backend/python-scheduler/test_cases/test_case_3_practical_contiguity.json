@@ -1,0 +1,114 @@
+{
+    "description": "Test Case 3: Practical Contiguity - Tests 2-hour consecutive practical blocks",
+    "expected_outcome": "All practicals scheduled as contiguous 2-hour blocks within same day, same teacher, same lab",
+    "constraints_tested": [
+        "Practical contiguity",
+        "Consecutive practical slots",
+        "Lab room allocation"
+    ],
+    "courses": {
+        "CS301-A": {
+            "name": "Computer Networks Lab",
+            "L": 2,
+            "T": 0,
+            "P": 2,
+            "year": 3,
+            "sem": 5,
+            "isElective": false
+        },
+        "CS302-A": {
+            "name": "AI Lab",
+            "L": 2,
+            "T": 0,
+            "P": 2,
+            "year": 3,
+            "sem": 5,
+            "isElective": false
+        },
+        "CS303-A": {
+            "name": "Compiler Design Lab",
+            "L": 2,
+            "T": 0,
+            "P": 2,
+            "year": 3,
+            "sem": 5,
+            "isElective": false
+        }
+    },
+    "teachers": [
+        {
+            "id": "T1",
+            "name": "Prof. Network",
+            "min": 6,
+            "max": 20,
+            "prefs": {
+                "CS301": 1
+            },
+            "fallbackCourses": []
+        },
+        {
+            "id": "T2",
+            "name": "Prof. AI",
+            "min": 6,
+            "max": 20,
+            "prefs": {
+                "CS302": 1
+            },
+            "fallbackCourses": []
+        },
+        {
+            "id": "T3",
+            "name": "Prof. Compiler",
+            "min": 6,
+            "max": 20,
+            "prefs": {
+                "CS303": 1
+            },
+            "fallbackCourses": []
+        }
+    ],
+    "classes": [
+        {
+            "id": "Y3-A",
+            "year": 3,
+            "sems": [
+                5
+            ],
+            "strength": 45,
+            "courses": [
+                "CS301-A",
+                "CS302-A",
+                "CS303-A"
+            ]
+        }
+    ],
+    "schedule": {
+        "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+        ],
+        "hours": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "14:00",
+            "15:00",
+            "16:00"
+        ]
+    },
+    "rooms": {
+        "theory": [
+            "R301",
+            "R302"
+        ],
+        "lab": [
+            "NET-LAB",
+            "AI-LAB",
+            "COMPILER-LAB"
+        ]
+    }
+}
