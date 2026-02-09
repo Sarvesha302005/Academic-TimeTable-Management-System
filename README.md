@@ -189,7 +189,9 @@ http://localhost:5050
 ```bash
 cd python-scheduler
 python3 -m venv venv
-source venv/bin/activate
+source venv/bin/activate  # Mac/Linux
+venv\Scripts\Activate.ps1 # Windows(PowerShell)
+venv\Scripts\activate.bat #Windows(CMD)
 pip install -r requirements.txt
 ```
 
@@ -215,6 +217,13 @@ Frontend runs at:
 
 ```
 http://localhost:5173
+```
+---
+
+Create `.env` file:
+
+```
+VITE_API_URL=http://localhost:5050/api
 ```
 
 ---
