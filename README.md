@@ -1,70 +1,37 @@
 # Automated Timetable Management System
 
-A full-stack academic timetable generation platform that helps institutions configure schedules, manage faculty workload, and generate conflict-free timetables using a constraint-based scheduling engine.
+A full-stack academic timetable generation platform that helps institutions create and manage schedules efficiently while handling faculty workload, leave requests, and timetable locking.
 
-The system provides role-based dashboards for administrators, faculty, and students, allowing centralized timetable control and real-time visibility through a web interface.
+The system provides role-based dashboards for administrators, faculty, and students. Administrators configure academic data and generate timetables using a constraint-based scheduling engine. Faculty and students can view schedules directly through the portal.
 
 ---
 
 ## System Overview
 
-This project automates timetable creation by combining:
+The platform automates timetable creation using:
 
-* Configurable academic data (courses, rooms, slots)
-* A constraint-based Python scheduling engine
+* Configurable academic data (courses, rooms, time slots)
+* A Python-based scheduling engine
 * Role-based backend APIs
 * Web dashboards for each user type
 
-Administrators configure the environment → generate timetable → verify → lock → users view schedules through their dashboards.
+**Flow:**
+Admin configures data → generates timetable → verifies → locks → users view schedules in dashboards.
 
-No notification service is currently implemented. Updates appear directly in the portal.
-
----
-
-## Core Capabilities
-
-### Authentication & Access Control
-
-* JWT-based login system
-* Role-based route protection
-* Separate dashboards for admin, faculty, and students
-
-### Academic Configuration
-
-* Academic calendar setup
-* Course creation and section mapping
-* Time slot configuration
-* Room allocation management
-* Faculty workload rule definition
-
-### Timetable Generation
-
-* Constraint-based scheduling engine
-* Considers workload, rooms, slots, and course hours
-* Timetable verification and locking by admin
-* Stored in MongoDB and displayed in dashboards
-
-### Faculty Management
-
-* Faculty timetable view
-* Leave application system
-* Course preference submission
-
-### Student Access
-
-* Timetable viewing interface
+No notification system is currently implemented. Updates appear directly in user portals.
 
 ---
 
-## User Roles
+## Roles & Permissions
 
 ### Admin
 
 Responsible for configuring and controlling the scheduling environment.
 
-* Configure academic calendar
+* Define academic calendar
 * Manage courses and sections
-* Define time slots and rooms
+* Configure time slots
+* Manage rooms
 * Set workload rules
 * Generate timetable
 * Verify and lock timetable
@@ -82,9 +49,9 @@ Responsible for configuring and controlling the scheduling environment.
 
 ---
 
-## Timetable Engine
+## Timetable Generation Engine
 
-The system uses a Python-based scheduler that generates timetables based on defined constraints:
+A Python constraint-based scheduler generates timetables based on:
 
 * Faculty workload limits
 * Room availability
@@ -92,8 +59,8 @@ The system uses a Python-based scheduler that generates timetables based on defi
 * Course hours
 * Academic calendar
 
-Flow:
-Admin triggers generation → backend calls Python scheduler → timetable stored → dashboards update.
+**Process:**
+Admin triggers generation → backend calls scheduler → timetable stored in MongoDB → dashboards update.
 
 ---
 
@@ -105,9 +72,9 @@ Admin triggers generation → backend calls Python scheduler → timetable store
 * Express.js
 * MongoDB
 * Mongoose
-* JWT authentication
+* JWT Authentication
 
-### Scheduler Engine
+### Scheduler
 
 * Python
 * Constraint-based scheduling logic
@@ -115,8 +82,7 @@ Admin triggers generation → backend calls Python scheduler → timetable store
 ### Frontend
 
 * React + Vite
-* Axios API integration
-* Role-based dashboards
+* Axios
 
 ---
 
@@ -134,7 +100,7 @@ MongoDB Database
 Python Scheduler
 ```
 
-Scheduler executes during timetable generation and returns structured timetable data to backend APIs.
+The scheduler runs when the admin generates a timetable and returns structured data to the backend.
 
 ---
 
@@ -198,7 +164,7 @@ JWT_SECRET=your_secret_key
 JWT_EXPIRE=7d
 ```
 
-Run server:
+Run backend:
 
 ```bash
 node server.js
@@ -268,26 +234,27 @@ Scheduler → Backend → Frontend
 * JWT authentication tested
 * Role-based route protection verified
 * Controller unit tests using Jest
-* API testing performed locally
+* Local API testing completed
 
 ---
 
 ## Current Status
 
-Completed:
+**Completed**
 
 * Backend architecture
 * Frontend dashboards
 * Timetable generation
 * Role-based access
-* Leave system (basic)
-* UML and schema design
+* Basic leave system
+* Database schema
+* UML diagrams
 
-Pending:
+**Pending**
 
 * Dynamic leave-based rescheduling
 * Advanced workload optimization
-* Admin analytics dashboard
+* Faculty workload dashboard
 * Full API testing
 * Deployment
 * Notification system
@@ -297,8 +264,8 @@ Pending:
 ## Future Improvements
 
 * Smarter scheduling optimization
-* Faculty workload analytics dashboard
 * Substitution handling for leave
+* Admin analytics dashboard
 * Production deployment
 * Notification system
 
@@ -307,3 +274,4 @@ Pending:
 ## License
 
 Academic project for educational use.
+
