@@ -6,7 +6,7 @@ const { facultyPreferenceValidation, validateObjectId } = require('../utils/vali
 const { ROLES } = require('../utils/constants');
 const { body } = require('express-validator');
 const { validate } = require('../utils/validators');
-console.log('FacultyController methods:', Object.keys(facultyController));
+
 // All routes require faculty role
 router.use(requireRole(ROLES.FACULTY));
 
