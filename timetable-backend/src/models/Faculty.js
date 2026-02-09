@@ -75,7 +75,6 @@ const facultySchema = new mongoose.Schema({
 });
 
 // Index for quick lookups
-facultySchema.index({ clerkUserId: 1 });
 facultySchema.index({ department: 1 });
 
 module.exports = mongoose.model('Faculty', facultySchema);
