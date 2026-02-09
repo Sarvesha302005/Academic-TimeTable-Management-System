@@ -1,0 +1,109 @@
+================================================================================
+TEST CASE 2: Medium Complexity - Multiple Sections with Shared Resources
+================================================================================
+
+DESCRIPTION:
+- 4 courses (CSE201, CSE202, CSE203, CSE204)
+- 4 teachers
+- 2 class sections (2A and 2B), both in Year 2, Semester 3
+- Tests parallel scheduling and resource conflict avoidance
+
+INPUT SUMMARY:
+- Courses:
+  * CSE201: L:3, T:1, P:2 (OOP)
+  * CSE202: L:4, T:0, P:2 (DBMS)
+  * CSE203: L:3, T:1, P:2 (Networks)
+  * CSE204: L:3, T:1, P:2 (OS)
+  
+- Per class total sessions required:
+  * CSE201: 3L + 1T + 2P = 6 slots
+  * CSE202: 4L + 0T + 2P = 6 slots
+  * CSE203: 3L + 1T + 2P = 6 slots
+  * CSE204: 3L + 1T + 2P = 6 slots
+  * Total per class: 24 session slots
+  * Total for 2 classes: 48 session slots
+
+- Available slots per week: 5 days * 7 hours = 35 timeslots
+- This means each class needs 24 sessions from 35 available slots
+
+EXPECTED BEHAVIOR:
+1. Scheduler should find a FEASIBLE solution
+2. Both classes 2A and 2B should be scheduled without conflicts
+3. Theory sessions:
+   - Class 2A lectures/tutorials in CR1 (fixed room)
+   - Class 2B lectures/tutorials in CR2 (fixed room)
+4. Practical sessions should be in lab rooms (ComputerLab1 or ComputerLab2)
+5. No teacher should teach two different classes at the same time
+6. No room should host two sessions at the same time
+7. Each teacher should have 6-18 hours assigned
+8. Practicals should be contiguous 2-hour blocks
+
+EXPECTED OUTPUT CHARACTERISTICS:
+- Status: SOLUTION FOUND
+- Each class (2A, 2B) should have:
+  * 13 Lecture sessions (3+4+3+3)
+  * 3 Tutorial sessions (1+0+1+1)
+  * 4 Practical blocks (1 per course with P > 0)
+- Total class-hours scheduled: 48 (24 per class * 2 classes)
+- All 4 teachers within 6-18 hour bounds
+- Peak slot load should be balanced (2 sessions max per slot ideally)
+
+================================================================================
+ACTUAL OUTPUT FROM SCHEDULER
+================================================================================
+
+========================================================================================================================
+CSE TIMETABLE SCHEDULER - WORKING EXAMPLE
+========================================================================================================================
+Setup: 4 courses, 4 teachers, 2 classes, 5 rooms, 35 timeslots
+
+Creating variables...
+  [OK] Created 8120 variables
+Applying constraints...
+  [OK] Added 20055 constraints
+Solving (8120 variables)...
+[INFO] Minimal max slot load = 2
+[OK] SOLUTION FOUND (Preference Score: 48)
+
+============================================================================================================================================
+GENERATED TIMETABLE
+============================================================================================================================================
+
+2A - Year 2 (Strength: 60)
+--------------------------------------------------------------------------------------------------------------------------------------------
+  CSE201 Object Oriented Programming | L:3 T:1 P:2 | Lectures:[Mon_10:00(Dr. R,CR1), Mon_11:00(Dr. K,CR1), Thu_15:00(Dr. K,CR1)] Tutorials:[Wed_12:00(Dr. K,CR1)] Practicals:[Wed_14:00(Dr. K,ComputerLab1), Wed_15:00(Dr. K,ComputerLab1)] 
+  CSE202 Database Management Systems | L:4 T:0 P:2 | Lectures:[Thu_14:00(Prof.,CR1), Tue_09:00(Prof.,CR1), Wed_09:00(Prof.,CR1), Wed_16:00(Prof.,CR1)] Practicals:[Mon_15:00(Prof.,ComputerLab2), Mon_16:00(Prof.,ComputerLab2)] 
+  CSE203 Computer Networks    | L:3 T:1 P:2 | Lectures:[Fri_09:00(Dr. R,CR1), Fri_12:00(Dr. K,CR1), Fri_14:00(Dr. R,CR1)] Tutorials:[Tue_14:00(Dr. K,CR1)] Practicals:[Tue_15:00(Dr. R,ComputerLab2), Tue_16:00(Dr. R,ComputerLab2)] 
+  CSE204 Operating Systems    | L:3 T:1 P:2 | Lectures:[Mon_09:00(Prof.,CR1), Mon_14:00(Prof.,CR1), Tue_10:00(Prof.,CR1)] Tutorials:[Mon_12:00(Prof.,CR1)] Practicals:[Tue_11:00(Prof.,ComputerLab1), Tue_12:00(Prof.,ComputerLab1)] 
+
+2B - Year 2 (Strength: 55)
+--------------------------------------------------------------------------------------------------------------------------------------------
+  CSE201 Object Oriented Programming | L:3 T:1 P:2 | Lectures:[Tue_10:00(Dr. R,CR2), Tue_11:00(Dr. K,CR2), Wed_10:00(Dr. K,CR2)] Tutorials:[Tue_12:00(Dr. K,CR2)] Practicals:[Wed_11:00(Dr. R,ComputerLab1), Wed_12:00(Dr. R,ComputerLab1)] 
+  CSE202 Database Management Systems | L:4 T:0 P:2 | Lectures:[Fri_09:00(Prof.,CR2), Fri_11:00(Prof.,CR2), Mon_09:00(Prof.,CR2), Thu_16:00(Prof.,CR2)] Practicals:[Thu_14:00(Prof.,ComputerLab1), Thu_15:00(Prof.,ComputerLab1)] 
+  CSE203 Computer Networks    | L:3 T:1 P:2 | Lectures:[Mon_12:00(Dr. K,CR2), Mon_14:00(Dr. K,CR2), Thu_11:00(Dr. R,CR2)] Tutorials:[Fri_14:00(Dr. K,CR2)] Practicals:[Fri_15:00(Dr. K,ComputerLab1), Fri_16:00(Dr. K,ComputerLab1)] 
+  CSE204 Operating Systems    | L:3 T:1 P:2 | Lectures:[Mon_10:00(Prof.,CR2), Mon_11:00(Prof.,CR2), Tue_09:00(Prof.,CR2)] Tutorials:[Fri_12:00(Prof.,CR2)] Practicals:[Mon_15:00(Prof.,ComputerLab1), Mon_16:00(Prof.,ComputerLab1)] 
+
+============================================================================================================================================
+SUMMARY
+============================================================================================================================================
+Classes scheduled: 2
+Total class-hours scheduled: 48
+
+Teacher Load Distribution:
+  Dr. Kumar       - 15 hours (req: 6-18)
+  Prof. Singh     - 14 hours (req: 6-18)
+  Dr. Reddy       -  9 hours (req: 6-18)
+  Prof. Joshi     - 10 hours (req: 6-18)
+
+================================================================================
+VERIFICATION: PASS ✓
+================================================================================
+- Solution found: YES
+- Total sessions: 48 (matches expected)
+- Both classes 2A and 2B scheduled: YES
+- All teachers within workload bounds: YES (all within 6-18)
+- Practicals are 2-hour contiguous blocks: YES
+- Class 2A theory in fixed room CR1: YES
+- Class 2B theory in fixed room CR2: YES
+- Practical sessions in ComputerLab1/ComputerLab2: YES
+- Peak slot load: 2 (balanced distribution)

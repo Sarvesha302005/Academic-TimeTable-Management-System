@@ -1,0 +1,210 @@
+{
+    "courses": {
+        "MTH101": {
+            "name": "Engineering Mathematics",
+            "L": 3,
+            "T": 1,
+            "P": 0,
+            "lab": false,
+            "year": 1,
+            "sem": 1
+        },
+        "PHY101": {
+            "name": "Engineering Physics",
+            "L": 3,
+            "T": 1,
+            "P": 2,
+            "lab": true,
+            "year": 1,
+            "sem": 1
+        },
+        "CSE101": {
+            "name": "Computer Programming",
+            "L": 2,
+            "T": 0,
+            "P": 2,
+            "lab": true,
+            "year": 1,
+            "sem": 1
+        },
+        "MTH201": {
+            "name": "Advanced Mathematics",
+            "L": 3,
+            "T": 1,
+            "P": 0,
+            "lab": false,
+            "year": 2,
+            "sem": 3
+        },
+        "CSE201": {
+            "name": "Data Structures",
+            "L": 3,
+            "T": 1,
+            "P": 2,
+            "lab": true,
+            "year": 2,
+            "sem": 3
+        },
+        "CSE202": {
+            "name": "Digital Electronics",
+            "L": 3,
+            "T": 1,
+            "P": 2,
+            "lab": true,
+            "year": 2,
+            "sem": 3
+        }
+    },
+    "teachers": [
+        {
+            "id": "T1",
+            "name": "Dr. Anil Mathur",
+            "min": 6,
+            "max": 24,
+            "prefs": [
+                "MTH101",
+                "MTH201"
+            ]
+        },
+        {
+            "id": "T2",
+            "name": "Prof. Sunita Rao",
+            "min": 6,
+            "max": 24,
+            "prefs": [
+                "PHY101",
+                "CSE202"
+            ]
+        },
+        {
+            "id": "T3",
+            "name": "Dr. Vikram Singh",
+            "min": 6,
+            "max": 24,
+            "prefs": [
+                "PHY101",
+                "CSE101"
+            ]
+        },
+        {
+            "id": "T4",
+            "name": "Prof. Neha Kapoor",
+            "min": 6,
+            "max": 24,
+            "prefs": [
+                "CSE101",
+                "CSE201"
+            ]
+        },
+        {
+            "id": "T5",
+            "name": "Dr. Rajesh Verma",
+            "min": 6,
+            "max": 24,
+            "prefs": [
+                "MTH101",
+                "MTH201"
+            ]
+        },
+        {
+            "id": "T6",
+            "name": "Prof. Kavitha Menon",
+            "min": 6,
+            "max": 24,
+            "prefs": [
+                "CSE201",
+                "CSE202",
+                "CSE101"
+            ]
+        }
+    ],
+    "classes": [
+        {
+            "id": "FY-A",
+            "year": 1,
+            "sems": [
+                1
+            ],
+            "strength": 40
+        },
+        {
+            "id": "FY-B",
+            "year": 1,
+            "sems": [
+                1
+            ],
+            "strength": 40
+        },
+        {
+            "id": "SY-A",
+            "year": 2,
+            "sems": [
+                3
+            ],
+            "strength": 45
+        },
+        {
+            "id": "SY-B",
+            "year": 2,
+            "sems": [
+                3
+            ],
+            "strength": 45
+        }
+    ],
+    "schedule": {
+        "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat"
+        ],
+        "hours": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "14:00",
+            "15:00",
+            "16:00"
+        ]
+    },
+    "fixed_rooms": {
+        "FY-A": "Hall-A",
+        "FY-B": "Hall-B",
+        "SY-A": "Hall-C",
+        "SY-B": "Hall-D"
+    },
+    "rooms": {
+        "theory": [
+            "Hall-A",
+            "Hall-B",
+            "Hall-C",
+            "Hall-D",
+            "Hall-E"
+        ],
+        "lab": [
+            "PhysicsLab",
+            "CompLab1",
+            "CompLab2"
+        ]
+    },
+    "room_capacities": {
+        "Hall-A": 80,
+        "Hall-B": 80,
+        "Hall-C": 70,
+        "Hall-D": 70,
+        "Hall-E": 50,
+        "PhysicsLab": 50,
+        "CompLab1": 50,
+        "CompLab2": 50
+    },
+    "break_times": [
+        {
+            "start": "13:00",
+            "end": "14:00"
+        }
+    ]
+}

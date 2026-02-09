@@ -1,0 +1,88 @@
+{
+    "courses": {
+        "CS101": {
+            "name": "Introduction to Programming",
+            "L": 3,
+            "T": 1,
+            "P": 2,
+            "lab": true,
+            "year": 1,
+            "sem": 1
+        },
+        "CS102": {
+            "name": "Data Structures",
+            "L": 3,
+            "T": 1,
+            "P": 2,
+            "lab": true,
+            "year": 1,
+            "sem": 1
+        }
+    },
+    "teachers": [
+        {
+            "id": "T1",
+            "name": "Dr. Sharma",
+            "min": 4,
+            "max": 12,
+            "prefs": [
+                "CS101",
+                "CS102"
+            ]
+        },
+        {
+            "id": "T2",
+            "name": "Prof. Gupta",
+            "min": 4,
+            "max": 12,
+            "prefs": [
+                "CS102",
+                "CS101"
+            ]
+        }
+    ],
+    "classes": [
+        {
+            "id": "A",
+            "year": 1,
+            "sems": [
+                1
+            ],
+            "strength": 30
+        }
+    ],
+    "schedule": {
+        "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+        ],
+        "hours": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "14:00",
+            "15:00"
+        ]
+    },
+    "fixed_rooms": {
+        "A": "R1"
+    },
+    "rooms": {
+        "theory": [
+            "R1",
+            "R2"
+        ],
+        "lab": [
+            "Lab1"
+        ]
+    },
+    "room_capacities": {
+        "R1": 40,
+        "R2": 40,
+        "Lab1": 40
+    }
+}

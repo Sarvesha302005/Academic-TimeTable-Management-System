@@ -1,0 +1,83 @@
+================================================================================
+TEST CASE 1: Simple Scheduling Scenario
+================================================================================
+
+DESCRIPTION:
+- 2 courses (CS101 and CS102)
+- 2 teachers (Dr. Sharma and Prof. Gupta)
+- 1 class section (A)
+- Minimal workload to verify basic scheduling
+
+INPUT SUMMARY:
+- Courses: CS101 (L:3, T:1, P:2), CS102 (L:3, T:1, P:2)
+- Total sessions required per class:
+  * CS101: 3 lectures + 1 tutorial + 2 practical hours = 6 session slots
+  * CS102: 3 lectures + 1 tutorial + 2 practical hours = 6 session slots
+  * Total: 12 session slots for class A
+
+EXPECTED BEHAVIOR:
+1. Scheduler should find a FEASIBLE solution
+2. All 3 lecture slots for each course should be scheduled
+3. All 1 tutorial slot for each course should be scheduled  
+4. Practicals should be scheduled as 2-hour contiguous blocks (1 block per course)
+5. All theory sessions (L, T) should be in room R1 (fixed room for class A)
+6. All practical sessions should be in Lab1
+7. No teacher should exceed 12 hours or be below 4 hours
+8. No room or teacher conflicts should occur
+9. Teacher preferences should be respected when possible
+
+EXPECTED OUTPUT CHARACTERISTICS:
+- Status: SOLUTION FOUND
+- Class A should have exactly:
+  * 6 Lecture sessions (3 for CS101 + 3 for CS102)
+  * 2 Tutorial sessions (1 for CS101 + 1 for CS102)
+  * 2 Practical blocks (2-hour each, 1 for CS101 + 1 for CS102)
+- Total class-hours scheduled: 12
+- Each teacher should have 4-12 hours assigned
+
+================================================================================
+ACTUAL OUTPUT FROM SCHEDULER
+================================================================================
+
+========================================================================================================================
+CSE TIMETABLE SCHEDULER - WORKING EXAMPLE
+========================================================================================================================
+Setup: 2 courses, 2 teachers, 1 classes, 3 rooms, 30 timeslots
+
+Creating variables...
+  [OK] Created 600 variables
+Applying constraints...
+  [OK] Added 1211 constraints
+Solving (600 variables)...
+[INFO] Minimal max slot load = 1
+[OK] SOLUTION FOUND (Preference Score: 12)
+
+============================================================================================================================================
+GENERATED TIMETABLE
+============================================================================================================================================
+
+A - Year 1 (Strength: 30)
+--------------------------------------------------------------------------------------------------------------------------------------------
+  CS101  Introduction to Programming | L:3 T:1 P:2 | Lectures:[Fri_11:00(Prof.,R1), Mon_09:00(Dr. S,R1), Thu_15:00(Prof.,R1)] Tutorials:[Mon_14:00(Dr. S,R1)] Practicals:[Mon_11:00(Dr. S,Lab1), Mon_12:00(Dr. S,Lab1)] 
+  CS102  Data Structures      | L:3 T:1 P:2 | Lectures:[Fri_12:00(Prof.,R1), Fri_14:00(Prof.,R1), Fri_15:00(Prof.,R1)] Tutorials:[Mon_10:00(Dr. S,R1)] Practicals:[Fri_09:00(Prof.,Lab1), Fri_10:00(Prof.,Lab1)] 
+
+============================================================================================================================================
+SUMMARY
+============================================================================================================================================
+Classes scheduled: 1
+Total class-hours scheduled: 12
+
+Teacher Load Distribution:
+  Dr. Sharma      -  5 hours (req: 4-12)
+  Prof. Gupta     -  7 hours (req: 4-12)
+
+================================================================================
+VERIFICATION: PASS ✓
+================================================================================
+- Solution found: YES
+- Total sessions: 12 (matches expected)
+- Class A scheduled: YES
+- All teachers within workload bounds: YES (both 4-12)
+- Practicals are 2-hour contiguous blocks: YES
+- Theory sessions in fixed room R1: YES
+- Practical sessions in Lab1: YES

@@ -1,0 +1,140 @@
+{
+    "courses": {
+        "CSE201": {
+            "name": "Object Oriented Programming",
+            "L": 3,
+            "T": 1,
+            "P": 2,
+            "lab": true,
+            "year": 2,
+            "sem": 3
+        },
+        "CSE202": {
+            "name": "Database Management Systems",
+            "L": 4,
+            "T": 0,
+            "P": 2,
+            "lab": true,
+            "year": 2,
+            "sem": 3
+        },
+        "CSE203": {
+            "name": "Computer Networks",
+            "L": 3,
+            "T": 1,
+            "P": 2,
+            "lab": true,
+            "year": 2,
+            "sem": 3
+        },
+        "CSE204": {
+            "name": "Operating Systems",
+            "L": 3,
+            "T": 1,
+            "P": 2,
+            "lab": true,
+            "year": 2,
+            "sem": 3
+        }
+    },
+    "teachers": [
+        {
+            "id": "T1",
+            "name": "Dr. Kumar",
+            "min": 6,
+            "max": 18,
+            "prefs": [
+                "CSE201",
+                "CSE203"
+            ]
+        },
+        {
+            "id": "T2",
+            "name": "Prof. Singh",
+            "min": 6,
+            "max": 18,
+            "prefs": [
+                "CSE202",
+                "CSE204"
+            ]
+        },
+        {
+            "id": "T3",
+            "name": "Dr. Reddy",
+            "min": 6,
+            "max": 18,
+            "prefs": [
+                "CSE203",
+                "CSE201"
+            ]
+        },
+        {
+            "id": "T4",
+            "name": "Prof. Joshi",
+            "min": 6,
+            "max": 18,
+            "prefs": [
+                "CSE204",
+                "CSE202"
+            ]
+        }
+    ],
+    "classes": [
+        {
+            "id": "2A",
+            "year": 2,
+            "sems": [
+                3
+            ],
+            "strength": 60
+        },
+        {
+            "id": "2B",
+            "year": 2,
+            "sems": [
+                3
+            ],
+            "strength": 55
+        }
+    ],
+    "schedule": {
+        "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+        ],
+        "hours": [
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "14:00",
+            "15:00",
+            "16:00"
+        ]
+    },
+    "fixed_rooms": {
+        "2A": "CR1",
+        "2B": "CR2"
+    },
+    "rooms": {
+        "theory": [
+            "CR1",
+            "CR2",
+            "CR3"
+        ],
+        "lab": [
+            "ComputerLab1",
+            "ComputerLab2"
+        ]
+    },
+    "room_capacities": {
+        "CR1": 70,
+        "CR2": 70,
+        "CR3": 50,
+        "ComputerLab1": 60,
+        "ComputerLab2": 60
+    }
+}
