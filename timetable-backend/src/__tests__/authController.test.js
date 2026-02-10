@@ -4,8 +4,8 @@ const Faculty = require('../models/Faculty');
 const httpMocks = require('node-mocks-http');
 
 // Mock models
-jest.mock('../../models/User');
-jest.mock('../../models/Faculty');
+jest.mock('../models/User');
+jest.mock('../models/Faculty');
 
 describe('Auth Controller', () => {
     let req, res, next;
