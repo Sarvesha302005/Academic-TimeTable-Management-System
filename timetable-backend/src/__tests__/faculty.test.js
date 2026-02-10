@@ -12,7 +12,7 @@ afterAll(() => {
 });
 
 // Mock auth middleware
-jest.mock("../src/middleware/auth.js", () => {
+jest.mock("../middleware/auth.js", () => {
     const fakeAuth = (req, res, next) => {
         req.user = {
             _id: "64f3e2d0e1d2b8f1a1a1a1a1",
@@ -31,18 +31,18 @@ jest.mock("../src/middleware/auth.js", () => {
 });
 
 // Mock models
-jest.mock("../src/models/Faculty");
-jest.mock("../src/models/FacultyLeave");
-jest.mock("../src/models/FacultyPreference");
-jest.mock("../src/models/Course");
+jest.mock("../models/Faculty");
+jest.mock("../models/FacultyLeave");
+jest.mock("../models/FacultyPreference");
+jest.mock("../models/Course");
 
-const Faculty = require("../src/models/Faculty");
-const FacultyLeave = require("../src/models/FacultyLeave");
-const FacultyPreference = require("../src/models/FacultyPreference");
-const Course = require("../src/models/Course");
+const Faculty = require("../models/Faculty");
+const FacultyLeave = require("../models/FacultyLeave");
+const FacultyPreference = require("../models/FacultyPreference");
+const Course = require("../models/Course");
 
 const request = require("supertest");
-const app = require("../src/app");
+const app = require("../app");
 
 describe("Faculty Module Testing", () => {
     const mockFacultyId = "64f3e2d0e1d2b8f1a1a1a1a1";
@@ -154,7 +154,7 @@ describe("Faculty Module Testing", () => {
         expect(res.body.data).toHaveLength(0);
     });
 
-    // ✅ 10th test: Leave history API without changing controller
+    // 10th test: Leave history API without changing controller
     test("10. Faculty leave history API should not fail even if faculty not found", async () => {
         // Simulate DB error to avoid 500
         Faculty.findOne.mockImplementation(() => { throw new Error("Faculty not found"); });
