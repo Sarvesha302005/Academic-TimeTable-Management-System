@@ -3,7 +3,8 @@ const timetableService = require('../services/timetableService');
 const httpMocks = require('node-mocks-http');
 
 // Mock service
-jest.mock('../../services/timetableService');
+jest.mock("../services/timetableService");
+
 
 describe('Student Controller', () => {
     let req, res, next;
