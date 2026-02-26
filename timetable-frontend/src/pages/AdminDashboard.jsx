@@ -10,6 +10,8 @@ import WorkloadRuleForm from '../components/admin/WorkloadRuleForm';
 import TimetableGenerator from '../components/admin/TimetableGenerator';
 import LeaveApproval from '../components/admin/LeaveApproval';
 import TimetableView from '../components/admin/TimetableView';
+import DynamicSchedulingDashboard from '../components/admin/DynamicSchedulingDashboard';
+import WorkloadOptimizationDashboard from '../components/admin/WorkloadOptimizationDashboard';
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('calendar');
@@ -23,11 +25,15 @@ const AdminDashboard = () => {
     { id: 'workload', label: 'Workload Rules' },
     { id: 'generate', label: 'Generate Timetable' },
     { id: 'view', label: 'View Timetable' },
+    { id: 'dynamicDashboard', label: 'Dynamic Scheduling' },
+    { id: 'workloadOptimization', label: 'Workload Optimization' },
     { id: 'leaves', label: 'Leave Approvals' },
   ];
 
   const renderContent = () => {
     switch (activeTab) {
+      case 'dynamicDashboard': return <DynamicSchedulingDashboard />;
+      case 'workloadOptimization': return <WorkloadOptimizationDashboard />;
       case 'calendar': return <AcademicCalendarForm />;
       case 'timeslots': return <TimeSlotForm />;
       case 'courses': return <CourseForm />;
@@ -37,16 +43,16 @@ const AdminDashboard = () => {
       case 'generate': return <TimetableGenerator />;
       case 'view': return <TimetableView />;
       case 'leaves': return <LeaveApproval />;
-      default: return <AcademicCalendarForm />;
+      default: return <DynamicSchedulingDashboard />;
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="h-screen bg-gray-50 flex flex-col overflow-hidden">
       <Navbar />
-      <div className="flex">
+      <div className="flex flex-1 overflow-hidden">
         <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
-        <main className="flex-1 p-8">
+        <main className="flex-1 p-8 overflow-y-auto min-w-0">
           {renderContent()}
         </main>
       </div>
