@@ -254,11 +254,12 @@ export const FacultyTimetable = () => {
                   return (
                     <td key={s} className="text-xs">
                       {entry ? (
-                        <div className="p-1 bg-blue-50 rounded">
+                        <div className={`p-1 rounded ${entry.isAdjustment ? 'bg-purple-100 border border-purple-300' : 'bg-blue-50'}`}>
                           <div className="font-bold">{entry.course.code}</div>
                           <div>{entry.course.name}</div>
                           <div>{entry.room.number}</div>
                           <div>Y{entry.year}-{entry.section}</div>
+                          {entry.isAdjustment && <div className="text-[10px] text-purple-700 font-bold mt-1 uppercase">Rescheduled</div>}
                         </div>
                       ) : '–'}
                     </td>
@@ -268,6 +269,166 @@ export const FacultyTimetable = () => {
             ))}
           </tbody>
         </table>
+      </div>
+    </div>
+  );
+};
+
+/* =========================
+   RESCHEDULED TIMETABLE (DATED)
+========================= */
+
+export const RescheduledTimetable = () => {
+  const [timetable, setTimetable] = useState(null);
+  const [faculty, setFaculty] = useState(null);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
+  const [weekRange, setWeekRange] = useState(null);
+
+  useEffect(() => {
+    loadTimetable();
+  }, [selectedDate]);
+
+  const loadTimetable = async () => {
+    try {
+      setLoading(true);
+      setError('');
+      const calRes = await timetableAPI.getActiveCalendar();
+      const res = await timetableAPI.getFacultyTimetable({
+        academicCalendarId: calRes.data.data._id,
+        date: selectedDate
+      });
+
+      setFaculty(res.data.data.faculty);
+      setTimetable(res.data.data.timetable);
+      setWeekRange(res.data.data.weekRange);
+    } catch (err) {
+      setError(err.response?.data?.error || 'Failed to load rescheduled timetable');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading && !timetable) return <div className="card">Loading rescheduled timetable…</div>;
+
+  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const slots = Array.from({ length: 10 }, (_, i) => i + 1);
+
+  return (
+    <div className="card">
+      <div className="flex justify-between items-center mb-4">
+        <div>
+          <h2 className="text-2xl font-bold">Rescheduled Timetable</h2>
+          <p className="text-gray-600">
+            {faculty?.name} • {faculty?.department}
+          </p>
+        </div>
+        <div className="flex items-center space-x-2">
+          <label className="text-sm font-medium">View Week for Date:</label>
+          <input
+            type="date"
+            className="input-field w-auto"
+            value={selectedDate}
+            onChange={(e) => setSelectedDate(e.target.value)}
+          />
+        </div>
+      </div>
+
+      {weekRange && (
+        <div className="mb-4 p-2 bg-indigo-50 text-indigo-700 rounded text-sm border border-indigo-100">
+          Showing adjustments for the week of <strong>{new Date(weekRange.start).toLocaleDateString()}</strong> to <strong>{new Date(weekRange.end).toLocaleDateString()}</strong>
+        </div>
+      )}
+
+      {error && <div className="alert-error mb-4">{error}</div>}
+
+      <div className="overflow-x-auto relative">
+        {loading && (
+          <div className="absolute inset-0 bg-white bg-opacity-50 flex items-center justify-center z-10">
+            <span className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></span>
+          </div>
+        )}
+        <table className="border min-w-full">
+          <thead>
+            <tr>
+              <th className="bg-gray-100">Day / Slot</th>
+              {slots.map(s => <th key={s} className="bg-gray-100">S{s}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {days.map(day => (
+              <tr key={day}>
+                <td className="font-medium">{day}</td>
+                {slots.map(s => {
+                  const entry = timetable && timetable[day]?.find(e => e.slotNumber === s);
+                  return (
+                    <td key={s} className="text-xs">
+                      {entry ? (
+                        <div className={`p-1 rounded shadow-sm ${entry.isAdjustment ? 'bg-purple-100 border border-purple-300' : 'bg-blue-50 border border-blue-100'}`}>
+                          <div className="font-bold">{entry.course.code}</div>
+                          <div>{entry.course.name}</div>
+                          <div>{entry.room.number}</div>
+                          <div>Y{entry.year}-{entry.section}</div>
+                          {entry.isAdjustment && (
+                            <div className="mt-1 flex items-center space-x-1">
+                              <span className="w-1.5 h-1.5 bg-purple-600 rounded-full animate-pulse"></span>
+                              <span className="text-[9px] text-purple-700 font-bold uppercase">Compensated</span>
+                            </div>
+                          )}
+                        </div>
+                      ) : '–'}
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="mt-6 flex items-center space-x-4 text-xs">
+        <div className="flex items-center">
+          <div className="w-3 h-3 bg-blue-50 border border-blue-100 rounded mr-1"></div>
+          <span>Regular Class</span>
+        </div>
+        <div className="flex items-center">
+          <div className="w-3 h-3 bg-purple-100 border border-purple-300 rounded mr-1"></div>
+          <span>Rescheduled/Compensated Class</span>
+        </div>
+      </div>
+
+      {/* 📋 Detailed Adjustment List */}
+      <div className="mt-8">
+        <h3 className="text-lg font-bold mb-3 flex items-center">
+          <span className="mr-2">📋</span> Weekly Adjustment Breakdown
+        </h3>
+        <div className="space-y-3">
+          {days.flatMap(day => {
+            const dayAdjustments = timetable && timetable[day]?.filter(e => e.isAdjustment);
+            if (!dayAdjustments || dayAdjustments.length === 0) return [];
+
+            return dayAdjustments.map((adj, idx) => (
+              <div key={`${day}-${idx}`} className="flex items-center p-3 bg-white border border-purple-200 rounded-lg shadow-sm">
+                <div className="w-16 text-center border-r border-gray-100 mr-4">
+                  <div className="text-xs font-bold text-purple-700">{day.slice(0, 3)}</div>
+                  <div className="text-[10px] text-gray-500">{adj.displayDate ? new Date(adj.displayDate).getDate() : ''}</div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-sm font-bold text-gray-800">{adj.course.name} ({adj.course.code})</div>
+                  <div className="text-xs text-gray-600">Slot {adj.slotNumber} • Year {adj.year} - Sec {adj.section} • Room {adj.room.number}</div>
+                </div>
+                <div className="text-right ml-4">
+                  <span className="px-2 py-0.5 bg-purple-100 text-purple-700 text-[10px] font-bold rounded uppercase tracking-wider">Compensated Class</span>
+                </div>
+              </div>
+            ));
+          }).length === 0 && (
+              <div className="text-center py-6 text-gray-400 border-2 border-dashed border-gray-100 rounded-xl">
+                No rescheduled classes found for this week.
+              </div>
+            )}
+        </div>
       </div>
     </div>
   );

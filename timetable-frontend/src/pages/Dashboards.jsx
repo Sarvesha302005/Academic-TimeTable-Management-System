@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../components/common/Navbar';
 import Sidebar from '../components/common/Sidebar';
-import { PreferenceForm, LeaveApplicationForm, FacultyTimetable } from '../components/faculty/index';
+import { PreferenceForm, LeaveApplicationForm, FacultyTimetable, RescheduledTimetable } from '../components/faculty/index';
 
 export const FacultyDashboard = () => {
   const [activeTab, setActiveTab] = useState('preferences');
@@ -9,6 +9,7 @@ export const FacultyDashboard = () => {
   const tabs = [
     { id: 'preferences', label: 'Course Preferences' },
     { id: 'timetable', label: 'My Timetable' },
+    { id: 'rescheduled', label: 'Rescheduled Timetable' },
     { id: 'leave', label: 'Apply Leave' },
   ];
 
@@ -16,6 +17,7 @@ export const FacultyDashboard = () => {
     switch (activeTab) {
       case 'preferences': return <PreferenceForm />;
       case 'timetable': return <FacultyTimetable />;
+      case 'rescheduled': return <RescheduledTimetable />;
       case 'leave': return <LeaveApplicationForm />;
       default: return <PreferenceForm />;
     }

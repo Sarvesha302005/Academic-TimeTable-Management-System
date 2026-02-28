@@ -9,8 +9,6 @@ Demonstrates all constraints for a real CSE timetable with:
 - Realistic constraints
 
 Configuration loaded from: config.json
-
-With Verified Possible Test Cases and Repair Mechanism via `forbiddenAssignments` for iterative improvement.
 """
 
 import sys
@@ -71,7 +69,9 @@ print("\n" + "="*120, file=sys.stderr)
 print("CSE TIMETABLE SCHEDULER", file=sys.stderr)
 print("="*120, file=sys.stderr)
 print(f"Setup: {len(COURSES)} courses, {len(TEACHERS)} teachers, {len(CLASSES)} classes, "
-      f"{len(ROOMS['theory']) + len(ROOMS['lab'])} rooms, {len(TIMESLOTS)} timeslots\n", file=sys.stderr)
+      f"{len(ROOMS['theory'])} theory rooms, {len(ROOMS['lab'])} lab rooms, {len(TIMESLOTS)} timeslots\n", file=sys.stderr)
+if not ROOMS['theory'] or not ROOMS['lab']:
+    print(f"[CRITICAL] Missing room types! Theory: {len(ROOMS['theory'])}, Lab: {len(ROOMS['lab'])}", file=sys.stderr)
 
 # ============================================================================
 # SCHEDULER
@@ -117,6 +117,10 @@ class Scheduler:
         self.vars_by_class_course_type = defaultdict(list)
         self.vars_by_class_room = defaultdict(list)
         self.vars_by_class_course_teacher = defaultdict(list)
+        self.vars_by_class_course_day = defaultdict(list)
+        
+        # Pre-map teacher names for performance and reliability
+        self.teacher_names = {t["id"]: t.get("name") or f"Faculty_{t['id'][-6:]}" for t in TEACHERS}
         
         var_count = 0
 
@@ -132,6 +136,12 @@ class Scheduler:
             for b in list(forbidden_set)[:10]:
                 print(f"  - ban: class={b[0]}, course={b[1]}, teacher={b[2]}", file=sys.stderr)
         
+        self.teacher_flag_map = {}
+        self.class_busy = {}
+        for cls in CLASSES:
+            for ts in TIMESLOTS:
+                self.class_busy[(cls["id"], ts)] = self.model.NewBoolVar(f"busy_{cls['id']}_{ts}")
+
         # Pre-calculate smart rotating candidate pools to ensure fairness and manageable variable count.
         # We aim for ~10 candidates per course.
         self.qualified_teachers = {}
@@ -156,23 +166,41 @@ class Scheduler:
             
             qualified.extend(list(priority_candidates))
             
-            # 2. Fill up to 10 candidates using rotation to ensure fairness
-            # Rotating start index based on course_index
-            start_offset = (course_index * 3) % teacher_count 
+            # 2. Fill up to 3 candidates using rotation
+            # Reducing to 3 significantly prunes variables
+            start_offset = (course_index * 2) % teacher_count 
             for i in range(teacher_count):
+                if len(qualified) >= 3:
+                    break
                 t_idx = (start_offset + i) % teacher_count
                 tid = sorted_teachers[t_idx]["id"]
                 if tid not in priority_candidates:
                     qualified.append(tid)
-                    if len(qualified) >= 10:
-                        break
             
             self.qualified_teachers[course_code] = qualified
+            
+            # Initialize teacher flags for this course across all potentially assigned classes
+            for cls in CLASSES:
+                if course["year"] == cls["year"] and course["sem"] in cls["sems"] and course_code in cls.get("courses", []):
+                    for tid in qualified:
+                        self.teacher_flag_map[(cls["id"], course_code, tid)] = self.model.NewBoolVar(f"tf_{cls['id']}_{course_code}_{tid}")
+            
             course_index += 1
 
         print(f"Candidate pools created (average {sum(len(v) for v in self.qualified_teachers.values())/len(COURSES):.1f} teachers/course)", file=sys.stderr)
 
         for cls in CLASSES:
+            # PRUNE THEORY ROOMS: Each class group is assigned only 5 theory rooms as candidates
+            num_t_rooms = len(ROOMS["theory"])
+            class_theory_rooms = []
+            if num_t_rooms > 0:
+                # Use deterministic hash of class ID to pick rooms
+                start_r = (abs(hash(cls["id"])) % num_t_rooms)
+                for r_idx in range(min(5, num_t_rooms)):
+                    class_theory_rooms.append(ROOMS["theory"][(start_r + r_idx) % num_t_rooms])
+            else:
+                class_theory_rooms = []
+
             for course_code, course in COURSES.items():
                 if course["year"] != cls["year"] or course["sem"] not in cls["sems"]:
                     continue
@@ -182,13 +210,17 @@ class Scheduler:
                 
                 candidates = self.qualified_teachers.get(course_code, [t["id"] for t in TEACHERS])
                 
-                # Lectures - always in theory room
+                # Lectures - only in pruned theory rooms
                 for ts in TIMESLOTS:
                     for tid in candidates:
-                        for room in ROOMS["theory"]:
+                        for room in class_theory_rooms:
                             var = self.model.NewBoolVar(f"L_{cls['id']}_{course_code}_{ts}_{tid}_{room}")
                             if (cls['id'], course_code, tid) in forbidden_set:
                                 self.model.Add(var == 0)
+                            
+                            # Link to teacher flag: if session is active, this teacher MUST be the one for the course
+                            self.model.Add(var <= self.teacher_flag_map[(cls['id'], course_code, tid)])
+                            
                             key = (cls["id"], course_code, "L", ts, tid, room)
                             self.vars[key] = var
                             # Indexing
@@ -199,16 +231,23 @@ class Scheduler:
                             self.vars_by_class_course_type[(cls["id"], course_code, "L")].append(var)
                             self.vars_by_class_room[(cls["id"], room)].append(var)
                             self.vars_by_class_course_teacher[(cls["id"], course_code, tid)].append(var)
+                            
+                            day = ts.split('_')[0]
+                            self.vars_by_class_course_day[(cls["id"], course_code, day)].append(var)
                             var_count += 1
                 
-                # Tutorials
-                if course["T"] > 0:
+                # Tutorials - only in pruned theory rooms
+                if course.get("T", 0) > 0:
                     for ts in TIMESLOTS:
                         for tid in candidates:
-                            for room in ROOMS["theory"]:
+                            for room in class_theory_rooms:
                                 var = self.model.NewBoolVar(f"T_{cls['id']}_{course_code}_{ts}_{tid}_{room}")
                                 if (cls['id'], course_code, tid) in forbidden_set:
                                     self.model.Add(var == 0)
+                                
+                                # Link to teacher flag
+                                self.model.Add(var <= self.teacher_flag_map[(cls['id'], course_code, tid)])
+                                
                                 key = (cls["id"], course_code, "T", ts, tid, room)
                                 self.vars[key] = var
                                 # Indexing
@@ -219,28 +258,51 @@ class Scheduler:
                                 self.vars_by_class_course_type[(cls["id"], course_code, "T")].append(var)
                                 self.vars_by_class_room[(cls["id"], room)].append(var)
                                 self.vars_by_class_course_teacher[(cls["id"], course_code, tid)].append(var)
+                                
+                                day = ts.split('_')[0]
+                                self.vars_by_class_course_day[(cls["id"], course_code, day)].append(var)
                                 var_count += 1
                 
                 # Practicals
-                if course["P"] > 0:
+                if course.get("P", 0) > 0:
                     room_list = ROOMS["lab"] if ROOMS["lab"] else ROOMS["theory"]
-                    for ts in TIMESLOTS:
-                        for tid in candidates:
-                            for room in room_list:
-                                var = self.model.NewBoolVar(f"P_{cls['id']}_{course_code}_{ts}_{tid}_{room}")
-                                if (cls['id'], course_code, tid) in forbidden_set:
-                                    self.model.Add(var == 0)
-                                key = (cls["id"], course_code, "P", ts, tid, room)
-                                self.vars[key] = var
-                                # Indexing
-                                self.vars_by_class_slot[(cls["id"], ts)].append((course_code, var))
-                                self.vars_by_course_slot[(course_code, ts)].append(var)
-                                self.vars_by_teacher_slot[(tid, ts)].append(var)
-                                self.vars_by_room_slot[(room, ts)].append(var)
-                                self.vars_by_class_course_type[(cls["id"], course_code, "P")].append(var)
-                                self.vars_by_class_course_teacher[(cls["id"], course_code, tid)].append(var)
-                                var_count += 1
-        
+                    for day in DAYS:
+                        day_slots = [ts for ts in TIMESLOTS if ts.startswith(day)]
+                        for i, ts in enumerate(day_slots):
+                            # Lab takes 2 slots (100 mins)
+                            if i + 1 >= len(day_slots):
+                                continue # Cannot start in last slot of day
+                            
+                            next_ts = day_slots[i+1]
+                            
+                            for tid in candidates:
+                                for room in room_list:
+                                    var = self.model.NewBoolVar(f"P_{cls['id']}_{course_code}_{ts}_{tid}_{room}")
+                                    if (cls['id'], course_code, tid) in forbidden_set:
+                                        self.model.Add(var == 0)
+                                    
+                                    # Link to teacher flag
+                                    self.model.Add(var <= self.teacher_flag_map[(cls['id'], course_code, tid)])
+                                    
+                                    key = (cls["id"], course_code, "P", ts, tid, room)
+                                    self.vars[key] = var
+                                    # Indexing (Block both slots on the same day)
+                                    for target_ts in [ts, next_ts]:
+                                        self.vars_by_class_slot[(cls["id"], target_ts)].append((course_code, var))
+                                        self.vars_by_course_slot[(course_code, target_ts)].append(var)
+                                        self.vars_by_teacher_slot[(tid, target_ts)].append(var)
+                                        self.vars_by_room_slot[(room, target_ts)].append(var)
+                                        
+                                    self.vars_by_class_course_type[(cls["id"], course_code, "P")].append(var)
+                                    self.vars_by_class_course_teacher[(cls["id"], course_code, tid)].append(var)
+                                    
+                                    self.vars_by_class_course_day[(cls["id"], course_code, day)].append(var)
+                                    var_count += 1
+                
+                # ENFORCE SINGLE TEACHER: exactly one teacher flag must be true for this course-section
+                course_tfs = [self.teacher_flag_map[(cls["id"], course_code, tid)] for tid in candidates]
+                if course_tfs:
+                    self.model.Add(sum(course_tfs) == 1)
         # NOTE: assigned_tid constraint (previously lines 180-183) has been removed 
         # to allow fallbacks as requested by the user. 
         # Preference for 'assignedFaculty' is now handled in _set_objective.
@@ -312,13 +374,14 @@ class Scheduler:
         constraint_count += self._constraint_no_room_conflicts()
         constraint_count += self._constraint_fixed_rooms_and_starttime()
         constraint_count += self._constraint_same_room_for_lectures()
-        constraint_count += self._constraint_practical_contiguity_and_consecutive_rules()
+        # DISABLED: Redundant with the new Block Variable approach in _create_variables
+        # constraint_count += self._constraint_practical_contiguity_and_consecutive_rules()
         constraint_count += self._constraint_room_capacity()
         # New constraints
-        constraint_count += self._constraint_single_teacher_per_course()
+        # Single teacher is now enforced in _create_variables
         constraint_count += self._constraint_subject_daily_limit()
         constraint_count += self._constraint_teacher_section_limits()
-        constraint_count += self._constraint_electives_common_slot()
+        # constraint_count += self._constraint_electives_common_slot()
 
         # build peak-slot variables used for smoothing objective
         self._add_peak_slot_vars()
@@ -337,8 +400,10 @@ class Scheduler:
             for course_code, course in COURSES.items():
                 if course["year"] != cls["year"] or course["sem"] not in cls["sems"]:
                     continue
+                
+                if course_code not in cls.get("courses", []):
+                    continue
 
-                # INDEXED LOOKUP
                 # Lectures
                 lect_vars = self.vars_by_class_course_type.get((cls["id"], course_code, "L"), [])
                 if lect_vars:
@@ -356,7 +421,9 @@ class Scheduler:
                 if course.get("P", 0) > 0:
                     prac_vars = self.vars_by_class_course_type.get((cls["id"], course_code, "P"), [])
                     if prac_vars:
-                        self.model.Add(sum(prac_vars) == course["P"])
+                        # Since each prac_var is a 2-hour block (from _create_variables indexing),
+                        # we need P/2 such blocks to get P hours.
+                        self.model.Add(sum(prac_vars) * 2 == course["P"])
                         added += 1
         return added
 
@@ -386,26 +453,53 @@ class Scheduler:
             if slot_activity_vars:
                 # Total hours = sum of active slots
                 total_load = sum(slot_activity_vars)
-                max_h = 20 # Target Max as requested by user
-                hard_max_h = 25 # Hard ceiling for feasibility safety - relaxed for constraint satisfaction
-                min_h = 8 # Relaxed minimum to allow more flexibility
                 
-                # SAFE-HARD LIMIT: 22 hours
-                self.model.Add(total_load <= hard_max_h)
+                # USER PREFERENCE: 16-18 preferred, but 15-22 allowed
+                # NOTE: If total work / teachers < 15, a hard min of 15 will cause failure.
+                # We use a broad hard range and strong soft penalties for target adherence.
+                pref_min = 16
+                pref_max = 18
+                hard_min = 0 
+                hard_max = 24 # Slightly above 22 for feasibility slack
                 
-                # SOFT TARGET penalty (over 18 hours)
-                excess_load = self.model.NewIntVar(0, 22, f"excess_load_{teacher['id']}")
-                self.model.Add(excess_load >= total_load - max_h)
-                self.model.Add(excess_load >= 0)
+                # Hard constraints
+                self.model.Add(total_load >= hard_min)
+                self.model.Add(total_load <= hard_max)
+                
+                # Penalty for being below 16
+                deficit = self.model.NewIntVar(0, 24, f"load_deficit_{teacher['id']}")
+                self.model.Add(deficit >= pref_min - total_load)
+                self.model.Add(deficit >= 0)
+                
+                # Penalty for being above 18
+                excess = self.model.NewIntVar(0, 24, f"load_excess_{teacher['id']}")
+                self.model.Add(excess >= total_load - pref_max)
+                self.model.Add(excess >= 0)
+                
+                # HEAVY penalty for being outside the 15-22 range
+                # Penalty for being below 15
+                deficit_15 = self.model.NewIntVar(0, 24, f"deficit_15_{teacher['id']}")
+                self.model.Add(deficit_15 >= 15 - total_load)
+                self.model.Add(deficit_15 >= 0)
+                
+                # Penalty for being above 22
+                excess_22 = self.model.NewIntVar(0, 24, f"excess_22_{teacher['id']}")
+                self.model.Add(excess_22 >= total_load - 22)
+                self.model.Add(excess_22 >= 0)
                 
                 if not hasattr(self, 'workload_penalties'):
                     self.workload_penalties = []
-                self.workload_penalties.append(excess_load)
                 
-                # Keep reference for objective
+                # Weights: 
+                # 16-18 is the target (low penalty for minor deviation)
+                # 15-22 is the acceptable range (high penalty for exceeding)
+                self.workload_penalties.extend([deficit * 10, excess * 10])
+                self.workload_penalties.extend([deficit_15 * 1000, excess_22 * 1000])
+                
+                # Keep reference for reporting
                 if not hasattr(self, 'teacher_load_vars'):
                     self.teacher_load_vars = {}
-                self.teacher_load_vars[teacher['id']] = (total_load, min_h)
+                self.teacher_load_vars[teacher['id']] = (total_load, pref_min, pref_max)
                 added += 1
         return added
 
@@ -447,11 +541,11 @@ class Scheduler:
                         self.model.Add(var == 0)
                         added += 1
 
-        # enforce no sessions before 09:00
+        # enforce no sessions before 08:30 (adjusted from 09:00 to allow 08:50 slot)
         for (c, co, st, ts, t, r), var in list(self.vars.items()):
             if '_' in ts:
                 hour = ts.split('_', 1)[1]
-                if hour < '09:00':
+                if hour < '08:30':
                     self.model.Add(var == 0)
                     added += 1
         return added
@@ -473,14 +567,27 @@ class Scheduler:
             if not lecture_vars_by_room:
                 continue
 
-            # create room_used vars and force exactly one
+            # create room_used vars
             room_used = {}
             for room in lecture_vars_by_room:
                 room_used[room] = self.model.NewBoolVar(f"room_used_{cls['id']}_{room}")
                 self.model.AddMaxEquality(room_used[room], lecture_vars_by_room[room])
                 added += 1
 
-            self.model.Add(sum(room_used.values()) == 1)
+            # Soften room consistency: force at least one, but allow more with penalty
+            if room_used:
+                # Must use at least one room
+                self.model.Add(sum(room_used.values()) >= 1)
+                
+                # Penalty for each additional room used beyond the first
+                excess_rooms = self.model.NewIntVar(0, len(room_used), f"ex_rooms_{cls['id']}")
+                self.model.Add(excess_rooms >= sum(room_used.values()) - 1)
+                self.model.Add(excess_rooms >= 0)
+                
+                if not hasattr(self, 'limit_penalties'):
+                    self.limit_penalties = []
+                self.limit_penalties.append(excess_rooms * 500) # Moderate-to-high penalty
+                added += 1
         return added
 
     def _constraint_practical_contiguity_and_consecutive_rules(self):
@@ -523,8 +630,8 @@ class Scheduler:
                         for k in range(p_hours - 1):
                             t1 = to_minutes(HOURS[i+k])
                             t2 = to_minutes(HOURS[i+k+1])
-                            # If gap is more than 60 mins, assume it crosses a break or is invalid for continuous block
-                            if (t2 - t1) > 60:
+                            # If gap is more than 75 mins, assume it crosses a long break
+                            if (t2 - t1) > 75:
                                 valid_window = False
                                 break
                         
@@ -660,57 +767,32 @@ class Scheduler:
         added = 0
         for cls in CLASSES:
             for course_code in cls.get("courses", []):
-                # INDEXED LOOKUP: get all vars for this (class, course)
-                all_sessions = []
-                for stype in ["L", "T", "P"]:
-                    all_sessions.extend(self.vars_by_class_course_type.get((cls["id"], course_code, stype), []))
-                
-                if not all_sessions:
-                    continue
-
-                for day in DAYS:
-                    # Filter sessions by day using TIMESLOTS
-                    day_slots = [f"{day}_{h}" for h in HOURS]
-                    # We need the slot info from the variable. 
-                    # Instead of iterating self.vars, let's use vars_by_course_slot
-                    vars_on_day = []
-                    for ts in day_slots:
-                        # vars_by_course_slot has vars for ALL classes. 
-                        # We need to filter by class. 
-                        # Actually vars_by_class_slot is better: it has (course_code, var)
-                        for c_code, var in self.vars_by_class_slot.get((cls["id"], ts), []):
-                            if c_code == course_code:
-                                vars_on_day.append(var)
-                    
-                    if vars_on_day:
-                        # Soften daily limit to a penalty
-                        excess_daily = self.model.NewIntVar(0, 10, f"excess_daily_{cls['id']}_{course_code}_{day}")
-                        self.model.Add(excess_daily >= sum(vars_on_day) - 3)
-                        self.model.Add(excess_daily >= 0)
-                        if not hasattr(self, 'daily_limit_penalties'):
-                            self.daily_limit_penalties = []
-                        self.daily_limit_penalties.append(excess_daily)
-                        added += 1
-        
-        # Soft constraint for spreading subjects across the week
-        # We'll reward having sessions on DIFFERENT days.
-        self.subject_spread_vars = []
-        for cls in CLASSES:
-            for course_code, course in COURSES.items():
                 active_days = []
                 for day in DAYS:
-                    day_slots = [f"{day}_{h}" for h in HOURS]
-                    vars_on_day = [v for (c, co, st, ts, t, r), v in self.vars.items()
-                                   if c == cls['id'] and co == course_code and ts in day_slots]
+                    vars_on_day = self.vars_by_class_course_day.get((cls["id"], course_code, day), [])
+                    
                     if vars_on_day:
+                        # 1. SOFT DAILY LIMIT: penalties for exceeding 2 periods
+                        # Limit to 2 periods per subject per day to ensure spreading
+                        excess_daily = self.model.NewIntVar(0, 10, f"excess_daily_{cls['id']}_{course_code}_{day}")
+                        self.model.Add(excess_daily >= sum(vars_on_day) - 2)
+                        self.model.Add(excess_daily >= 0)
+                        
+                        if not hasattr(self, 'limit_penalties'):
+                            self.limit_penalties = []
+                        self.limit_penalties.append(excess_daily * 2000) 
+                        added += 1
+
+                        # 2. SPREAD LOGIC: Reward having sessions on different days
                         day_active = self.model.NewBoolVar(f"day_active_{cls['id']}_{course_code}_{day}")
                         self.model.AddMaxEquality(day_active, vars_on_day)
                         active_days.append(day_active)
                 
                 if active_days:
-                    # Reward total number of active days for this course
+                    if not hasattr(self, 'subject_spread_vars'):
+                        self.subject_spread_vars = []
+                    # Reward total number of active days (more days = higher score)
                     self.subject_spread_vars.extend(active_days)
-                    
         return added
 
     def _constraint_teacher_section_limits(self):
@@ -731,7 +813,13 @@ class Scheduler:
                         teacher_courses_in_class.append(tf)
                 
                 if len(teacher_courses_in_class) > 1:
-                    self.model.Add(sum(teacher_courses_in_class) <= 1)
+                    # SOFTENED: Heavy penalty instead of hard constraint
+                    excess_courses = self.model.NewIntVar(0, 5, f"ex_courses_{cls['id']}_{teacher['id']}")
+                    self.model.Add(excess_courses >= sum(teacher_courses_in_class) - 1)
+                    self.model.Add(excess_courses >= 0)
+                    if not hasattr(self, 'limit_penalties'):
+                        self.limit_penalties = []
+                    self.limit_penalties.append(excess_courses * 1000)
                     added += 1
         
         # 2. Max two sections for the same course
@@ -751,10 +839,10 @@ class Scheduler:
                         if tf is not None:
                             teacher_section_flags.append(tf)
                 
-                if len(teacher_section_flags) > 2:
-                    # Penalty = max(0, sum(flags) - 2)
+                if len(teacher_section_flags) > 4:
+                    # Penalty = max(0, sum(flags) - 4)
                     excess = self.model.NewIntVar(0, len(teacher_section_flags), f"excess_{teacher['id']}_{base}")
-                    self.model.Add(excess >= sum(teacher_section_flags) - 2)
+                    self.model.Add(excess >= sum(teacher_section_flags) - 4)
                     self.model.Add(excess >= 0)
                     
                     if not hasattr(self, 'limit_penalties'):
@@ -772,7 +860,8 @@ class Scheduler:
         """
         added = 0
         # breaks can be configured in CONFIG as a list of {start,end}
-        default_breaks = [{"start": "13:00", "end": "14:00"}, {"start": "10:30", "end": "10:45"}]
+        # UPDATED to match DB slots: Slot 3 (10:30-10:45) and Slot 7 (13:15-14:05)
+        default_breaks = [{"start": "13:15", "end": "14:05"}, {"start": "10:30", "end": "10:45"}]
         breaks = CONFIG.get('break_times', default_breaks)
 
         def to_minutes(t):
@@ -801,15 +890,23 @@ class Scheduler:
                 continue
 
             start_min = to_minutes(start_time)
-            duration = 120 if st == 'P' else 60
+            # UPDATED: Use 50 mins for theory, 100 mins for labs (2 * 50)
+            duration = 100 if st == 'P' else 50
             end_min = start_min + duration
 
             # if session interval [start_min, end_min) overlaps any break interval, ban
             overlap = False
             for bs, be in break_intervals:
+                # We use strict boundaries here because slots usually end exactly when breaks start
+                # end_min <= bs means session ends at or before break starts
+                # start_min >= be means session starts at or after break ends
+                # Special Case: Morning break (10:30-10:45) is only 15 mins.
+                # We allow 100-min labs (P) to cross it if they start early enough.
+                is_morning_break = (bs == to_minutes("10:30") and be == to_minutes("10:45"))
                 if not (end_min <= bs or start_min >= be):
-                    overlap = True
-                    break
+                    if not (st == 'P' and is_morning_break):
+                        overlap = True
+                        break
 
             if overlap:
                 self.model.Add(var == 0)
@@ -849,10 +946,10 @@ class Scheduler:
 
         # Reward reaching minimum hours (soft constraint)
         if hasattr(self, 'teacher_load_vars'):
-            for tid, (total_load, min_h) in self.teacher_load_vars.items():
-                load_up_to_min = self.model.NewIntVar(0, min_h, f"load_min_{tid}")
+            for tid, (total_load, min_h, max_h) in self.teacher_load_vars.items():
+                load_up_to_min = self.model.NewIntVar(0, 50, f"load_min_{tid}")
                 self.model.AddMinEquality(load_up_to_min, [total_load, min_h])
-                rewards.append(load_up_to_min * 10) # Heavy reward for reaching minimums
+                rewards.append(load_up_to_min * 20) # Heavy reward for reaching minimums
 
         # Apply penalties for soft-constraints violations
         if hasattr(self, 'capacity_penalties'):
@@ -866,7 +963,7 @@ class Scheduler:
 
         if hasattr(self, 'workload_penalties'):
             for p_var in self.workload_penalties:
-                rewards.append(p_var * -5000) # Extremely heavy penalty for exceeding 20 hours
+                rewards.append(p_var * -100) # Penalize deviation from target workload
         
         if hasattr(self, 'daily_limit_penalties'):
             for p_var in self.daily_limit_penalties:
@@ -988,7 +1085,7 @@ class Scheduler:
     def _solve_model(self):
         """Solve the model using safe two-stage lexicographic optimization."""
         solver = cp_model.CpSolver()
-        solver.parameters.max_time_in_seconds = 180.0
+        solver.parameters.max_time_in_seconds = 300.0 # Target 5 mins as requested
         solver.parameters.num_search_workers = 8
 
         print(f"Solving ({len(self.vars)} variables)...", file=sys.stderr)
@@ -1002,8 +1099,14 @@ class Scheduler:
         if hasattr(self, 'workload_penalties'):
             stage1_obj += sum(self.workload_penalties) * 10000 
         
+        # Also include limit_penalties in stage 1 to guide the solver
+        if hasattr(self, 'limit_penalties'):
+            stage1_obj += sum(self.limit_penalties) * 5000
+
         self.model.Minimize(stage1_obj)
         status = solver.Solve(self.model)
+
+        print(f"Stage 1 Result: {solver.StatusName(status)} in {solver.WallTime():.2f}s", file=sys.stderr)
 
         if status in (cp_model.OPTIMAL, cp_model.FEASIBLE):
             best_max = solver.Value(self.max_load)
@@ -1049,13 +1152,31 @@ class Scheduler:
             solution = defaultdict(list)
             for (c, co, st, ts, t, r), var in self.vars.items():
                 if final_solver.Value(var) == 1:
-                    solution[c].append({
-                        "course": co,
-                        "type": st,
-                        "slot": ts,
-                        "teacher": next((te["name"] for te in TEACHERS if te["id"] == t), t),
-                        "room": r
-                    })
+                    if st == "P":
+                        # Add entries for both slots of the Practical block
+                        day = ts.split('_', 1)[0]
+                        day_slots = [s for s in TIMESLOTS if s.startswith(day)]
+                        try:
+                            idx = day_slots.index(ts)
+                            for k in range(2):
+                                if idx + k < len(day_slots):
+                                    solution[c].append({
+                                        "course": co,
+                                        "type": st,
+                                        "slot": day_slots[idx + k],
+                                        "teacher": next((te["name"] for te in TEACHERS if te["id"] == t), t),
+                                        "room": r
+                                    })
+                        except ValueError:
+                            pass
+                    else:
+                        solution[c].append({
+                            "course": co,
+                            "type": st,
+                            "slot": ts,
+                            "teacher": next((te["name"] for te in TEACHERS if te["id"] == t), t),
+                            "room": r
+                        })
             return solution
         else:
             print("[FAIL] No solution found\n", file=sys.stderr)
@@ -1110,21 +1231,29 @@ class Scheduler:
         print("="*140, file=sys.stderr)
         print(f"Classes scheduled: {len(solution)}", file=sys.stderr)
         total_slots = sum(len(entries) for entries in solution.values())
-        print(f"Total class-hours scheduled: {total_slots}", file=sys.stderr)
+        print(f"Total class-slots scheduled: {total_slots} hours", file=sys.stderr)
         
         # Teacher summary
         print(f"\nTeacher Load Distribution:", file=sys.stderr)
         for teacher in TEACHERS:
+            # Overlaps are forbidden by _constraint_no_teacher_double_booking
+            # so direct count is accurate for teaching hours.
             load = sum(1 for entries in solution.values() for e in entries 
                       if e["teacher"] == teacher["name"])
-            print(f"  {teacher['name']:15} - {load:2} hours (req: {teacher['min']}-{teacher['max']})", file=sys.stderr)
+            print(f"  {teacher['name']:15} - {load:2} hours (target: 16-18)", file=sys.stderr)
     
     def _calculate_end_time(self, start_time, session_type="L"):
-        """Calculate end time (1 hour for L/T, 2 hours for P)"""
+        """Calculate end time (50 mins for L/T, 100 mins for P)"""
         hours, minutes = map(int, start_time.split(':'))
-        # Practicals span 2 hours, lectures/tutorials span 1 hour
-        hours += 2 if session_type == "P" else 1
-        return f"{hours:02d}:{minutes:02d}"
+        # Practicals span 100 mins, lectures/tutorials span 50 mins
+        added_mins = 100 if session_type == "P" else 50
+        
+        total_mins = minutes + added_mins
+        extra_hours = total_mins // 60
+        final_mins = total_mins % 60
+        final_hours = hours + extra_hours
+        
+        return f"{final_hours:02d}:{final_mins:02d}"
     
     def save_class_timetable(self, solution):
         """Save timetable organized by class"""
