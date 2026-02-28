@@ -186,6 +186,12 @@ class AdminController {
     leave.status = 'approved';
     await leave.save();
 
+    // Trigger dynamic rescheduling
+    const schedulingService = require('../services/schedulingService');
+    schedulingService.dynamicReschedule(leave._id).catch(err => {
+      console.error('Error in dynamicReschedule:', err);
+    });
+
     res.json({ success: true, data: leave });
   }
 
@@ -206,14 +212,14 @@ class AdminController {
     try {
       console.log('Lock request body:', JSON.stringify(req.body));
       let academicCalendarId = req.body.academicCalendarId || req.body;
-      
+
       // If academicCalendarId is still an object, try to extract the actual ID
       if (typeof academicCalendarId === 'object' && academicCalendarId.academicCalendarId) {
         academicCalendarId = academicCalendarId.academicCalendarId;
       }
-      
+
       console.log('Extracted academicCalendarId:', academicCalendarId, 'Type:', typeof academicCalendarId);
-      
+
       if (!academicCalendarId || typeof academicCalendarId !== 'string') {
         return res.status(400).json({ success: false, error: 'academicCalendarId must be a string' });
       }
@@ -239,14 +245,14 @@ class AdminController {
     try {
       console.log('Unlock request body:', JSON.stringify(req.body));
       let academicCalendarId = req.body.academicCalendarId || req.body;
-      
+
       // If academicCalendarId is still an object, try to extract the actual ID
       if (typeof academicCalendarId === 'object' && academicCalendarId.academicCalendarId) {
         academicCalendarId = academicCalendarId.academicCalendarId;
       }
-      
+
       console.log('Extracted academicCalendarId:', academicCalendarId, 'Type:', typeof academicCalendarId);
-      
+
       if (!academicCalendarId || typeof academicCalendarId !== 'string') {
         return res.status(400).json({ success: false, error: 'academicCalendarId must be a string' });
       }
