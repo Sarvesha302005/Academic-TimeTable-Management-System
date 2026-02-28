@@ -76,6 +76,9 @@ export const adminAPI = {
   // Timetable Control
   lockTimetable: (academicCalendarId) => api.post('/admin/timetable/lock', { academicCalendarId }),
   unlockTimetable: (academicCalendarId) => api.post('/admin/timetable/unlock', { academicCalendarId }),
+
+  // Workload Optimization
+  getWorkloadReport: () => api.get('/admin/workload-report'),
 };
 
 // Faculty APIs

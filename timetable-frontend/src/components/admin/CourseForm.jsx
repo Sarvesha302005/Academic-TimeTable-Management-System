@@ -74,7 +74,6 @@ const CourseForm = () => {
         tutorialHours: 0,
         practicalHours: 0,
         weeklyHours: 3,
-        weeklyHours: 3,
         department: '',
         isElective: false,
         sections: []

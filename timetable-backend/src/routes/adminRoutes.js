@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const adminController = require('../controllers/adminController');
 const { requireRole } = require('../middleware/auth');
-const { 
+const {
   academicCalendarValidation,
   timeSlotValidation,
   courseValidation,
@@ -58,5 +58,8 @@ router.put('/leave/:id/reject', validateObjectId('id'), adminController.rejectLe
 // Timetable Lock/Unlock routes
 router.post('/timetable/lock', adminController.lockTimetable);
 router.post('/timetable/unlock', adminController.unlockTimetable);
+
+// Workload Optimization routes
+router.get('/workload-report', adminController.getWorkloadReport);
 
 module.exports = router;
