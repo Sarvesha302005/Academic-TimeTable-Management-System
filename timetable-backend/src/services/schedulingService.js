@@ -22,7 +22,7 @@ class SchedulingService {
 
       // Spawn Python process using venv
       const venvPythonPath = path.resolve(
-        path.join(__dirname, '../../python-scheduler/venv/bin/python'));
+        path.join(__dirname, '../../python-scheduler/venv/Scripts/python.exe'));
       const pythonCommand = process.env.PYTHON_EXECUTABLE || venvPythonPath;
       console.log(`[DEBUG] Using Python: ${pythonCommand}`);
       const pythonProcess = spawn(pythonCommand, [pythonScriptPath]);

@@ -6,6 +6,9 @@ const Room = require('../models/Room');
 const WorkloadRule = require('../models/WorkloadRule');
 const Timetable = require('../models/Timetable');
 const FacultyLeave = require('../models/FacultyLeave');
+const { spawn } = require('child_process');
+const path = require('path');
+const fs = require('fs').promises;
 
 class AdminController {
 
@@ -270,6 +273,60 @@ class AdminController {
     } catch (error) {
       console.error('Error in unlockTimetable:', error);
       res.status(500).json({ success: false, error: error.message || 'Failed to unlock timetable' });
+    }
+  }
+
+  /* =========================
+     WORKLOAD OPTIMIZATION
+  ========================= */
+  async getWorkloadReport(req, res) {
+    try {
+      const schedulerDir = path.join(__dirname, '../../python-scheduler');
+      const analyzerPath = path.join(schedulerDir, 'workload_analyzer.py');
+      const reportPath = path.join(schedulerDir, 'output', 'workload_report.json');
+
+      // Determine python command (common practice for Windows/Unix)
+      const pythonCmd = path.join(
+        schedulerDir,
+        'venv',
+        'Scripts',
+        'python.exe'
+      );
+
+      console.log(`Running workload analyzer: ${pythonCmd} ${analyzerPath}`);
+
+      const pythonProcess = spawn(pythonCmd, [analyzerPath], {
+        cwd: schedulerDir,
+        env: { ...process.env, PYTHONPATH: schedulerDir }
+      });
+
+      let errorData = '';
+      pythonProcess.stderr.on('data', (data) => {
+        errorData += data.toString();
+      });
+
+      pythonProcess.on('close', async (code) => {
+        if (code !== 0) {
+          console.error(`Analyzer failed with code ${code}: ${errorData}`);
+          return res.status(500).json({
+            success: false,
+            error: 'Failed to generate workload report',
+            details: errorData
+          });
+        }
+
+        try {
+          const rawData = await fs.readFile(reportPath, 'utf8');
+          const report = JSON.parse(rawData);
+          res.json({ success: true, data: report });
+        } catch (err) {
+          console.error('Error reading report file:', err);
+          res.status(500).json({ success: false, error: 'Failed to read workload report' });
+        }
+      });
+    } catch (error) {
+      console.error('Error in getWorkloadReport:', error);
+      res.status(500).json({ success: false, error: 'Internal server error' });
     }
   }
 }

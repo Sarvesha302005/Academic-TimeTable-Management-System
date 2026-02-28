@@ -16,6 +16,7 @@ import json
 import os
 from ortools.sat.python import cp_model
 from collections import defaultdict
+from workload_analyzer import analyze_workload
 
 # ============================================================================
 # PATHS - Relative to project root
@@ -428,78 +429,55 @@ class Scheduler:
         return added
 
     def _constraint_teacher_workload(self):
-        """Enforce teacher min/max workload in hours. Merged sections in same slot count as 1 hour."""
+        """Enforce teacher target workload of 17 hours/week and calculate absolute deviation."""
         added = 0
+        self.teacher_dev_vars = []
+        self.teacher_load_vars = {}
+
         for teacher in TEACHERS:
-            # We must sum up "active slots" for this teacher.
-            # active_slots = sum(is_teaching_in_slot_S)
-            
+            tid = teacher["id"]
             slot_activity_vars = []
             
             for ts in TIMESLOTS:
-                # INDEXED LOOKUP
-                ts_vars = self.vars_by_teacher_slot.get((teacher["id"], ts), [])
-                
+                ts_vars = self.vars_by_teacher_slot.get((tid, ts), [])
                 if not ts_vars:
                     continue
                 
                 if len(ts_vars) == 1:
                     slot_activity_vars.append(ts_vars[0])
                 else:
-                    b = self.model.NewBoolVar(f"active_{teacher['id']}_{ts}")
+                    b = self.model.NewBoolVar(f"active_{tid}_{ts}")
                     self.model.AddMaxEquality(b, ts_vars)
                     slot_activity_vars.append(b)
             
             if slot_activity_vars:
                 # Total hours = sum of active slots
-                total_load = sum(slot_activity_vars)
+                total_load = self.model.NewIntVar(0, 24, f"total_load_{tid}")
+                self.model.Add(total_load == sum(slot_activity_vars))
                 
-                # USER PREFERENCE: 16-18 preferred, but 15-22 allowed
-                # NOTE: If total work / teachers < 15, a hard min of 15 will cause failure.
-                # We use a broad hard range and strong soft penalties for target adherence.
-                pref_min = 16
-                pref_max = 18
-                hard_min = 0 
-                hard_max = 24 # Slightly above 22 for feasibility slack
+                # Ideal target = 17 hours
+                ideal_target = 17
                 
-                # Hard constraints
-                self.model.Add(total_load >= hard_min)
-                self.model.Add(total_load <= hard_max)
+                # Deviation = |total_load - 17|
+                deviation = self.model.NewIntVar(0, 24, f"dev_{tid}")
+                self.model.AddAbsEquality(deviation, total_load - ideal_target)
                 
-                # Penalty for being below 16
-                deficit = self.model.NewIntVar(0, 24, f"load_deficit_{teacher['id']}")
-                self.model.Add(deficit >= pref_min - total_load)
-                self.model.Add(deficit >= 0)
+                self.teacher_dev_vars.append(deviation)
+                self.teacher_load_vars[tid] = total_load
                 
-                # Penalty for being above 18
-                excess = self.model.NewIntVar(0, 24, f"load_excess_{teacher['id']}")
-                self.model.Add(excess >= total_load - pref_max)
-                self.model.Add(excess >= 0)
+                # Hard safety range: 0-24 (already covered by NewIntVar bounds, 
+                # but explicit constraints help if needed later)
+                self.model.Add(total_load >= 0)
+                self.model.Add(total_load <= 24)
                 
-                # HEAVY penalty for being outside the 15-22 range
-                # Penalty for being below 15
-                deficit_15 = self.model.NewIntVar(0, 24, f"deficit_15_{teacher['id']}")
-                self.model.Add(deficit_15 >= 15 - total_load)
-                self.model.Add(deficit_15 >= 0)
-                
-                # Penalty for being above 22
-                excess_22 = self.model.NewIntVar(0, 24, f"excess_22_{teacher['id']}")
-                self.model.Add(excess_22 >= total_load - 22)
-                self.model.Add(excess_22 >= 0)
-                
+                # Maintain compatibility with existing penalty reporting if any
                 if not hasattr(self, 'workload_penalties'):
                     self.workload_penalties = []
+                # Stronger penalty for extreme outliers (>22 or <12)
+                outlier_penalty = self.model.NewIntVar(0, 24, f"outlier_{tid}")
+                # Use a dummy variable to catch > 22 or < 12
+                # But it's better to just use deviation in the objective.
                 
-                # Weights: 
-                # 16-18 is the target (low penalty for minor deviation)
-                # 15-22 is the acceptable range (high penalty for exceeding)
-                self.workload_penalties.extend([deficit * 10, excess * 10])
-                self.workload_penalties.extend([deficit_15 * 1000, excess_22 * 1000])
-                
-                # Keep reference for reporting
-                if not hasattr(self, 'teacher_load_vars'):
-                    self.teacher_load_vars = {}
-                self.teacher_load_vars[teacher['id']] = (total_load, pref_min, pref_max)
                 added += 1
         return added
 
@@ -915,59 +893,54 @@ class Scheduler:
         return added
     
     def _set_objective(self):
-        """Prepare teacher preference expression (not set final objective here).
+        """Build workload and preference objective expressions."""
+        # 1. Workload Objective (Minimize Deviation from 17h)
+        total_deviation = sum(self.teacher_dev_vars)
+        
+        # Max deviation for fairness (prevents outliers)
+        max_dev = self.model.NewIntVar(0, 24, "max_dev")
+        if self.teacher_dev_vars:
+            self.model.AddMaxEquality(max_dev, self.teacher_dev_vars)
+        
+        # Workload objective: prioritize total alignment, then fairness (max deviation)
+        self.workload_obj = total_deviation * 10 + max_dev * 50
 
-        Preference objective will be used in the second stage after minimizing peak load.
-        This uses the teacher_flag variables (one per class-course-teacher) so preferences
-        are counted once per course assignment rather than per-session (avoid double-counting).
-        """
+        # 2. Preference Objective (Maximize Teacher Choices)
         rewards = []
-
-        # Build a lookup for teacher prefs for quick match
         teacher_prefs = {t['id']: set(t.get('prefs', [])) for t in TEACHERS}
 
         for (cls_id, course_key, tid), tf in self.teacher_flag_map.items():
             base_course = course_key.split('-')[0]
             
-            # 1. Preferred course (from teacher's preference list)
+            # Preferred course
             if base_course in teacher_prefs.get(tid, set()):
-                rewards.append(tf * 5) # Medium weight
+                rewards.append(tf * 5)
             
-            # 2. Specifically assigned Faculty (from DB's primary assignment)
-            # Find the course data to check assignedFaculty
+            # Assigned Faculty (Primary)
             course_data = COURSES.get(course_key)
             if course_data and course_data.get('assignedFaculty') == tid:
-                # Strong reward for the "primary" teacher ensures they are used if possible
                 rewards.append(tf * 100) 
-
-        # Reward spreading subjects across the week
-        # if hasattr(self, 'subject_spread_vars'):
-        #     rewards.extend(self.subject_spread_vars)
 
         # Reward reaching minimum hours (soft constraint)
         if hasattr(self, 'teacher_load_vars'):
-            for tid, (total_load, min_h, max_h) in self.teacher_load_vars.items():
+            for tid, total_load in self.teacher_load_vars.items():
+                min_h = 16
                 load_up_to_min = self.model.NewIntVar(0, 50, f"load_min_{tid}")
                 self.model.AddMinEquality(load_up_to_min, [total_load, min_h])
-                rewards.append(load_up_to_min * 20) # Heavy reward for reaching minimums
+                rewards.append(load_up_to_min * 20) 
 
-        # Apply penalties for soft-constraints violations
+        # Penalties for soft-constraints violations
         if hasattr(self, 'capacity_penalties'):
             for p_var in self.capacity_penalties:
-                rewards.append(p_var * -20) # Significantly reduced penalty (was -1000)
+                rewards.append(p_var * -20)
         
         if hasattr(self, 'limit_penalties'):
             for p_var in self.limit_penalties:
-                # Objective is MAXIMIZED, so we subtract penalty * weight
-                rewards.append(p_var * -1000) # High penalty for excess sections
+                rewards.append(p_var * -1000)
 
-        if hasattr(self, 'workload_penalties'):
-            for p_var in self.workload_penalties:
-                rewards.append(p_var * -100) # Penalize deviation from target workload
-        
         if hasattr(self, 'daily_limit_penalties'):
             for p_var in self.daily_limit_penalties:
-                rewards.append(p_var * -30) # Penalty for exceeding 3 periods/day
+                rewards.append(p_var * -30)
 
         self.pref_obj = sum(rewards) if rewards else None
 
@@ -1083,67 +1056,46 @@ class Scheduler:
             self.model.AddMaxEquality(self.max_load, list(self.slot_load.values()))
     
     def _solve_model(self):
-        """Solve the model using safe two-stage lexicographic optimization."""
+        """Solve model using 3-stage lexicographic optimization."""
         solver = cp_model.CpSolver()
-        solver.parameters.max_time_in_seconds = 300.0 # Target 5 mins as requested
+        solver.parameters.max_time_in_seconds = 300.0
         solver.parameters.num_search_workers = 8
 
         print(f"Solving ({len(self.vars)} variables)...", file=sys.stderr)
 
-        final_solver = None
-        final_status = None
-
-        # Stage 1: minimize peak load AND workload violations
-        # Balanced weights to ensure both goals are prioritized
-        stage1_obj = self.max_load * 5000
-        if hasattr(self, 'workload_penalties'):
-            stage1_obj += sum(self.workload_penalties) * 10000 
+        # Stage 1: Minimize Peak Slot Load
+        self.model.Minimize(self.max_load)
+        status = solver.Solve(self.model)
         
-        # Also include limit_penalties in stage 1 to guide the solver
-        if hasattr(self, 'limit_penalties'):
-            stage1_obj += sum(self.limit_penalties) * 5000
+        if status not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
+            print("[FAIL] Stage 1 (Peak Load) failed", file=sys.stderr)
+            return None
 
-        self.model.Minimize(stage1_obj)
+        best_max = solver.Value(self.max_load)
+        print(f"Stage 1 Result: {solver.StatusName(status)} (Max Load: {best_max})", file=sys.stderr)
+        self.model.Add(self.max_load <= best_max)
+
+        # Stage 2: Minimize Workload Deviation (Fairness)
+        self.model.Minimize(self.workload_obj)
+        solver.parameters.max_time_in_seconds = 60.0
         status = solver.Solve(self.model)
 
-        print(f"Stage 1 Result: {solver.StatusName(status)} in {solver.WallTime():.2f}s", file=sys.stderr)
-
         if status in (cp_model.OPTIMAL, cp_model.FEASIBLE):
-            best_max = solver.Value(self.max_load)
-            print(f"[INFO] Minimal max slot load = {best_max}", file=sys.stderr)
-            final_solver = solver
-            final_status = status
-
-            # Stage 2: maximize preferences while staying at minimal peak (+1 slack)
-            self.model.Add(self.max_load <= best_max + 1)
-            if self.pref_obj is not None:
-                self.model.Maximize(self.pref_obj)
-                
-                solver2 = cp_model.CpSolver()
-                solver2.parameters.max_time_in_seconds = 60.0
-                solver2.parameters.num_search_workers = 8
-                status2 = solver2.Solve(self.model)
-
-                if status2 in (cp_model.OPTIMAL, cp_model.FEASIBLE):
-                    final_solver = solver2
-                    final_status = status2
-                else:
-                    print("[WARN] Stage 2 preference optimization timed out or failed. Returning Stage 1 solution.", file=sys.stderr)
-            else:
-                print("[WARN] Peak minimization infeasible. Solving with preferences only...", file=sys.stderr)
-                if self.pref_obj is not None:
-                    self.model.Maximize(self.pref_obj)
-                status = solver.Solve(self.model)
-                if status in (cp_model.OPTIMAL, cp_model.FEASIBLE):
-                    final_solver = solver
-                    final_status = status
+            best_workload = solver.Value(self.workload_obj)
+            print(f"Stage 2 Result: {solver.StatusName(status)} (Workload Score: {best_workload})", file=sys.stderr)
+            self.model.Add(self.workload_obj <= best_workload + 1) # Small slack for preferences
         else:
-            if self.pref_obj is not None:
-                self.model.Maximize(self.pref_obj)
+            print("[WARN] Stage 2 failed, using Stage 1 limits", file=sys.stderr)
+
+        # Stage 3: Maximize Preferences
+        if self.pref_obj is not None:
+            self.model.Maximize(self.pref_obj)
+            solver.parameters.max_time_in_seconds = 60.0
             status = solver.Solve(self.model)
-            if status in (cp_model.OPTIMAL, cp_model.FEASIBLE):
-                final_solver = solver
-                final_status = status
+            print(f"Stage 3 Result: {solver.StatusName(status)}", file=sys.stderr)
+
+        final_solver = solver
+        final_status = status
 
         if final_solver and final_status in (cp_model.OPTIMAL, cp_model.FEASIBLE):
             pref_score = final_solver.ObjectiveValue() if self.pref_obj is not None else 0
@@ -1446,6 +1398,12 @@ if __name__ == "__main__":
             
             # (Timetables are already saved inside print_solution)
             
+            # RUN ANALYSIS AUTOMATICALLY
+            print("\n" + "-"*50, file=sys.stderr)
+            print("RUNNING WORKLOAD ANALYSIS...", file=sys.stderr)
+            faculty_json = os.path.join(OUTPUT_DIR, "faculty_timetable.json")
+            analyze_workload(faculty_json, OUTPUT_DIR)
+            print("-"*50 + "\n", file=sys.stderr)            
             # Success response
             result = {
                 "status": "success",
