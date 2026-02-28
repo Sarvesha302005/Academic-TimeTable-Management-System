@@ -41,6 +41,16 @@ const timetableEntrySchema = new mongoose.Schema({
   type: {
     type: String, // 'L', 'T', 'P'
     required: false
+  },
+  isCompensation: {
+    type: Boolean,
+    default: false
+  },
+  date: {
+    type: Date // Specific date for this entry (e.g., compensation date)
+  },
+  originalDate: {
+    type: Date // The original date that was missed due to leave
   }
 });
 
@@ -81,7 +91,9 @@ const timetableSchema = new mongoose.Schema({
     totalClasses: Number,
     facultyUtilization: Number,
     roomUtilization: Number,
-    averageClassesPerDay: Number
+    averageClassesPerDay: Number,
+    facultyDistribution: mongoose.Schema.Types.Mixed,
+    roomDistribution: mongoose.Schema.Types.Mixed
   },
   metadata: {
     generationTime: Number,
