@@ -285,8 +285,8 @@ class AdminController {
       const analyzerPath = path.join(schedulerDir, 'workload_analyzer.py');
       const reportPath = path.join(schedulerDir, 'output', 'workload_report.json');
 
-      // Determine python command (common practice for Windows/Unix)
-      const pythonCmd = path.join(
+      // Determine python command – prefer env var (set in Docker), fall back to local venv
+      const pythonCmd = process.env.PYTHON_EXECUTABLE || path.join(
         schedulerDir,
         'venv',
         'Scripts',
