@@ -54,11 +54,13 @@ describe('TimetableController', () => {
     describe('GET /api/timetable', () => {
         it('should return 404 if timetable not found', async () => {
             Timetable.findOne.mockReturnValue({
-                populate: jest.fn().mockReturnValue({
+                sort: jest.fn().mockReturnValue({
                     populate: jest.fn().mockReturnValue({
                         populate: jest.fn().mockReturnValue({
                             populate: jest.fn().mockReturnValue({
-                                populate: jest.fn().mockResolvedValue(null)
+                                populate: jest.fn().mockReturnValue({
+                                    populate: jest.fn().mockResolvedValue(null)
+                                })
                             })
                         })
                     })
