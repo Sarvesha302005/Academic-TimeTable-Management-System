@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This document presents the DevOps strategy for the Academic Timetable Management System. The strategy focuses on structured version control, a simple branching workflow, and reliable manual deployment practices. Automation through CI/CD is planned as a future enhancement.
+This document presents the DevOps strategy for the Academic Timetable Management System. The strategy covers structured version control, a simple branching workflow, Docker containerization for consistent environments, and CI/CD automation using GitHub Actions for testing, building, and publishing.
 
 ---
 
@@ -43,10 +43,17 @@ The system consists of a frontend application, a backend API, a Python-based sch
 
 ```
 Academic-TimeTable-Management-System/
-├── timetable-frontend/      # Frontend application
-├── timetable-backend/       # Backend API
-│   └── python-scheduler/    # Scheduling logic
-└── .github/workflows/       # Reserved for future automation
+├── timetable-frontend/          # Frontend application
+│   ├── Dockerfile               # Multi-stage build (Vite → Nginx)
+│   └── nginx.conf               # SPA routing & caching config
+├── timetable-backend/           # Backend API
+│   ├── Dockerfile               # Node.js + Python runtime
+│   └── python-scheduler/        # Scheduling logic
+├── docker-compose.yml           # Full-stack orchestration
+├── .env.example                 # Environment variable template
+└── .github/workflows/           # CI/CD pipelines
+    ├── ci.yml                   # Test, build & Docker validation
+    └── cd.yml                   # Build & push images to GHCR
 ```
 
 ### Component Mapping
@@ -80,23 +87,41 @@ This approach keeps the repository clean and supports controlled development for
 
 ---
 
-## Deployment Approach (Current)
+## Deployment Approach
 
-**Proposed Deployment Workflow:**
+### Containerized Deployment (Docker)
 
-- **Frontend** will be deployed to a static hosting platform (e.g., Vercel, Netlify)
-- **Backend** will be deployed to a backend hosting platform (e.g., Railway, Render, Heroku)
-- **Database** will be hosted on MongoDB Atlas (managed service)
-- **Environment variables** will be configured on the chosen hosting platforms
-- **Deployments** will be performed manually after local testing and verification
+All application components are containerized using Docker for consistent deployment:
+
+- **Frontend** — Multi-stage Docker image (Vite build → Nginx serving)
+- **Backend** — Docker image with Node.js 20 and Python 3 (for embedded scheduler)
+- **Database** — MongoDB Atlas (managed service) or local MongoDB via Docker Compose
+- **Orchestration** — Docker Compose for local development and testing
+- **Registry** — Docker images published to GitHub Container Registry (GHCR)
+
+### Local Development
+
+```bash
+# Start full stack with Atlas DB (default)
+docker compose up -d --build
+
+# Start full stack with local MongoDB
+docker compose --profile local-db up -d --build
+```
+
+| Service | URL | Container |
+|---------|-----|-----------|
+| Frontend | http://localhost:3000 | `timetable-frontend` (Nginx) |
+| Backend API | http://localhost:5050 | `timetable-backend` (Node.js + Python) |
+| MongoDB (local) | localhost:27017 | `timetable-mongodb` (optional, via `--profile local-db`) |
 
 ### Deployment Locations
 
-| Component | Proposed Platform | Configuration Method |
-|-----------|------------------|---------------------|
-| Frontend | Static hosting platform | Manual deployment via platform dashboard/CLI |
-| Backend | Backend hosting platform | Manual deployment via platform CLI/dashboard |
-| Database | MongoDB Atlas | Managed service configuration |
+| Component | Platform | Configuration Method |
+|-----------|----------|---------------------|
+| Frontend | Any Docker host / Static hosting | Docker image from GHCR or `npm run build` |
+| Backend | Any Docker host / Cloud platform | Docker image from GHCR |
+| Database | MongoDB Atlas | Managed service, connection via `MONGODB_URI` |
 
 ---
 
@@ -132,15 +157,18 @@ This approach keeps the repository clean and supports controlled development for
 | Category | Tool/Platform | Purpose |
 |----------|---------------|---------|
 | **Version Control** | GitHub | Source code repository |
+| **CI/CD** | GitHub Actions | Automated testing, building, and deployment |
+| **Containerization** | Docker + Docker Compose | Consistent environments and orchestration |
+| **Container Registry** | GitHub Container Registry (GHCR) | Docker image hosting |
 | **Frontend Framework** | React | User interface development |
 | **Frontend Build Tool** | Vite | Development server and bundling |
 | **Frontend Styling** | TailwindCSS | CSS framework |
+| **Frontend Serving** | Nginx | Static file serving in production |
 | **Backend Runtime** | Node.js | Server-side JavaScript runtime |
 | **Backend Framework** | Express | REST API framework |
-| **Scheduler Language** | Python | Constraint-based scheduling logic |
+| **Scheduler Language** | Python + OR-Tools | Constraint-based scheduling logic |
 | **Database** | MongoDB Atlas | Managed NoSQL database |
-| **Frontend Hosting** | Static hosting platform (Vercel/Netlify) | Static site deployment |
-| **Backend Hosting** | Backend hosting platform (Railway/Render/Heroku) | API server hosting |
+| **Testing** | Jest + mongodb-memory-server | Backend unit and integration tests |
 
 ---
 
@@ -173,22 +201,67 @@ This approach keeps the repository clean and supports controlled development for
 
 ### Pre-Deployment
 - [ ] Code changes tested locally
-- [ ] Manual testing completed
-- [ ] Environment variables verified
-- [ ] Build succeeds without errors
+- [ ] `docker compose up -d --build` runs successfully
+- [ ] Environment variables verified in `.env`
+- [ ] CI pipeline passes (tests + build + Docker validation)
 
 ### Deployment
 - [ ] Merge feature branch to `main`
-- [ ] Deploy frontend to chosen static hosting platform
-- [ ] Deploy backend to chosen backend hosting platform
-- [ ] Verify environment variables on platforms
+- [ ] CD pipeline builds and pushes images to GHCR
+- [ ] Pull updated images on production server
+- [ ] Verify environment variables on production
 
 ### Post-Deployment
-- [ ] Health check endpoints responding
-- [ ] Frontend loads correctly
+- [ ] Health check endpoint responding (`/health`)
+- [ ] Frontend loads correctly at production URL
 - [ ] API endpoints accessible
 - [ ] Database connections stable
 - [ ] User flows working as expected
+
+---
+
+## CI/CD Pipeline (Implemented)
+
+### CI – Continuous Integration (`.github/workflows/ci.yml`)
+
+**Triggers:** Push/PR to `main` and `feature/*` branches.
+
+| Job | What It Does |
+|-----|-------------|
+| **Backend Tests** | Installs dependencies → runs Jest test suite (uses mongodb-memory-server, no external DB needed) |
+| **Frontend Build** | Installs dependencies → runs `npm run build` to validate Vite build |
+| **Docker Build** | Builds both Docker images to validate Dockerfiles (runs after tests pass) |
+
+### CD – Continuous Deployment (`.github/workflows/cd.yml`)
+
+**Triggers:** Push to `main` only (after PR merge).
+
+| Step | What It Does |
+|------|-------------|
+| **Login to GHCR** | Authenticates using built-in `GITHUB_TOKEN` |
+| **Build & Push Backend** | Builds and pushes `ghcr.io/<owner>/timetable-backend:latest` |
+| **Build & Push Frontend** | Builds and pushes `ghcr.io/<owner>/timetable-frontend:latest` |
+
+Each image is tagged with both `latest` and the short commit SHA for version pinning.
+
+---
+
+## Containerization (Implemented)
+
+### Docker Images
+
+| Component | Base Image | Key Details |
+|-----------|-----------|-------------|
+| **Backend** | `node:20-slim` | Includes Python 3 + OR-Tools for embedded scheduler |
+| **Frontend** | `node:20-alpine` → `nginx:alpine` | Multi-stage: Vite builds static assets, Nginx serves them |
+
+### Docker Compose Services
+
+| Service | Port | Notes |
+|---------|------|-------|
+| `backend` | 5050 | Health check on `/health` endpoint |
+| `frontend` | 3000 | Nginx with SPA routing and gzip |
+| `mongodb` | 27017 | Optional local DB (activate with `--profile local-db`) |
 
 ---
 
@@ -196,51 +269,14 @@ This approach keeps the repository clean and supports controlled development for
 
 The following improvements are planned for future iterations:
 
-### 1. CI/CD Automation
+### 1. Enhanced Automated Testing
 
 **Planned Implementation:**
-- Automated testing and build using GitHub Actions
-- Automatic deployment on merge to `main`
-- Automated code quality checks (ESLint, Prettier)
-- Security vulnerability scanning (npm audit, Snyk)
-
-**Benefits:**
-- Faster deployment cycles
-- Reduced manual errors
-- Consistent build and test processes
-
----
-
-### 2. Containerization
-
-**Planned Implementation:**
-- Docker for consistent development and deployment environments
-- Docker Compose for local development setup
-- Container registry (Docker Hub/GitHub Container Registry)
-
-**Benefits:**
-- Environment consistency across development and production
-- Simplified onboarding for new developers
-- Easier dependency management
-
----
-
-### 3. Automated Testing
-
-**Planned Implementation:**
-- Unit tests for frontend components (Jest/Vitest)
-- Backend API integration tests (Supertest)
+- Unit tests for frontend components (Vitest)
 - End-to-end testing (Playwright/Cypress)
-- Test coverage reporting
+- Test coverage reporting in CI
 
-**Benefits:**
-- Early bug detection
-- Regression prevention
-- Improved code quality
-
----
-
-### 4. Enhanced Monitoring
+### 2. Enhanced Monitoring
 
 **Planned Implementation:**
 - Error tracking (Sentry)
@@ -248,17 +284,17 @@ The following improvements are planned for future iterations:
 - Application logs aggregation
 - Uptime monitoring
 
-**Benefits:**
-- Proactive issue detection
-- Better debugging capabilities
-- Performance insights
+### 3. Security Scanning
+
+**Planned Implementation:**
+- Automated `npm audit` in CI pipeline
+- Docker image vulnerability scanning
+- Dependency update automation (Dependabot)
 
 ---
 
 ## Conclusion
 
-The current DevOps strategy emphasizes **simplicity, clarity, and reliability** using structured version control and manual deployment. This approach is well-suited for the current development phase and team size.
-
-Planned enhancements such as CI/CD automation, containerization, and comprehensive testing will improve automation and scalability in future versions of the system, enabling faster development cycles and more robust deployments.
+The DevOps strategy combines **structured version control, Docker containerization, and automated CI/CD pipelines** using GitHub Actions. The CI pipeline validates code quality on every push through testing and build verification, while the CD pipeline automatically publishes Docker images to GitHub Container Registry on merge to `main`. Docker Compose enables consistent local development across all team members. Future enhancements will focus on expanded test coverage, monitoring, and security scanning.
 
 ---
