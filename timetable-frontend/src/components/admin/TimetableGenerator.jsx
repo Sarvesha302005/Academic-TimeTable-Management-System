@@ -107,18 +107,18 @@ const TimetableGenerator = () => {
 
           <button
             onClick={viewConflicts}
-            className="bg-purple-500 text-white px-4 py-2 rounded"
+            className="bg-primary-100 text-primary-700 hover:bg-primary-200 px-4 py-2 rounded font-medium transition-colors"
           >
             Check Conflicts
           </button>
         </div>
 
         {stats && (
-          <div className="mt-6 bg-green-50 p-4 rounded border">
-            <p><b>Status:</b> {timetable.status}</p>
-            <p><b>Generation Time:</b> {stats.generationTime} ms</p>
-            <p><b>Constraints Satisfied:</b> {stats.constraintsSatisfied ? 'Yes' : 'No'}</p>
-            <p><b>Total Classes:</b> {stats.totalClasses ?? 'N/A'}</p>
+          <div className="mt-6 bg-primary-50 p-4 rounded-xl border border-primary-100 text-primary-900 shadow-sm">
+            <p className="flex justify-between border-b border-primary-100 pb-2 mb-2"><b>Status:</b> <span className="capitalize">{timetable.status}</span></p>
+            <p className="flex justify-between border-b border-primary-100 pb-2 mb-2"><b>Generation Time:</b> <span>{stats.generationTime} ms</span></p>
+            <p className="flex justify-between border-b border-primary-100 pb-2 mb-2"><b>Constraints Satisfied:</b> <span>{stats.constraintsSatisfied ? 'Yes ✓' : 'No ✗'}</span></p>
+            <p className="flex justify-between"><b>Total Classes:</b> <span>{stats.totalClasses ?? '0'}</span></p>
           </div>
         )}
 

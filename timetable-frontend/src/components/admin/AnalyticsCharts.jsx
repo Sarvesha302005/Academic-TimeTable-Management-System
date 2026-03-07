@@ -95,7 +95,7 @@ export const AnalyticsCharts = ({ timetable, facultyList }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
             <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <h3 className="text-md font-semibold text-gray-800 mb-6 flex items-center gap-2">
-                    <span className="w-2 h-6 bg-indigo-500 rounded-full"></span>
+                    <span className="w-2 h-6 bg-primary-500 rounded-full"></span>
                     Faculty Workload (Top 10)
                 </h3>
                 <div className="h-64">

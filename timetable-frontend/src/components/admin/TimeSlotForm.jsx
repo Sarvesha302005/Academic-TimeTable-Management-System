@@ -168,7 +168,7 @@ const TimeSlotForm = () => {
                     <td className="table-cell">{slot.endTime}</td>
                     <td className="table-cell">{slot.duration} min</td>
                     <td className="table-cell">
-                      <span className={`px-2 py-1 rounded-full text-xs ${slot.isBreak ? 'bg-yellow-100 text-yellow-800' : 'bg-blue-100 text-blue-800'}`}>
+                      <span className={`px-2 py-1 rounded-full text-xs ${slot.isBreak ? 'bg-yellow-100 text-yellow-800' : 'bg-primary-100 text-primary-800'}`}>
                         {slot.isBreak ? 'Break' : 'Class'}
                       </span>
                     </td>

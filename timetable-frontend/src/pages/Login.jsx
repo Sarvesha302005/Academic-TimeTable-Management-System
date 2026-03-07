@@ -10,7 +10,7 @@ const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  
+
   const [loginData, setLoginData] = useState({
     email: '',
     password: ''
@@ -36,13 +36,13 @@ const Login = () => {
     setError('');
 
     const result = await login(loginData.email, loginData.password);
-    
+
     if (result.success) {
       navigate('/');
     } else {
       setError(result.error);
     }
-    
+
     setLoading(false);
   };
 
@@ -60,13 +60,13 @@ const Login = () => {
     const { confirmPassword, ...userData } = registerData;
     // const { register } = useAuthContext(); // Removed invalid hook call
     const result = await register(userData);
-    
+
     if (result.success) {
       navigate('/');
     } else {
       setError(result.error);
     }
-    
+
     setLoading(false);
   };
 
@@ -74,7 +74,7 @@ const Login = () => {
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to-primary-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-primary-600 mb-2">Timetable System</h1>
+          <h1 className="text-4xl font-bold text-primary-600 mb-2">Schedulix</h1>
           <p className="text-gray-600">Automated College Timetable Scheduler</p>
         </div>
 
@@ -261,7 +261,7 @@ const Login = () => {
                 />
               </div>
 
-              <button type="submit" className="btn-primary w-full" disabled={loading}>
+              <button type="submit" className="btn-primary w-full shadow-lg hover:shadow-primary-200 transition-all duration-300" disabled={loading}>
                 {loading ? <LoadingSpinner size="sm" /> : 'Register'}
               </button>
             </form>

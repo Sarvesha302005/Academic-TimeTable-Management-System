@@ -45,9 +45,9 @@ const WorkloadOptimizationDashboard = () => {
             counts[m.status] = (counts[m.status] || 0) + 1;
         });
         return [
-            { name: 'Balanced', value: counts.Balanced, color: '#10B981' },
-            { name: 'Underloaded', value: counts.Underloaded, color: '#6366f1' },
-            { name: 'Overloaded', value: counts.Overloaded, color: '#ef4444' }
+            { name: 'Balanced', value: counts.Balanced, color: '#10B981' }, // Emerald for Good
+            { name: 'Underloaded', value: counts.Underloaded, color: '#A4123F' }, // Primary for Underloaded (Available)
+            { name: 'Overloaded', value: counts.Overloaded, color: '#DC2626' } // Uniform Red for Overloaded
         ].filter(d => d.value > 0);
     }, [report]);
 
@@ -58,7 +58,7 @@ const WorkloadOptimizationDashboard = () => {
                     <p className="font-bold mb-1">{label}</p>
                     <p className="flex justify-between gap-4">
                         <span>Load:</span>
-                        <span className="font-bold text-indigo-400">{payload[0].value} hrs</span>
+                        <span className="font-bold text-primary-400">{payload[0].value} hrs</span>
                     </p>
                     <p className="text-xs text-gray-400 mt-1">Target: 17 hrs</p>
                 </div>
@@ -81,15 +81,15 @@ const WorkloadOptimizationDashboard = () => {
             {/* 1️⃣ Header */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <div>
-                    <h2 className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-indigo-600 bg-clip-text text-transparent flex items-center gap-2">
-                        <Activity className="text-indigo-600" /> Faculty Workload Optimization
+                    <h2 className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-primary-600 bg-clip-text text-transparent flex items-center gap-2">
+                        <Activity className="text-primary-600" /> Faculty Workload Optimization
                     </h2>
                     <p className="text-sm text-gray-500 mt-1">Real-time scheduling intelligence from Python CP-SAT Solver.</p>
                 </div>
                 <div className="flex gap-3 mt-4 sm:mt-0">
                     <button
                         onClick={fetchReport}
-                        className="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all shadow-md font-medium text-sm"
+                        className="flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-all shadow-md font-medium text-sm"
                         disabled={loading}
                     >
                         {loading ? <LoadingSpinner size="sm" /> : <Activity size={16} />}
@@ -110,12 +110,12 @@ const WorkloadOptimizationDashboard = () => {
                 <div className="space-y-6 animate-in fade-in duration-500">
                     {/* 2️⃣ KPI Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between group hover:border-indigo-200 transition-all">
+                        <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between group hover:border-primary-200 transition-all">
                             <div>
                                 <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Total Faculty</p>
                                 <p className="text-3xl font-black text-gray-900">{Object.keys(report.faculty_metrics).length}</p>
                             </div>
-                            <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-500 group-hover:scale-110 transition-transform">
+                            <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-500 group-hover:scale-110 transition-transform">
                                 <Users size={24} />
                             </div>
                         </div>
@@ -180,13 +180,13 @@ const WorkloadOptimizationDashboard = () => {
                                         </thead>
                                         <tbody className="divide-y divide-gray-50">
                                             {chartData.map((faculty, idx) => (
-                                                <tr key={idx} className="hover:bg-indigo-50/30 transition-colors">
+                                                <tr key={idx} className="hover:bg-primary-50/30 transition-colors">
                                                     <td className="p-4 font-semibold text-gray-700">{faculty.name}</td>
                                                     <td className="p-4 text-center font-black text-gray-900">{faculty.assignedHours}</td>
                                                     <td className="p-4 text-center">
                                                         <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border ${faculty.status === 'Overloaded' ? 'bg-red-50 text-red-600 border-red-100' :
                                                             faculty.status === 'Balanced' ? 'bg-emerald-50 text-emerald-600 border-emerald-100' :
-                                                                'bg-indigo-50 text-indigo-600 border-indigo-100'
+                                                                'bg-primary-50 text-primary-600 border-primary-100'
                                                             }`}>
                                                             {faculty.status}
                                                         </span>
@@ -247,7 +247,7 @@ const WorkloadOptimizationDashboard = () => {
                                             <RechartsTooltip content={<CustomTooltip />} cursor={{ fill: '#f8fafc' }} />
                                             <Bar dataKey="assignedHours" radius={[0, 4, 4, 0]} barSize={20}>
                                                 {chartData.slice(0, 10).map((entry, index) => (
-                                                    <Cell key={`cell-${index}`} fill={entry.isOverloaded ? '#ef4444' : '#6366f1'} />
+                                                    <Cell key={`cell-${index}`} fill={entry.isOverloaded ? '#DC2626' : '#A4123F'} />
                                                 ))}
                                             </Bar>
                                         </BarChart>
@@ -256,12 +256,12 @@ const WorkloadOptimizationDashboard = () => {
                                 <p className="text-[10px] text-gray-400 mt-4 text-center italic">* Displaying top 10 loaded faculty</p>
                             </div>
 
-                            <div className="bg-indigo-900 text-white p-6 rounded-xl shadow-lg relative overflow-hidden">
-                                <div className="absolute top-0 right-0 p-4 opacity-10">
-                                    <CheckCircle size={80} />
+                            <div className="bg-primary-950 text-white p-6 rounded-2xl shadow-xl relative overflow-hidden border border-primary-800/50">
+                                <div className="absolute top-0 right-0 p-4 opacity-5">
+                                    <CheckCircle size={100} />
                                 </div>
-                                <h4 className="font-bold text-indigo-200 uppercase text-[10px] tracking-widest mb-2">Optimization Insight</h4>
-                                <p className="text-sm leading-relaxed relative z-10">
+                                <h4 className="font-bold text-primary-300 uppercase text-[10px] tracking-widest mb-3">Optimization Insight</h4>
+                                <p className="text-sm leading-relaxed relative z-10 text-primary-50">
                                     The current schedule targets <strong>17 hours</strong> per teacher. Using lexicographic optimization, we've minimized the maximum deviation to maintain extreme fairness across departments.
                                 </p>
                             </div>

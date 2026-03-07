@@ -190,7 +190,7 @@ const DynamicSchedulingDashboard = () => {
                         <div className="relative">
                             <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
                             <select
-                                className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 appearance-none"
+                                className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 appearance-none"
                                 value={selectedCalendar}
                                 onChange={handleCalendarChange}
                             >
@@ -211,7 +211,7 @@ const DynamicSchedulingDashboard = () => {
                             <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
                             <input
                                 type="date"
-                                className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                                className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                                 value={selectedDate}
                                 onChange={handleDateChange}
                             />
@@ -225,8 +225,8 @@ const DynamicSchedulingDashboard = () => {
                             disabled={!selectedCalendar || generating}
                             className={`w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg font-semibold text-white shadow-sm transition-all text-sm
                                 ${!selectedCalendar || generating
-                                    ? 'bg-indigo-300 cursor-not-allowed'
-                                    : 'bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-700 hover:to-indigo-600 hover:shadow-lg active:scale-[0.98]'}`}
+                                    ? 'bg-primary-300 cursor-not-allowed'
+                                    : 'bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 hover:shadow-lg active:scale-[0.98]'}`}
                         >
                             {generating ? <RefreshCw className="animate-spin" size={16} /> : <Activity size={16} />}
                             {generating ? 'Generating...' : timetable ? 'Re-generate' : 'Generate Schedule'}
@@ -238,7 +238,7 @@ const DynamicSchedulingDashboard = () => {
                         <button
                             onClick={() => selectedCalendar && fetchTimetable(selectedCalendar, selectedDate)}
                             disabled={!selectedCalendar || loading}
-                            className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200 shadow-sm hover:bg-indigo-100 transition-all text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg font-semibold text-primary-700 bg-primary-50 border border-primary-200 shadow-sm hover:bg-primary-100 transition-all text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             <RefreshCw size={16} className={loading ? 'animate-spin' : ''} /> Refresh View
                         </button>
@@ -251,11 +251,11 @@ const DynamicSchedulingDashboard = () => {
                 <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                         <div className="flex items-center gap-3">
-                            <div className="p-2 bg-indigo-50 rounded-lg">
-                                <Calendar size={18} className="text-indigo-600" />
+                            <div className="p-2 bg-primary-50 rounded-lg">
+                                <Calendar size={18} className="text-primary-600" />
                             </div>
                             <div>
-                                <p className="text-sm font-semibold text-gray-700">Showing schedule for: <span className="text-indigo-600">{weekRangeStr}</span></p>
+                                <p className="text-sm font-semibold text-gray-700">Showing schedule for: <span className="text-primary-600">{weekRangeStr}</span></p>
                                 <p className="text-xs text-gray-400">Master timetable merged with all rescheduled adjustments</p>
                             </div>
                         </div>
@@ -286,8 +286,8 @@ const DynamicSchedulingDashboard = () => {
             {/* KPI Cards */}
             {timetable && (
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 group hover:border-indigo-200 transition-colors">
-                        <BookOpen size={18} className="text-indigo-500 mb-2" />
+                    <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 group hover:border-primary-200 transition-colors">
+                        <BookOpen size={18} className="text-primary-500 mb-2" />
                         <p className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-0.5">Classes Shown</p>
                         <p className="text-2xl font-bold text-gray-900">{totalClasses}</p>
                     </div>
@@ -296,8 +296,8 @@ const DynamicSchedulingDashboard = () => {
                         <p className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-0.5">Rescheduled</p>
                         <p className="text-2xl font-bold text-purple-600">{adjustedClasses}</p>
                     </div>
-                    <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 group hover:border-blue-200 transition-colors">
-                        <Users size={18} className="text-blue-500 mb-2" />
+                    <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 group hover:border-primary-200 transition-colors">
+                        <Users size={18} className="text-primary-500 mb-2" />
                         <p className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-0.5">Status</p>
                         <p className={`text-sm font-bold ${timetable.status === 'locked' ? 'text-gray-600' : 'text-green-600'}`}>{timetable.status?.toUpperCase()}</p>
                     </div>
@@ -320,7 +320,7 @@ const DynamicSchedulingDashboard = () => {
                     <div className="overflow-x-auto relative">
                         {loading && (
                             <div className="absolute inset-0 bg-white/60 flex items-center justify-center z-10">
-                                <RefreshCw className="animate-spin text-indigo-500" size={24} />
+                                <RefreshCw className="animate-spin text-primary-500" size={24} />
                             </div>
                         )}
                         <table className="min-w-full divide-y divide-gray-200 border-collapse">
@@ -352,7 +352,7 @@ const DynamicSchedulingDashboard = () => {
                                                                             ? 'bg-purple-50 border-purple-300 ring-1 ring-purple-200'
                                                                             : entry.type === 'P'
                                                                                 ? 'bg-green-50 border-green-200'
-                                                                                : 'bg-blue-50 border-blue-200'
+                                                                                : 'bg-primary-50 border-primary-200'
                                                                         }`}
                                                                 >
                                                                     <div className="font-bold truncate text-gray-800" title={getCourseName(entry)}>
@@ -389,7 +389,7 @@ const DynamicSchedulingDashboard = () => {
                     {/* Legend */}
                     <div className="p-4 border-t border-gray-100 flex flex-wrap items-center gap-5 text-xs text-gray-600">
                         <div className="flex items-center gap-1.5">
-                            <div className="w-3 h-3 bg-blue-50 border border-blue-200 rounded"></div>
+                            <div className="w-3 h-3 bg-primary-50 border border-primary-200 rounded"></div>
                             <span>Regular Theory</span>
                         </div>
                         <div className="flex items-center gap-1.5">

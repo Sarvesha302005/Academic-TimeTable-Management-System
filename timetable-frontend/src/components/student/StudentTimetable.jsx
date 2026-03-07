@@ -8,8 +8,8 @@ const getCourseColor = (code) => {
     'bg-red-100 border-red-300 text-red-900',
     'bg-yellow-100 border-yellow-300 text-yellow-900',
     'bg-green-100 border-green-300 text-green-900',
-    'bg-blue-100 border-blue-300 text-blue-900',
-    'bg-indigo-100 border-indigo-300 text-indigo-900',
+    'bg-primary-50 border-primary-200 text-primary-900',
+    'bg-primary-100 border-primary-300 text-primary-900',
     'bg-purple-100 border-purple-300 text-purple-900',
     'bg-pink-100 border-pink-300 text-pink-900',
   ];

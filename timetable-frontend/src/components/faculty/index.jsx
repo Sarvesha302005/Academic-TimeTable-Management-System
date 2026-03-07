@@ -254,7 +254,7 @@ export const FacultyTimetable = () => {
                   return (
                     <td key={s} className="text-xs">
                       {entry ? (
-                        <div className={`p-1 rounded ${entry.isAdjustment ? 'bg-purple-100 border border-purple-300' : 'bg-blue-50'}`}>
+                        <div className={`p-1 rounded ${entry.isAdjustment ? 'bg-primary-100 border border-primary-300' : 'bg-primary-50'}`}>
                           <div className="font-bold">{entry.course.code}</div>
                           <div>{entry.course.name}</div>
                           <div>{entry.room.number}</div>
@@ -336,7 +336,7 @@ export const RescheduledTimetable = () => {
       </div>
 
       {weekRange && (
-        <div className="mb-4 p-2 bg-indigo-50 text-indigo-700 rounded text-sm border border-indigo-100">
+        <div className="mb-4 p-2 bg-primary-50 text-primary-700 rounded text-sm border border-primary-100">
           Showing adjustments for the week of <strong>{new Date(weekRange.start).toLocaleDateString()}</strong> to <strong>{new Date(weekRange.end).toLocaleDateString()}</strong>
         </div>
       )}
@@ -346,7 +346,7 @@ export const RescheduledTimetable = () => {
       <div className="overflow-x-auto relative">
         {loading && (
           <div className="absolute inset-0 bg-white bg-opacity-50 flex items-center justify-center z-10">
-            <span className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></span>
+            <span className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></span>
           </div>
         )}
         <table className="border min-w-full">
@@ -365,7 +365,7 @@ export const RescheduledTimetable = () => {
                   return (
                     <td key={s} className="text-xs">
                       {entry ? (
-                        <div className={`p-1 rounded shadow-sm ${entry.isAdjustment ? 'bg-purple-100 border border-purple-300' : 'bg-blue-50 border border-blue-100'}`}>
+                        <div className={`p-1 rounded shadow-sm ${entry.isAdjustment ? 'bg-primary-100 border border-primary-300' : 'bg-primary-50 border border-primary-100'}`}>
                           <div className="font-bold">{entry.course.code}</div>
                           <div>{entry.course.name}</div>
                           <div>{entry.room.number}</div>
@@ -389,7 +389,7 @@ export const RescheduledTimetable = () => {
 
       <div className="mt-6 flex items-center space-x-4 text-xs">
         <div className="flex items-center">
-          <div className="w-3 h-3 bg-blue-50 border border-blue-100 rounded mr-1"></div>
+          <div className="w-3 h-3 bg-primary-50 border border-primary-100 rounded mr-1"></div>
           <span>Regular Class</span>
         </div>
         <div className="flex items-center">

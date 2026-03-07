@@ -221,7 +221,7 @@ const CourseForm = () => {
               type="checkbox"
               checked={formData.isElective}
               onChange={e => setFormData({ ...formData, isElective: e.target.checked })}
-              className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4"
+              className="rounded text-primary-600 focus:ring-primary-500 h-4 w-4"
             />
             <span className="font-medium text-gray-700">Is this an Elective Course? (Common Slot across sections)</span>
           </label>

@@ -71,11 +71,11 @@ const LeaveApproval = () => {
 
   const getLeaveTypeBadge = (type) => {
     const badges = {
-      casual: 'bg-blue-100 text-blue-800',
+      casual: 'bg-primary-100 text-primary-800',
       sick: 'bg-purple-100 text-purple-800',
       earned: 'bg-green-100 text-green-800',
       maternity: 'bg-pink-100 text-pink-800',
-      paternity: 'bg-indigo-100 text-indigo-800',
+      paternity: 'bg-primary-200 text-primary-900',
       other: 'bg-gray-100 text-gray-800',
     };
     return badges[type] || 'bg-gray-100 text-gray-800';
@@ -205,7 +205,7 @@ const LeaveApproval = () => {
       <div className="card bg-yellow-50 border border-yellow-200">
         <h3 className="font-semibold text-yellow-900 mb-2">Note</h3>
         <p className="text-sm text-yellow-800">
-          When approving leave, consider checking if the faculty has classes scheduled during the leave period. 
+          When approving leave, consider checking if the faculty has classes scheduled during the leave period.
           The system will track affected classes for rescheduling purposes.
         </p>
       </div>

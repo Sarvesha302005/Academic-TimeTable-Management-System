@@ -13,11 +13,10 @@ const Sidebar = ({ activeTab, setActiveTab, tabs }) => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`w-full text-left px-4 py-2 rounded-lg transition duration-200 ${
-                activeTab === tab.id
-                  ? 'bg-primary-600 text-white'
-                  : 'text-gray-700 hover:bg-gray-100'
-              }`}
+              className={`w-full text-left px-4 py-2 rounded-lg transition duration-200 ${activeTab === tab.id
+                ? 'bg-primary-600 text-white'
+                : 'text-gray-700 hover:bg-primary-50'
+                }`}
             >
               {tab.label}
             </button>

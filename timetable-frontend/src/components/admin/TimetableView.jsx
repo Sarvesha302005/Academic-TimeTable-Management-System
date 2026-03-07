@@ -168,7 +168,7 @@ const TimetableView = () => {
                                     <button
                                         onClick={handleUnlock}
                                         disabled={actionLoading}
-                                        className="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded w-full"
+                                        className="bg-white border-2 border-red-500 text-red-500 hover:bg-red-50 font-bold py-2 px-4 rounded-lg w-full transition-all duration-200"
                                     >
                                         {actionLoading ? 'Unlock...' : 'Unlock Timetable'}
                                     </button>
@@ -176,7 +176,7 @@ const TimetableView = () => {
                                     <button
                                         onClick={handleLock}
                                         disabled={actionLoading}
-                                        className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded w-full"
+                                        className="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded-lg w-full shadow-md hover:shadow-primary-200 transition-all duration-200"
                                     >
                                         {actionLoading ? 'Locking...' : 'Lock Timetable'}
                                     </button>
@@ -188,9 +188,9 @@ const TimetableView = () => {
 
                 {timetable && (
                     <div className="mb-4">
-                        <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${timetable.status === 'locked' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                        <span className={`inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider ${timetable.status === 'locked' ? 'bg-green-100 text-green-800' : 'bg-primary-100 text-primary-800'
                             }`}>
-                            Status: {timetable.status.charAt(0).toUpperCase() + timetable.status.slice(1)}
+                            Status: {timetable.status}
                         </span>
                     </div>
                 )}
