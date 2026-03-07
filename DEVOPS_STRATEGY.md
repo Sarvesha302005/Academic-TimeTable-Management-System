@@ -111,7 +111,7 @@ docker compose --profile local-db up -d --build
 
 | Service | URL | Container |
 |---------|-----|-----------|
-| Frontend | http://localhost:3000 | `timetable-frontend` (Nginx) |
+| Frontend | http://localhost:5173 | `timetable-frontend` (Nginx) |
 | Backend API | http://localhost:5050 | `timetable-backend` (Node.js + Python) |
 | MongoDB (local) | localhost:27017 | `timetable-mongodb` (optional, via `--profile local-db`) |
 
@@ -260,7 +260,7 @@ Each image is tagged with both `latest` and the short commit SHA for version pin
 | Service | Port | Notes |
 |---------|------|-------|
 | `backend` | 5050 | Health check on `/health` endpoint |
-| `frontend` | 3000 | Nginx with SPA routing and gzip |
+| `frontend` | 5173 | Nginx with SPA routing and gzip |
 | `mongodb` | 27017 | Optional local DB (activate with `--profile local-db`) |
 
 ---
