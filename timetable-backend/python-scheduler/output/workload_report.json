@@ -6,9 +6,9 @@
       "status": "Balanced"
     },
     "faculty3": {
-      "total_hours": 16,
-      "deviation": -1,
-      "status": "Balanced"
+      "total_hours": 15,
+      "deviation": -2,
+      "status": "Underloaded"
     },
     "faculty4": {
       "total_hours": 15,
@@ -16,28 +16,28 @@
       "status": "Underloaded"
     },
     "faculty5": {
-      "total_hours": 17,
-      "deviation": 0,
+      "total_hours": 16,
+      "deviation": -1,
       "status": "Balanced"
     },
     "faculty6": {
-      "total_hours": 15,
-      "deviation": -2,
-      "status": "Underloaded"
-    },
-    "faculty7": {
-      "total_hours": 15,
-      "deviation": -2,
-      "status": "Underloaded"
-    },
-    "faculty8": {
       "total_hours": 20,
       "deviation": 3,
       "status": "Overloaded"
     },
+    "faculty7": {
+      "total_hours": 17,
+      "deviation": 0,
+      "status": "Balanced"
+    },
+    "faculty8": {
+      "total_hours": 15,
+      "deviation": -2,
+      "status": "Underloaded"
+    },
     "faculty9": {
-      "total_hours": 20,
-      "deviation": 3,
+      "total_hours": 19,
+      "deviation": 2,
       "status": "Overloaded"
     },
     "faculty10": {
@@ -46,16 +46,16 @@
       "status": "Balanced"
     },
     "faculty11": {
-      "total_hours": 18,
-      "deviation": 1,
-      "status": "Balanced"
+      "total_hours": 19,
+      "deviation": 2,
+      "status": "Overloaded"
     }
   },
   "global_metrics": {
     "average_load": 17.0,
     "min_load": 15,
     "max_load": 20,
-    "variance": 3.4,
+    "variance": 3.2,
     "fairness_score_pct": 90.6
   }
 }

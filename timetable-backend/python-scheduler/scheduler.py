@@ -1058,8 +1058,8 @@ class Scheduler:
     def _solve_model(self):
         """Solve model using 3-stage lexicographic optimization."""
         solver = cp_model.CpSolver()
-        solver.parameters.max_time_in_seconds = 300.0
-        solver.parameters.num_search_workers = 8
+        solver.parameters.max_time_in_seconds = 120.0
+        solver.parameters.num_search_workers = 2
 
         print(f"Solving ({len(self.vars)} variables)...", file=sys.stderr)
 
