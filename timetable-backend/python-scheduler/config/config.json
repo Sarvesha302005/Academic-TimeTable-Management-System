@@ -1,0 +1,16 @@
+{
+  "description": "Auto-generated config for tests (basic)",
+  "courses": {
+    "CS101-A": { "name": "Intro to Programming", "L": 3, "T": 1, "P": 2, "year": 1, "sem": 1, "isElective": false },
+    "CS102-A": { "name": "Data Structures", "L": 3, "T": 0, "P": 2, "year": 1, "sem": 1, "isElective": false }
+  },
+  "teachers": [
+    { "id": "T1", "name": "Dr. Smith", "min": 4, "max": 20, "prefs": {}, "fallbackCourses": [] },
+    { "id": "T2", "name": "Dr. Jones", "min": 4, "max": 20, "prefs": {}, "fallbackCourses": [] }
+  ],
+  "classes": [
+    { "id": "Y1-A", "year": 1, "sems": [1], "strength": 60, "courses": ["CS101-A", "CS102-A"] }
+  ],
+  "schedule": { "days": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "hours": ["09:00","10:00","11:00","12:00","14:00","15:00","16:00"] },
+  "rooms": { "theory": ["R101","R102"], "lab": ["LAB1","LAB2"] }
+}

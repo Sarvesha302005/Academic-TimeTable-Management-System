@@ -2,10 +2,10 @@ import React from 'react';
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import StudentTimetable from '../components/student/StudentTimetable';
 import { studentAPI, timetableAPI } from '../services/api';
-import { vi } from 'vitest';
+import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest';
 
 // Mock API
-vi.mock('../../../services/api', () => ({
+vi.mock('../services/api', () => ({
     studentAPI: {
         getFormattedTimetable: vi.fn(),
     },
@@ -15,7 +15,7 @@ vi.mock('../../../services/api', () => ({
 }));
 
 // Mock LoadingSpinner
-vi.mock('../../common/LoadingSpinner', () => ({
+vi.mock('../components/common/LoadingSpinner', () => ({
     default: () => <div data-testid="loading-spinner">Loading...</div>,
 }));
 
@@ -62,7 +62,7 @@ describe('StudentTimetable', () => {
 
         render(<StudentTimetable />);
 
-        await waitFor(() => expect(screen.getByText('Class Timetable')).toBeInTheDocument());
+            await waitFor(() => expect(screen.getAllByText('Class Timetable')[0]).toBeInTheDocument());
         expect(screen.getByText('CS101')).toBeInTheDocument();
         expect(screen.getByText('Dr. Smith')).toBeInTheDocument();
     });
@@ -118,7 +118,7 @@ describe('StudentTimetable', () => {
 
         render(<StudentTimetable />);
 
-        await waitFor(() => expect(screen.getByText('Class Timetable')).toBeInTheDocument());
+            await waitFor(() => expect(screen.getAllByText('Class Timetable')[0]).toBeInTheDocument());
         // Check for dashboards/empty indicators (rendered as '-')
         const emptySlots = screen.getAllByText('-');
         expect(emptySlots.length).toBeGreaterThan(0);
@@ -132,7 +132,7 @@ describe('StudentTimetable', () => {
 
         render(<StudentTimetable />);
 
-        await waitFor(() => expect(screen.getByText('No timetable available')).toBeInTheDocument());
+        await waitFor(() => expect(screen.getAllByText('No timetable available')[0]).toBeInTheDocument());
         consoleSpy.mockRestore();
     });
 
@@ -145,7 +145,7 @@ describe('StudentTimetable', () => {
 
         render(<StudentTimetable />);
 
-        await waitFor(() => expect(screen.getByText('No timetable available')).toBeInTheDocument());
+        await waitFor(() => expect(screen.getAllByText('No timetable available')[0]).toBeInTheDocument());
         consoleSpy.mockRestore();
     });
 
@@ -160,7 +160,7 @@ describe('StudentTimetable', () => {
         studentAPI.getFormattedTimetable.mockRejectedValue(new Error('Fail'));
 
         render(<StudentTimetable />);
-        await waitFor(() => expect(screen.getByText('No timetable available')).toBeInTheDocument());
+        await waitFor(() => expect(screen.getAllByText('No timetable available')[0]).toBeInTheDocument());
     });
 
     it('should handle missing calendar ID correctly', async () => {

@@ -1,8 +1,8 @@
+import React from 'react';
 import { render, screen, cleanup } from '@testing-library/react';
 import { describe, it, expect, afterEach } from 'vitest';
 import * as matchers from '@testing-library/jest-dom/matchers';
 import TimetableGrid from '../components/admin/TimetableGrid';
-import React from 'react';
 
 expect.extend(matchers);
 

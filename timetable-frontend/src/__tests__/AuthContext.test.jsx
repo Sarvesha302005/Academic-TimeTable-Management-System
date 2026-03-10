@@ -1,105 +1,26 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { render } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
+import { AuthProvider, useAuthContext } from '../context/AuthContext';
 
-const AuthContext = createContext();
-
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5050/api';
-
-export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
-    const [token, setToken] = useState(localStorage.getItem('token'));
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        if (token) {
-            fetchUser();
-        } else {
-            setLoading(false);
-        }
-    }, [token]);
-
-    const fetchUser = async () => {
-        try {
-            const response = await axios.get(`${API_URL}/auth/me`, {
-                headers: { Authorization: `Bearer ${token}` }
-            });
-            setUser(response.data.user);
-        } catch (error) {
-            console.error('Failed to fetch user:', error);
-            logout();
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    const login = async (email, password) => {
-        try {
-            const response = await axios.post(`${API_URL}/auth/login`, {
-                email,
-                password
-            });
-
-            const { token: newToken, user: userData } = response.data;
-
-            localStorage.setItem('token', newToken);
-            setToken(newToken);
-            setUser(userData);
-
-            return { success: true };
-        } catch (error) {
-            return {
-                success: false,
-                error: error.response?.data?.error || 'Login failed'
-            };
-        }
-    };
-
-    const register = async (userData) => {
-        try {
-            const response = await axios.post(`${API_URL}/auth/register`, userData);
-
-            const { token: newToken, user: newUser } = response.data;
-
-            localStorage.setItem('token', newToken);
-            setToken(newToken);
-            setUser(newUser);
-
-            return { success: true };
-        } catch (error) {
-            return {
-                success: false,
-                error: error.response?.data?.error || 'Registration failed'
-            };
-        }
-    };
-
-    const logout = () => {
-        localStorage.removeItem('token');
-        setToken(null);
-        setUser(null);
-    };
-
-    const value = {
-        user,
-        token,
-        loading,
-        isAuthenticated: !!token && !!user,
-        userRole: user?.role,
-        isAdmin: user?.role === 'admin',
-        isFaculty: user?.role === 'faculty',
-        isStudent: user?.role === 'student',
-        login,
-        register,
-        logout,
-    };
-
-    return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+const Consumer = () => {
+  const ctx = useAuthContext();
+  return <div data-testid="role">{ctx.userRole || 'no-role'}</div>;
 };
 
-export const useAuthContext = () => {
-    const context = useContext(AuthContext);
-    if (!context) {
-        throw new Error('useAuthContext must be used within AuthProvider');
-    }
-    return context;
-};
+describe('AuthContext', () => {
+  it('throws when used outside provider', () => {
+    const renderOutside = () => render(<Consumer />);
+    expect(renderOutside).toThrow();
+  });
+
+  it('provides context inside AuthProvider', () => {
+    const { getByTestId } = render(
+      <AuthProvider>
+        <Consumer />
+      </AuthProvider>
+    );
+
+    expect(getByTestId('role').textContent).toBe('no-role');
+  });
+});
