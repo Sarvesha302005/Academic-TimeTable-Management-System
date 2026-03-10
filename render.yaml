@@ -1,5 +1,5 @@
 services:
-  # Backend Web Service (using Docker for OR-Tools)
+  # Backend
   - type: web
     name: timetable-backend
     env: docker
@@ -16,20 +16,17 @@ services:
       - key: JWT_SECRET
         generateValue: true
 
-  # Frontend Static Site
-  - type: static
+  # Frontend
+  - type: web
     name: timetable-frontend
-    env: static
+    runtime: node
     plan: free
     rootDir: timetable-frontend
     buildCommand: npm install && npm run build
-    staticPublishPath: dist
+    startCommand: npx serve dist
     envVars:
       - key: VITE_API_URL
         fromService:
           name: timetable-backend
           type: web
           property: host
-    routingRules:
-      - route: /*
-        destination: /index.html
