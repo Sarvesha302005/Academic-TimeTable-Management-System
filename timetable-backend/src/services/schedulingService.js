@@ -20,10 +20,18 @@ class SchedulingService {
       console.log(`[DEBUG] Sending ${inputData.length} bytes to Python scheduler`);
       console.log(`[DEBUG] Data includes: ${Object.keys(data).join(', ')}`);
 
-      // Spawn Python process using venv
-      const venvPythonPath = path.resolve(
-        path.join(__dirname, '../../python-scheduler/venv/Scripts/python.exe'));
-      const pythonCommand = process.env.PYTHON_EXECUTABLE || venvPythonPath;
+      // Spawn Python process
+      // In Docker/Linux, we use 'python3'. In Windows dev, we use the venv path.
+      let pythonCommand = process.env.PYTHON_EXECUTABLE;
+
+      if (!pythonCommand) {
+        if (process.platform === 'win32') {
+          pythonCommand = path.resolve(path.join(__dirname, '../../python-scheduler/venv/Scripts/python.exe'));
+        } else {
+          pythonCommand = 'python3';
+        }
+      }
+
       console.log(`[DEBUG] Using Python: ${pythonCommand}`);
       const pythonProcess = spawn(pythonCommand, [pythonScriptPath]);
 

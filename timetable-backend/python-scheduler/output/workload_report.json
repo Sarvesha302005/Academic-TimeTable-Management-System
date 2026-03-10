@@ -1,61 +1,21 @@
 {
   "faculty_metrics": {
-    "faculty2": {
-      "total_hours": 16,
-      "deviation": -1,
-      "status": "Balanced"
-    },
-    "faculty3": {
-      "total_hours": 14,
-      "deviation": -3,
+    "Dr. Smith": {
+      "total_hours": 5,
+      "deviation": -12,
       "status": "Underloaded"
     },
-    "faculty4": {
-      "total_hours": 15,
-      "deviation": -2,
+    "Dr. Jones": {
+      "total_hours": 6,
+      "deviation": -11,
       "status": "Underloaded"
-    },
-    "faculty5": {
-      "total_hours": 17,
-      "deviation": 0,
-      "status": "Balanced"
-    },
-    "faculty6": {
-      "total_hours": 20,
-      "deviation": 3,
-      "status": "Overloaded"
-    },
-    "faculty7": {
-      "total_hours": 17,
-      "deviation": 0,
-      "status": "Balanced"
-    },
-    "faculty8": {
-      "total_hours": 15,
-      "deviation": -2,
-      "status": "Underloaded"
-    },
-    "faculty9": {
-      "total_hours": 18,
-      "deviation": 1,
-      "status": "Balanced"
-    },
-    "faculty10": {
-      "total_hours": 19,
-      "deviation": 2,
-      "status": "Overloaded"
-    },
-    "faculty11": {
-      "total_hours": 19,
-      "deviation": 2,
-      "status": "Overloaded"
     }
   },
   "global_metrics": {
-    "average_load": 17.0,
-    "min_load": 14,
-    "max_load": 20,
-    "variance": 3.6,
-    "fairness_score_pct": 90.6
+    "average_load": 5.5,
+    "min_load": 5,
+    "max_load": 6,
+    "variance": 0.25,
+    "fairness_score_pct": 90.9
   }
 }

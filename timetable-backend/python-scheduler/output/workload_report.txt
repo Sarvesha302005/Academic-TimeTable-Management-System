@@ -1,18 +1,10 @@
 Faculty Workload Report
 ==============================
-faculty10            — 19 hrs — Overloaded
-faculty11            — 19 hrs — Overloaded
-faculty2             — 16 hrs — Balanced
-faculty3             — 14 hrs — Underloaded
-faculty4             — 15 hrs — Underloaded
-faculty5             — 17 hrs — Balanced
-faculty6             — 20 hrs — Overloaded
-faculty7             — 17 hrs — Balanced
-faculty8             — 15 hrs — Underloaded
-faculty9             — 18 hrs — Balanced
+Dr. Jones            �  6 hrs � Underloaded
+Dr. Smith            �  5 hrs � Underloaded
 
 ==============================
-Average Load:    17.0
-Min / Max Load:  14 / 20
-Variance:        3.6
-Fairness Score:  90.6%
+Average Load:    5.5
+Min / Max Load:  5 / 6
+Variance:        0.25
+Fairness Score:  90.9%
