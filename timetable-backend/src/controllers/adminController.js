@@ -1,0 +1,334 @@
+const AcademicCalendar = require('../models/AcademicCalendar');
+const TimeSlot = require('../models/TimeSlot');
+const Course = require('../models/Course');
+const Faculty = require('../models/Faculty');
+const Room = require('../models/Room');
+const WorkloadRule = require('../models/WorkloadRule');
+const Timetable = require('../models/Timetable');
+const FacultyLeave = require('../models/FacultyLeave');
+const { spawn } = require('child_process');
+const path = require('path');
+const fs = require('fs').promises;
+
+class AdminController {
+
+  /* =========================
+     ACADEMIC CALENDAR
+  ========================= */
+  async createAcademicCalendar(req, res) {
+    const calendar = await AcademicCalendar.create(req.body);
+    res.status(201).json({ success: true, data: calendar });
+  }
+
+  async getAcademicCalendars(req, res) {
+    const calendars = await AcademicCalendar.find().sort({ createdAt: -1 });
+    res.json({ success: true, data: calendars });
+  }
+
+  async updateAcademicCalendar(req, res) {
+    const calendar = await AcademicCalendar.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true, runValidators: true }
+    );
+    if (!calendar) {
+      return res.status(404).json({ success: false, error: 'Academic calendar not found' });
+    }
+    res.json({ success: true, data: calendar });
+  }
+
+  async deleteAcademicCalendar(req, res) {
+    const calendar = await AcademicCalendar.findByIdAndDelete(req.params.id);
+    if (!calendar) {
+      return res.status(404).json({ success: false, error: 'Academic calendar not found' });
+    }
+    res.json({ success: true, message: 'Academic calendar deleted' });
+  }
+
+  /* =========================
+     TIME SLOTS
+  ========================= */
+  async createTimeSlot(req, res) {
+    const slot = await TimeSlot.create(req.body);
+    res.status(201).json({ success: true, data: slot });
+  }
+
+  async getTimeSlots(req, res) {
+    const slots = await TimeSlot.find().sort({ slotNumber: 1 });
+    res.json({ success: true, data: slots });
+  }
+
+  async updateTimeSlot(req, res) {
+    const slot = await TimeSlot.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!slot) return res.status(404).json({ success: false, error: 'Time slot not found' });
+    res.json({ success: true, data: slot });
+  }
+
+  async deleteTimeSlot(req, res) {
+    const slot = await TimeSlot.findByIdAndDelete(req.params.id);
+    if (!slot) return res.status(404).json({ success: false, error: 'Time slot not found' });
+    res.json({ success: true, message: 'Time slot deleted' });
+  }
+
+  /* =========================
+     COURSES
+  ========================= */
+  async createCourse(req, res) {
+    const course = await Course.create(req.body);
+    res.status(201).json({ success: true, data: course });
+  }
+
+  async getCourses(req, res) {
+    const filter = {};
+    if (req.query.year) filter.year = Number(req.query.year);
+    if (req.query.courseType) filter.courseType = req.query.courseType;
+    if (req.query.section) filter.sections = req.query.section;
+
+    const courses = await Course.find(filter)
+      .populate('assignedFaculty')
+      .sort({ year: 1, courseCode: 1 });
+
+    res.json({ success: true, data: courses });
+  }
+
+  async updateCourse(req, res) {
+    const course = await Course.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!course) return res.status(404).json({ success: false, error: 'Course not found' });
+    res.json({ success: true, data: course });
+  }
+
+  async deleteCourse(req, res) {
+    const course = await Course.findByIdAndDelete(req.params.id);
+    if (!course) return res.status(404).json({ success: false, error: 'Course not found' });
+    res.json({ success: true, message: 'Course deleted' });
+  }
+
+  /* =========================
+     FACULTY
+  ========================= */
+  async createFaculty(req, res) {
+    const faculty = await Faculty.create(req.body);
+    res.status(201).json({ success: true, data: faculty });
+  }
+
+  async getFaculty(req, res) {
+    const faculty = await Faculty.find().sort({ name: 1 });
+    res.json({ success: true, data: faculty });
+  }
+
+  async updateFaculty(req, res) {
+    const faculty = await Faculty.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!faculty) return res.status(404).json({ success: false, error: 'Faculty not found' });
+    res.json({ success: true, data: faculty });
+  }
+
+  async deleteFaculty(req, res) {
+    const faculty = await Faculty.findByIdAndDelete(req.params.id);
+    if (!faculty) return res.status(404).json({ success: false, error: 'Faculty not found' });
+    res.json({ success: true, message: 'Faculty deleted' });
+  }
+
+  /* =========================
+     ROOMS
+  ========================= */
+  async createRoom(req, res) {
+    const room = await Room.create(req.body);
+    res.status(201).json({ success: true, data: room });
+  }
+
+  async getRooms(req, res) {
+    const rooms = await Room.find().sort({ roomNumber: 1 });
+    res.json({ success: true, data: rooms });
+  }
+
+  async updateRoom(req, res) {
+    const room = await Room.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!room) return res.status(404).json({ success: false, error: 'Room not found' });
+    res.json({ success: true, data: room });
+  }
+
+  async deleteRoom(req, res) {
+    const room = await Room.findByIdAndDelete(req.params.id);
+    if (!room) return res.status(404).json({ success: false, error: 'Room not found' });
+    res.json({ success: true, message: 'Room deleted' });
+  }
+
+  /* =========================
+     WORKLOAD RULES
+  ========================= */
+  async createWorkloadRule(req, res) {
+    const rule = await WorkloadRule.create(req.body);
+    res.status(201).json({ success: true, data: rule });
+  }
+
+  async getWorkloadRules(req, res) {
+    const rules = await WorkloadRule.find().sort({ createdAt: -1 });
+    res.json({ success: true, data: rules });
+  }
+
+  async updateWorkloadRule(req, res) {
+    const rule = await WorkloadRule.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!rule) return res.status(404).json({ success: false, error: 'Workload rule not found' });
+    res.json({ success: true, data: rule });
+  }
+
+  /* =========================
+     LEAVE MANAGEMENT
+  ========================= */
+  async getPendingLeaves(req, res) {
+    const leaves = await FacultyLeave.find({ status: 'pending' })
+      .populate('faculty')
+      .sort({ createdAt: -1 });
+    res.json({ success: true, data: leaves });
+  }
+
+  async approveLeave(req, res) {
+    const leave = await FacultyLeave.findById(req.params.id);
+    if (!leave) return res.status(404).json({ success: false, error: 'Leave not found' });
+
+    leave.status = 'approved';
+    await leave.save();
+
+    // Trigger dynamic rescheduling
+    const schedulingService = require('../services/schedulingService');
+    schedulingService.dynamicReschedule(leave._id).catch(err => {
+      console.error('Error in dynamicReschedule:', err);
+    });
+
+    res.json({ success: true, data: leave });
+  }
+
+  async rejectLeave(req, res) {
+    const leave = await FacultyLeave.findById(req.params.id);
+    if (!leave) return res.status(404).json({ success: false, error: 'Leave not found' });
+
+    leave.status = 'rejected';
+    await leave.save();
+
+    res.json({ success: true, data: leave });
+  }
+
+  /* =========================
+     TIMETABLE LOCK / UNLOCK
+  ========================= */
+  async lockTimetable(req, res) {
+    try {
+      console.log('Lock request body:', JSON.stringify(req.body));
+      let academicCalendarId = req.body.academicCalendarId || req.body;
+
+      // If academicCalendarId is still an object, try to extract the actual ID
+      if (typeof academicCalendarId === 'object' && academicCalendarId.academicCalendarId) {
+        academicCalendarId = academicCalendarId.academicCalendarId;
+      }
+
+      console.log('Extracted academicCalendarId:', academicCalendarId, 'Type:', typeof academicCalendarId);
+
+      if (!academicCalendarId || typeof academicCalendarId !== 'string') {
+        return res.status(400).json({ success: false, error: 'academicCalendarId must be a string' });
+      }
+
+      // Find the latest generated timetable for the requested academic calendar
+      const timetable = await Timetable.findOne({ academicCalendar: academicCalendarId, status: 'generated' }).sort({ updatedAt: -1 });
+      if (!timetable) return res.status(404).json({ success: false, error: 'No generated timetable found for this academic calendar' });
+
+      timetable.status = 'locked';
+      timetable.lockedAt = new Date();
+      // prefer user id from auth middleware if available
+      timetable.lockedBy = (req.userId || (req.user && req.user._id) || 'unknown').toString();
+      await timetable.save();
+
+      res.json({ success: true, data: timetable });
+    } catch (error) {
+      console.error('Error in lockTimetable:', error);
+      res.status(500).json({ success: false, error: error.message || 'Failed to lock timetable' });
+    }
+  }
+
+  async unlockTimetable(req, res) {
+    try {
+      console.log('Unlock request body:', JSON.stringify(req.body));
+      let academicCalendarId = req.body.academicCalendarId || req.body;
+
+      // If academicCalendarId is still an object, try to extract the actual ID
+      if (typeof academicCalendarId === 'object' && academicCalendarId.academicCalendarId) {
+        academicCalendarId = academicCalendarId.academicCalendarId;
+      }
+
+      console.log('Extracted academicCalendarId:', academicCalendarId, 'Type:', typeof academicCalendarId);
+
+      if (!academicCalendarId || typeof academicCalendarId !== 'string') {
+        return res.status(400).json({ success: false, error: 'academicCalendarId must be a string' });
+      }
+
+      // Find the latest locked timetable for the requested academic calendar
+      const timetable = await Timetable.findOne({ academicCalendar: academicCalendarId, status: 'locked' }).sort({ updatedAt: -1 });
+      if (!timetable) return res.status(404).json({ success: false, error: 'No locked timetable found for this academic calendar' });
+
+      timetable.status = 'generated';
+      timetable.lockedAt = undefined;
+      timetable.lockedBy = undefined;
+      await timetable.save();
+
+      res.json({ success: true, data: timetable });
+    } catch (error) {
+      console.error('Error in unlockTimetable:', error);
+      res.status(500).json({ success: false, error: error.message || 'Failed to unlock timetable' });
+    }
+  }
+
+  /* =========================
+     WORKLOAD OPTIMIZATION
+  ========================= */
+  async getWorkloadReport(req, res) {
+    try {
+      const schedulerDir = path.join(__dirname, '../../python-scheduler');
+      const analyzerPath = path.join(schedulerDir, 'workload_analyzer.py');
+      const reportPath = path.join(schedulerDir, 'output', 'workload_report.json');
+
+      // Determine python command – prefer env var (set in Docker), fall back to local venv
+      const pythonCmd = process.env.PYTHON_EXECUTABLE || path.join(
+        schedulerDir,
+        'venv',
+        'Scripts',
+        'python.exe'
+      );
+
+      console.log(`Running workload analyzer: ${pythonCmd} ${analyzerPath}`);
+
+      const pythonProcess = spawn(pythonCmd, [analyzerPath], {
+        cwd: schedulerDir,
+        env: { ...process.env, PYTHONPATH: schedulerDir }
+      });
+
+      let errorData = '';
+      pythonProcess.stderr.on('data', (data) => {
+        errorData += data.toString();
+      });
+
+      pythonProcess.on('close', async (code) => {
+        if (code !== 0) {
+          console.error(`Analyzer failed with code ${code}: ${errorData}`);
+          return res.status(500).json({
+            success: false,
+            error: 'Failed to generate workload report',
+            details: errorData
+          });
+        }
+
+        try {
+          const rawData = await fs.readFile(reportPath, 'utf8');
+          const report = JSON.parse(rawData);
+          res.json({ success: true, data: report });
+        } catch (err) {
+          console.error('Error reading report file:', err);
+          res.status(500).json({ success: false, error: 'Failed to read workload report' });
+        }
+      });
+    } catch (error) {
+      console.error('Error in getWorkloadReport:', error);
+      res.status(500).json({ success: false, error: 'Internal server error' });
+    }
+  }
+}
+
+module.exports = new AdminController();

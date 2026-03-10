@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+timetable-backend/node_modules/
+timetable-frontend/node_modules/
+
+# Build output
+dist/
+build/
+
+# Logs
+logs
+*.log
+
+# Environment
+.env
+.env.local
+.env.production
+
+# OS
+.DS_Store

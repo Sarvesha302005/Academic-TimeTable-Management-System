@@ -1,0 +1,274 @@
+========================================================================================================================
+CLASS-WISE TIMETABLE
+========================================================================================================================
+
+
+Y1-A
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Monday     08:50      09:40      CSE23113-A      L     faculty11            A-103     
+Monday     14:05      14:55      CSE23111-A      L     faculty4             A-103     
+Tuesday    09:40      11:20      CSE23111-A      P     faculty4             A-101     
+Tuesday    10:45      12:25      CSE23111-A      P     faculty4             A-101     
+Wednesday  15:45      16:35      CSE23113-A      L     faculty11            A-103     
+Thursday   09:40      11:20      CSE23113-A      P     faculty11            A-404     
+Thursday   10:45      12:25      CSE23113-A      P     faculty11            A-404     
+Thursday   12:25      13:15      CSE23111-A      L     faculty4             A-103     
+Thursday   14:55      15:45      CSE23111-A      L     faculty4             A-103     
+
+Y1-B
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Monday     14:55      16:35      CSE23111-B      P     faculty6             A-101     
+Monday     15:45      17:25      CSE23111-B      P     faculty6             A-101     
+Tuesday    08:50      10:30      CSE23113-B      P     faculty2             A-404     
+Tuesday    09:40      11:20      CSE23113-B      P     faculty2             A-404     
+Tuesday    15:45      16:35      CSE23113-B      L     faculty2             A-302     
+Wednesday  10:45      11:35      CSE23113-B      L     faculty2             A-302     
+Wednesday  15:45      16:35      CSE23111-B      L     faculty6             A-302     
+Friday     14:05      14:55      CSE23111-B      L     faculty6             A-302     
+Friday     15:45      16:35      CSE23111-B      L     faculty6             A-302     
+
+Y1-C
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Tuesday    11:35      12:25      CSE23113-C      L     faculty11            D-101     
+Thursday   11:35      13:15      CSE23113-C      P     faculty11            A-101     
+Thursday   12:25      14:05      CSE23113-C      P     faculty11            A-101     
+Thursday   14:05      14:55      CSE23113-C      L     faculty11            D-101     
+
+Y1-D
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Monday     10:45      12:25      CSE23113-D      P     faculty10            HW-301    
+Monday     11:35      13:15      CSE23113-D      P     faculty10            HW-301    
+Tuesday    15:45      16:35      CSE23113-D      L     faculty10            A-303     
+Friday     12:25      13:15      CSE23113-D      L     faculty10            A-303     
+
+Y1-E
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Monday     09:40      10:30      CSE23113-E      L     faculty2             A-103     
+Thursday   10:45      11:35      CSE23113-E      L     faculty2             A-103     
+Friday     14:55      16:35      CSE23113-E      P     faculty2             A-403     
+Friday     15:45      17:25      CSE23113-E      P     faculty2             A-403     
+
+Y1-F
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Monday     12:25      14:05      CSE23113-F      P     faculty10            PG-303    
+Monday     14:05      15:45      CSE23113-F      P     faculty10            PG-303    
+Wednesday  15:45      16:35      CSE23113-F      L     faculty10            C-202     
+Thursday   10:45      11:35      CSE23113-F      L     faculty10            C-202     
+
+Y1-G
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Monday     12:25      13:15      CSE23113-G      L     faculty2             D-103     
+Wednesday  14:05      15:45      CSE23113-G      P     faculty2             A-403     
+Wednesday  14:55      16:35      CSE23113-G      P     faculty2             A-403     
+Friday     08:50      09:40      CSE23113-G      L     faculty2             D-103     
+
+Y1-H
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Monday     10:45      12:25      CSE23113-H      P     faculty2             PG-303    
+Monday     11:35      13:15      CSE23113-H      P     faculty2             PG-303    
+Tuesday    12:25      13:15      CSE23113-H      L     faculty2             C-303     
+Wednesday  08:50      09:40      CSE23113-H      L     faculty2             C-303     
+
+Y2-A
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Monday     11:35      12:25      CSE23211-A      L     faculty11            A-301     
+Monday     14:55      15:45      CSE23213-A      L     faculty7             A-301     
+Tuesday    08:50      09:40      CSE23203-A      L     faculty6             A-301     
+Tuesday    09:40      10:30      CSE23203-A      L     faculty6             A-301     
+Tuesday    11:35      13:15      CSE214-A        P     faculty8             A-101     
+Tuesday    12:25      14:05      CSE214-A        P     faculty8             A-101     
+Tuesday    14:05      14:55      CSE23201-A      L     faculty3             A-301     
+Tuesday    15:45      16:35      CSE23211-A      L     faculty11            A-301     
+Wednesday  09:40      10:30      CSE23213-A      L     faculty7             A-301     
+Wednesday  10:45      12:25      CSE23211-A      P     faculty11            C-301     
+Wednesday  11:35      13:15      CSE23211-A      P     faculty11            C-301     
+Wednesday  14:05      14:55      CSE23201-A      L     faculty3             A-301     
+Wednesday  14:55      16:35      CSE23201-A      P     faculty3             A-404     
+Wednesday  15:45      17:25      CSE23201-A      P     faculty3             A-404     
+Thursday   08:50      10:30      CSE23203-A      P     faculty6             PG-303    
+Thursday   09:40      11:20      CSE23203-A      P     faculty6             PG-303    
+Thursday   10:45      11:35      CSE23213-A      L     faculty7             A-301     
+Thursday   11:35      12:25      CSE214-A        L     faculty8             A-301     
+Thursday   12:25      13:15      CSE23203-A      L     faculty6             A-301     
+Thursday   15:45      16:35      CSE23211-A      L     faculty11            A-301     
+Friday     08:50      09:40      CSE214-A        L     faculty8             A-301     
+Friday     09:40      10:30      CSE23213-A      T     faculty7             A-301     
+Friday     12:25      13:15      CSE214-A        L     faculty8             A-301     
+Friday     15:45      16:35      CSE23201-A      L     faculty3             A-301     
+
+Y2-B
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Monday     09:40      10:30      CSE23203-B      L     faculty4             A-203     
+Monday     10:45      11:35      CSE23211-B      L     faculty9             A-203     
+Monday     11:35      12:25      CSE23211-B      L     faculty9             A-203     
+Monday     12:25      13:15      CSE23203-B      L     faculty4             A-203     
+Monday     14:05      14:55      CSE23213-B      L     faculty5             A-203     
+Tuesday    14:55      15:45      CSE23213-B      T     faculty5             A-203     
+Wednesday  08:50      10:30      CSE23201-B      P     faculty3             PG-303    
+Wednesday  09:40      11:20      CSE23201-B      P     faculty3             PG-303    
+Wednesday  11:35      13:15      CSE214-B        P     faculty8             A-101     
+Wednesday  12:25      14:05      CSE214-B        P     faculty8             A-101     
+Wednesday  14:05      14:55      CSE23211-B      L     faculty9             A-203     
+Wednesday  14:55      16:35      CSE23211-B      P     faculty9             PG-303    
+Wednesday  15:45      17:25      CSE23211-B      P     faculty9             PG-303    
+Thursday   09:40      10:30      CSE214-B        L     faculty8             A-203     
+Thursday   10:45      11:35      CSE214-B        L     faculty8             A-203     
+Thursday   12:25      13:15      CSE23201-B      L     faculty3             A-203     
+Thursday   14:55      15:45      CSE23213-B      L     faculty5             A-203     
+Thursday   15:45      16:35      CSE23201-B      L     faculty3             A-203     
+Friday     08:50      09:40      CSE23213-B      L     faculty5             A-203     
+Friday     09:40      10:30      CSE214-B        L     faculty8             A-203     
+Friday     11:35      12:25      CSE23201-B      L     faculty3             A-203     
+Friday     12:25      13:15      CSE23203-B      L     faculty4             A-203     
+Friday     14:05      15:45      CSE23203-B      P     faculty4             HW-301    
+Friday     14:55      16:35      CSE23203-B      P     faculty4             HW-301    
+
+Y2-C
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Monday     09:40      10:30      CSE23211-C      L     faculty10            D-102     
+Tuesday    11:35      12:25      CSE23211-C      L     faculty10            D-102     
+Thursday   14:55      16:35      CSE23211-C      P     faculty10            HW-301    
+Thursday   15:45      17:25      CSE23211-C      P     faculty10            HW-301    
+Friday     11:35      12:25      CSE23211-C      L     faculty10            D-102     
+
+Y2-D
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Tuesday    10:45      11:35      CSE23211-D      L     faculty9             D-103     
+Thursday   12:25      13:15      CSE23211-D      L     faculty9             D-103     
+Friday     12:25      14:05      CSE23211-D      P     faculty9             A-101     
+Friday     14:05      15:45      CSE23211-D      P     faculty9             A-101     
+Friday     15:45      16:35      CSE23211-D      L     faculty9             D-103     
+
+Y2-E
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Monday     08:50      10:30      CSE23211-E      P     faculty9             HW-301    
+Monday     09:40      11:20      CSE23211-E      P     faculty9             HW-301    
+Monday     14:05      14:55      CSE23211-E      L     faculty9             D-103     
+Tuesday    09:40      10:30      CSE23211-E      L     faculty9             D-103     
+Friday     14:55      15:45      CSE23211-E      L     faculty9             D-103     
+
+Y2-F
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Monday     15:45      16:35      CSE23211-F      L     faculty9             D-102     
+Wednesday  09:40      10:30      CSE23211-F      L     faculty9             D-102     
+Wednesday  12:25      13:15      CSE23211-F      L     faculty9             D-102     
+Thursday   09:40      11:20      CSE23211-F      P     faculty9             A-403     
+Thursday   10:45      12:25      CSE23211-F      P     faculty9             A-403     
+
+Y2-G
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Tuesday    08:50      09:40      CSE23211-G      L     faculty11            C-103     
+Wednesday  12:25      13:15      CSE23211-G      L     faculty11            C-103     
+Friday     09:40      10:30      CSE23211-G      L     faculty11            C-103     
+Friday     11:35      13:15      CSE23211-G      P     faculty11            A-403     
+Friday     12:25      14:05      CSE23211-G      P     faculty11            A-403     
+
+Y2-H
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Tuesday    12:25      14:05      CSE23211-H      P     faculty10            PG-303    
+Tuesday    14:05      15:45      CSE23211-H      P     faculty10            PG-303    
+Tuesday    14:55      15:45      CSE23211-H      L     faculty10            A-303     
+Wednesday  08:50      09:40      CSE23211-H      L     faculty10            A-303     
+Thursday   11:35      12:25      CSE23211-H      L     faculty10            A-303     
+
+Y3-A
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Monday     08:50      09:40      CSE23302-A      T     faculty7             C-202     
+Monday     09:40      11:20      CSE23302-A      P     faculty7             C-301     
+Monday     10:45      12:25      CSE23302-A      P     faculty7             C-301     
+Monday     14:55      15:45      CSE23311-A      L     faculty8             C-202     
+Monday     15:45      16:35      CSE23301-A      L     faculty5             C-202     
+Tuesday    08:50      10:30      CSE23311-A      P     faculty8             C-301     
+Tuesday    09:40      11:20      CSE23311-A      P     faculty8             C-301     
+Tuesday    10:45      12:25      CSE23301-A      P     faculty5             C-301     
+Tuesday    11:35      13:15      CSE23301-A      P     faculty5             C-301     
+Tuesday    12:25      13:15      CSE23302-A      L     faculty7             C-202     
+Tuesday    14:55      15:45      CSE23304-A      L     faculty6             C-202     
+Wednesday  08:50      09:40      CSE23304-A      L     faculty6             C-202     
+Wednesday  10:45      11:35      CSE23311-A      L     faculty8             C-202     
+Wednesday  14:55      15:45      CSE23304-A      L     faculty6             C-202     
+Thursday   08:50      09:40      CSE23311-A      L     faculty8             C-202     
+Thursday   14:05      14:55      CSE23302-A      L     faculty7             C-202     
+Thursday   15:45      16:35      CSE23301-A      L     faculty5             C-202     
+Friday     08:50      10:30      CSE23304-A      P     faculty6             PG-303    
+Friday     09:40      11:20      CSE23304-A      P     faculty6             PG-303    
+Friday     14:55      15:45      CSE23302-A      L     faculty7             C-202     
+Friday     15:45      16:35      CSE23301-A      L     faculty5             C-202     
+
+Y3-B
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Monday     08:50      09:40      CSE23311-B      L     faculty4             C-104     
+Monday     10:45      11:35      CSE23302-B      T     faculty3             C-104     
+Monday     11:35      12:25      CSE23301-B      L     faculty7             C-104     
+Monday     12:25      13:15      CSE23304-B      L     faculty8             C-104     
+Monday     14:05      14:55      CSE23302-B      L     faculty3             C-104     
+Monday     15:45      16:35      CSE23304-B      L     faculty8             C-104     
+Tuesday    09:40      10:30      CSE23301-B      L     faculty7             C-104     
+Tuesday    10:45      11:35      CSE23304-B      L     faculty8             C-104     
+Tuesday    11:35      12:25      CSE23302-B      L     faculty3             C-104     
+Tuesday    12:25      13:15      CSE23311-B      L     faculty4             C-104     
+Tuesday    14:55      16:35      CSE23302-B      P     faculty3             HW-301    
+Tuesday    15:45      17:25      CSE23302-B      P     faculty3             HW-301    
+Wednesday  12:25      14:05      CSE23311-B      P     faculty4             PG-303    
+Wednesday  14:05      15:45      CSE23311-B      P     faculty4             PG-303    
+Thursday   08:50      09:40      CSE23311-B      L     faculty4             C-104     
+Thursday   09:40      10:30      CSE23301-B      L     faculty7             C-104     
+Thursday   11:35      13:15      CSE23301-B      P     faculty7             PG-303    
+Thursday   12:25      14:05      CSE23301-B      P     faculty7             PG-303    
+Thursday   14:05      14:55      CSE23302-B      L     faculty3             C-104     
+Friday     14:55      16:35      CSE23304-B      P     faculty8             PG-303    
+Friday     15:45      17:25      CSE23304-B      P     faculty8             PG-303    
+
+Y4-A
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Tuesday    15:45      16:35      CSE23402-A      L     faculty5             A-105     
+Wednesday  11:35      12:25      CSE23402-A      T     faculty5             A-105     
+Wednesday  15:45      16:35      CSE23402-A      L     faculty5             A-105     
+Thursday   14:05      14:55      CSE23402-A      L     faculty5             A-105     
+
+Y4-B
+------------------------------------------------------------------------------------------------------------------------
+Day        Start      End        Course          Type  Teacher              Room      
+------------------------------------------------------------------------------------------------------------------------
+Monday     14:55      15:45      CSE23402-B      T     faculty5             D-103     
+Tuesday    14:05      14:55      CSE23402-B      L     faculty5             D-103     
+Wednesday  12:25      13:15      CSE23402-B      L     faculty5             D-103     
+Friday     14:05      14:55      CSE23402-B      L     faculty5             D-103     

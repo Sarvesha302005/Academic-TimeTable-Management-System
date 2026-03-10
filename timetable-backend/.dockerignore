@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log*
+.env
+.env.*
+.git
+.gitignore
+*.md
+python-scheduler/__pycache__
+python-scheduler/output
+python-scheduler/test_cases
+src/__tests__
+nodemon.json
