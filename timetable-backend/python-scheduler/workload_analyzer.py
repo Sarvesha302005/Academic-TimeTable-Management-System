@@ -8,17 +8,27 @@ def analyze_workload(faculty_timetable_path, output_dir):
     Analyzes the faculty workload from the generated timetable and produces a report.
     """
 
-    if not os.path.exists(faculty_timetable_path):
-        print(f"[ERROR] Faculty timetable not found: {faculty_timetable_path}", file=sys.stderr)
-        return
-
-    with open(faculty_timetable_path, 'r') as f:
-        faculty_timetable = json.load(f)
+    # Ensure output directory exists
+    os.makedirs(output_dir, exist_ok=True)
 
     report_data = {
         "faculty_metrics": {},
         "global_metrics": {}
     }
+
+    if not os.path.exists(faculty_timetable_path):
+        print(f"[ERROR] Faculty timetable not found: {faculty_timetable_path}", file=sys.stderr)
+        
+        # Save empty JSON report to prevent ENOENT crashes in Node.js
+        json_path = os.path.join(output_dir, "workload_report.json")
+        with open(json_path, 'w') as f:
+            json.dump(report_data, f, indent=2)
+            
+        print(f"[OK] Saved empty workload report.", file=sys.stderr)
+        return
+
+    with open(faculty_timetable_path, 'r') as f:
+        faculty_timetable = json.load(f)
 
     total_hours_list = []
     IDEAL_LOAD = 17
