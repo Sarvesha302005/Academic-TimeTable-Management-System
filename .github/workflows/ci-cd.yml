@@ -1,0 +1,189 @@
+name: Automated Testing & CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  backend-tests:
+    runs-on: ubuntu-latest
+    
+    services:
+      mongodb:
+        image: mongo:latest
+        options: >-
+          --health-cmd mongosh
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 27017:27017
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install Backend Dependencies
+      run: |
+        cd timetable-backend
+        npm ci
+    
+    - name: Run Backend Unit & Integration Tests
+      env:
+        MONGODB_URI: mongodb://localhost:27017/timetable-test
+      run: |
+        cd timetable-backend
+        npm test 2>&1
+    
+    - name: Upload Backend Test Results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: backend-test-results
+        path: timetable-backend/coverage/
+
+  frontend-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install Frontend Dependencies
+      run: |
+        cd timetable-frontend
+        npm ci
+    
+    - name: Run Frontend Unit & Integration Tests
+      run: |
+        cd timetable-frontend
+        npm test 2>&1
+    
+    - name: Upload Frontend Test Results
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: frontend-test-results
+        path: timetable-frontend/coverage/
+
+  e2e-tests:
+    runs-on: ubuntu-latest
+    needs: [backend-tests, frontend-tests]
+    if: success()
+    
+    services:
+      mongodb:
+        image: mongo:latest
+        options: >-
+          --health-cmd mongosh
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 27017:27017
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install Dependencies
+      run: npm ci
+    
+    - name: Install Frontend Dependencies
+      run: |
+        cd timetable-frontend
+        npm ci
+    
+    - name: Install Backend Dependencies
+      run: |
+        cd timetable-backend
+        npm ci
+    
+    - name: Install Playwright Browsers
+      run: |
+        cd timetable-frontend
+        npx playwright install --with-deps
+    
+    - name: Seed Test Database
+      env:
+        MONGODB_URI: mongodb://localhost:27017/timetable-test
+      run: |
+        cd timetable-backend
+        # Optional: Add seed script if you have one
+        # npm run seed:test
+        true
+    
+    - name: Start Backend Server
+      env:
+        MONGODB_URI: mongodb://localhost:27017/timetable-test
+        PORT: 5000
+      run: |
+        cd timetable-backend
+        npm start &
+        sleep 5
+    
+    - name: Start Frontend Dev Server
+      run: |
+        cd timetable-frontend
+        npm run dev &
+        sleep 10
+    
+    - name: Run E2E Tests
+      env:
+        CI: true
+      run: |
+        cd timetable-frontend
+        npm run test:e2e 2>&1
+    
+    - name: Upload E2E Test Reports
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: e2e-test-results
+        path: timetable-frontend/playwright-report/
+    
+    - name: Upload E2E Screenshots
+      if: failure()
+      uses: actions/upload-artifact@v3
+      with:
+        name: e2e-screenshots
+        path: timetable-frontend/test-results/
+
+  test-summary:
+    runs-on: ubuntu-latest
+    needs: [backend-tests, frontend-tests, e2e-tests]
+    if: always()
+    
+    steps:
+    - name: Check Test Status
+      run: |
+        echo "=== TEST EXECUTION SUMMARY ==="
+        echo "Backend Tests: ${{ needs.backend-tests.result }}"
+        echo "Frontend Tests: ${{ needs.frontend-tests.result }}"
+        echo "E2E Tests: ${{ needs.e2e-tests.result }}"
+        
+        if [ "${{ needs.backend-tests.result }}" != "success" ] || \
+           [ "${{ needs.frontend-tests.result }}" != "success" ] || \
+           [ "${{ needs.e2e-tests.result }}" != "success" ]; then
+          echo "❌ Some tests failed!"
+          exit 1
+        else
+          echo "✅ All tests passed!"
+        fi
