@@ -5,90 +5,90 @@
       "course_name": "OOP",
       "type": "P",
       "day": "Monday",
-      "start_time": "10:45",
-      "end_time": "12:25",
+      "start_time": "08:50",
+      "end_time": "10:30",
       "teacher": "faculty4",
-      "room": "PG-303"
+      "room": "A-403"
     },
     {
       "course": "CSE23111-A",
       "course_name": "OOP",
       "type": "P",
       "day": "Monday",
-      "start_time": "11:35",
-      "end_time": "13:15",
+      "start_time": "09:40",
+      "end_time": "11:20",
       "teacher": "faculty4",
-      "room": "PG-303"
+      "room": "A-403"
+    },
+    {
+      "course": "CSE23111-A",
+      "course_name": "OOP",
+      "type": "L",
+      "day": "Monday",
+      "start_time": "11:35",
+      "end_time": "12:25",
+      "teacher": "faculty4",
+      "room": "A-103"
     },
     {
       "course": "CSE23113-A",
       "course_name": "User Interface Design",
       "type": "L",
       "day": "Monday",
+      "start_time": "12:25",
+      "end_time": "13:15",
+      "teacher": "faculty11",
+      "room": "A-103"
+    },
+    {
+      "course": "CSE23113-A",
+      "course_name": "User Interface Design",
+      "type": "P",
+      "day": "Tuesday",
       "start_time": "14:05",
-      "end_time": "14:55",
-      "teacher": "faculty10",
-      "room": "C-203"
+      "end_time": "15:45",
+      "teacher": "faculty11",
+      "room": "A-403"
+    },
+    {
+      "course": "CSE23113-A",
+      "course_name": "User Interface Design",
+      "type": "P",
+      "day": "Tuesday",
+      "start_time": "14:55",
+      "end_time": "16:35",
+      "teacher": "faculty11",
+      "room": "A-403"
     },
     {
       "course": "CSE23111-A",
       "course_name": "OOP",
       "type": "L",
-      "day": "Tuesday",
+      "day": "Wednesday",
       "start_time": "14:55",
       "end_time": "15:45",
       "teacher": "faculty4",
-      "room": "C-203"
-    },
-    {
-      "course": "CSE23113-A",
-      "course_name": "User Interface Design",
-      "type": "P",
-      "day": "Thursday",
-      "start_time": "09:40",
-      "end_time": "11:20",
-      "teacher": "faculty10",
-      "room": "A-403"
-    },
-    {
-      "course": "CSE23113-A",
-      "course_name": "User Interface Design",
-      "type": "P",
-      "day": "Thursday",
-      "start_time": "10:45",
-      "end_time": "12:25",
-      "teacher": "faculty10",
-      "room": "A-403"
-    },
-    {
-      "course": "CSE23111-A",
-      "course_name": "OOP",
-      "type": "L",
-      "day": "Thursday",
-      "start_time": "11:35",
-      "end_time": "12:25",
-      "teacher": "faculty4",
-      "room": "C-203"
+      "room": "A-103"
     },
     {
       "course": "CSE23113-A",
       "course_name": "User Interface Design",
       "type": "L",
       "day": "Thursday",
-      "start_time": "15:45",
-      "end_time": "16:35",
-      "teacher": "faculty10",
-      "room": "C-203"
-    },
-    {
-      "course": "CSE23111-A",
-      "course_name": "OOP",
-      "type": "L",
-      "day": "Friday",
       "start_time": "12:25",
       "end_time": "13:15",
+      "teacher": "faculty11",
+      "room": "A-103"
+    },
+    {
+      "course": "CSE23111-A",
+      "course_name": "OOP",
+      "type": "L",
+      "day": "Thursday",
+      "start_time": "14:55",
+      "end_time": "15:45",
       "teacher": "faculty4",
-      "room": "C-203"
+      "room": "A-103"
     }
   ],
   "Y1-B": [
@@ -97,20 +97,40 @@
       "course_name": "User Interface Design",
       "type": "L",
       "day": "Monday",
-      "start_time": "11:35",
-      "end_time": "12:25",
-      "teacher": "faculty10",
-      "room": "A-201"
+      "start_time": "14:05",
+      "end_time": "14:55",
+      "teacher": "faculty11",
+      "room": "D-101"
     },
     {
       "course": "CSE23111-B",
       "course_name": "OOP",
       "type": "L",
+      "day": "Monday",
+      "start_time": "14:55",
+      "end_time": "15:45",
+      "teacher": "faculty6",
+      "room": "D-101"
+    },
+    {
+      "course": "CSE23111-B",
+      "course_name": "OOP",
+      "type": "P",
       "day": "Tuesday",
       "start_time": "09:40",
-      "end_time": "10:30",
+      "end_time": "11:20",
       "teacher": "faculty6",
-      "room": "A-201"
+      "room": "PG-303"
+    },
+    {
+      "course": "CSE23111-B",
+      "course_name": "OOP",
+      "type": "P",
+      "day": "Tuesday",
+      "start_time": "10:45",
+      "end_time": "12:25",
+      "teacher": "faculty6",
+      "room": "PG-303"
     },
     {
       "course": "CSE23111-B",
@@ -120,7 +140,17 @@
       "start_time": "15:45",
       "end_time": "16:35",
       "teacher": "faculty6",
-      "room": "A-201"
+      "room": "D-101"
+    },
+    {
+      "course": "CSE23111-B",
+      "course_name": "OOP",
+      "type": "L",
+      "day": "Wednesday",
+      "start_time": "09:40",
+      "end_time": "10:30",
+      "teacher": "faculty6",
+      "room": "D-101"
     },
     {
       "course": "CSE23113-B",
@@ -129,129 +159,99 @@
       "day": "Wednesday",
       "start_time": "15:45",
       "end_time": "16:35",
-      "teacher": "faculty10",
-      "room": "A-201"
+      "teacher": "faculty11",
+      "room": "D-101"
     },
     {
       "course": "CSE23113-B",
       "course_name": "User Interface Design",
       "type": "P",
       "day": "Thursday",
-      "start_time": "12:25",
-      "end_time": "14:05",
-      "teacher": "faculty10",
-      "room": "A-403"
+      "start_time": "14:55",
+      "end_time": "16:35",
+      "teacher": "faculty11",
+      "room": "A-101"
     },
     {
       "course": "CSE23113-B",
       "course_name": "User Interface Design",
       "type": "P",
       "day": "Thursday",
-      "start_time": "14:05",
-      "end_time": "15:45",
-      "teacher": "faculty10",
-      "room": "A-403"
-    },
-    {
-      "course": "CSE23111-B",
-      "course_name": "OOP",
-      "type": "P",
-      "day": "Friday",
-      "start_time": "08:50",
-      "end_time": "10:30",
-      "teacher": "faculty6",
-      "room": "A-403"
-    },
-    {
-      "course": "CSE23111-B",
-      "course_name": "OOP",
-      "type": "P",
-      "day": "Friday",
-      "start_time": "09:40",
-      "end_time": "11:20",
-      "teacher": "faculty6",
-      "room": "A-403"
-    },
-    {
-      "course": "CSE23111-B",
-      "course_name": "OOP",
-      "type": "L",
-      "day": "Friday",
-      "start_time": "10:45",
-      "end_time": "11:35",
-      "teacher": "faculty6",
-      "room": "A-201"
+      "start_time": "15:45",
+      "end_time": "17:25",
+      "teacher": "faculty11",
+      "room": "A-101"
     }
   ],
   "Y2-A": [
     {
-      "course": "CSE23211-A",
-      "course_name": "Design And Analysis of Algorithms",
-      "type": "L",
-      "day": "Monday",
-      "start_time": "09:40",
-      "end_time": "10:30",
-      "teacher": "faculty11",
-      "room": "A-401"
-    },
-    {
       "course": "CSE23203-A",
       "course_name": "Database and Management System",
-      "type": "P",
-      "day": "Monday",
-      "start_time": "14:55",
-      "end_time": "16:35",
-      "teacher": "faculty6",
-      "room": "A-404"
-    },
-    {
-      "course": "CSE23203-A",
-      "course_name": "Database and Management System",
-      "type": "P",
-      "day": "Monday",
-      "start_time": "15:45",
-      "end_time": "17:25",
-      "teacher": "faculty6",
-      "room": "A-404"
-    },
-    {
-      "course": "CSE214-A",
-      "course_name": "Operating System",
       "type": "L",
-      "day": "Tuesday",
+      "day": "Monday",
       "start_time": "08:50",
       "end_time": "09:40",
-      "teacher": "faculty8",
-      "room": "A-401"
+      "teacher": "faculty6",
+      "room": "C-302"
     },
     {
-      "course": "CSE214-A",
-      "course_name": "Operating System",
+      "course": "CSE23213-A",
+      "course_name": "Computer architecture and organization",
       "type": "L",
-      "day": "Tuesday",
+      "day": "Monday",
       "start_time": "09:40",
       "end_time": "10:30",
-      "teacher": "faculty8",
-      "room": "A-401"
+      "teacher": "faculty3",
+      "room": "C-302"
+    },
+    {
+      "course": "CSE23203-A",
+      "course_name": "Database and Management System",
+      "type": "P",
+      "day": "Monday",
+      "start_time": "10:45",
+      "end_time": "12:25",
+      "teacher": "faculty6",
+      "room": "PG-303"
+    },
+    {
+      "course": "CSE23203-A",
+      "course_name": "Database and Management System",
+      "type": "P",
+      "day": "Monday",
+      "start_time": "11:35",
+      "end_time": "13:15",
+      "teacher": "faculty6",
+      "room": "PG-303"
     },
     {
       "course": "CSE23213-A",
       "course_name": "Computer architecture and organization",
       "type": "T",
-      "day": "Tuesday",
-      "start_time": "10:45",
-      "end_time": "11:35",
+      "day": "Monday",
+      "start_time": "12:25",
+      "end_time": "13:15",
+      "teacher": "faculty3",
+      "room": "C-302"
+    },
+    {
+      "course": "CSE23201-A",
+      "course_name": "Introduction to C programming",
+      "type": "L",
+      "day": "Monday",
+      "start_time": "14:55",
+      "end_time": "15:45",
       "teacher": "faculty7",
-      "room": "A-401"
+      "room": "C-302"
     },
     {
       "course": "CSE23211-A",
       "course_name": "Design And Analysis of Algorithms",
       "type": "P",
       "day": "Tuesday",
-      "start_time": "12:25",
-      "end_time": "14:05",
-      "teacher": "faculty11",
+      "start_time": "08:50",
+      "end_time": "10:30",
+      "teacher": "faculty9",
       "room": "HW-301"
     },
     {
@@ -259,140 +259,140 @@
       "course_name": "Design And Analysis of Algorithms",
       "type": "P",
       "day": "Tuesday",
+      "start_time": "09:40",
+      "end_time": "11:20",
+      "teacher": "faculty9",
+      "room": "HW-301"
+    },
+    {
+      "course": "CSE214-A",
+      "course_name": "Operating System",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "14:05",
+      "end_time": "14:55",
+      "teacher": "faculty4",
+      "room": "C-302"
+    },
+    {
+      "course": "CSE23213-A",
+      "course_name": "Computer architecture and organization",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "14:55",
+      "end_time": "15:45",
+      "teacher": "faculty3",
+      "room": "C-302"
+    },
+    {
+      "course": "CSE214-A",
+      "course_name": "Operating System",
+      "type": "P",
+      "day": "Wednesday",
+      "start_time": "10:45",
+      "end_time": "12:25",
+      "teacher": "faculty4",
+      "room": "HW-301"
+    },
+    {
+      "course": "CSE214-A",
+      "course_name": "Operating System",
+      "type": "P",
+      "day": "Wednesday",
+      "start_time": "11:35",
+      "end_time": "13:15",
+      "teacher": "faculty4",
+      "room": "HW-301"
+    },
+    {
+      "course": "CSE23213-A",
+      "course_name": "Computer architecture and organization",
+      "type": "L",
+      "day": "Wednesday",
+      "start_time": "14:05",
+      "end_time": "14:55",
+      "teacher": "faculty3",
+      "room": "C-302"
+    },
+    {
+      "course": "CSE214-A",
+      "course_name": "Operating System",
+      "type": "L",
+      "day": "Thursday",
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "teacher": "faculty4",
+      "room": "C-302"
+    },
+    {
+      "course": "CSE23211-A",
+      "course_name": "Design And Analysis of Algorithms",
+      "type": "L",
+      "day": "Thursday",
+      "start_time": "10:45",
+      "end_time": "11:35",
+      "teacher": "faculty9",
+      "room": "C-302"
+    },
+    {
+      "course": "CSE23201-A",
+      "course_name": "Introduction to C programming",
+      "type": "L",
+      "day": "Thursday",
+      "start_time": "12:25",
+      "end_time": "13:15",
+      "teacher": "faculty7",
+      "room": "C-302"
+    },
+    {
+      "course": "CSE23201-A",
+      "course_name": "Introduction to C programming",
+      "type": "P",
+      "day": "Thursday",
       "start_time": "14:05",
       "end_time": "15:45",
-      "teacher": "faculty11",
+      "teacher": "faculty7",
       "room": "HW-301"
     },
     {
       "course": "CSE23201-A",
       "course_name": "Introduction to C programming",
-      "type": "L",
-      "day": "Tuesday",
-      "start_time": "15:45",
-      "end_time": "16:35",
-      "teacher": "faculty3",
-      "room": "A-401"
-    },
-    {
-      "course": "CSE23203-A",
-      "course_name": "Database and Management System",
-      "type": "L",
-      "day": "Wednesday",
-      "start_time": "08:50",
-      "end_time": "09:40",
-      "teacher": "faculty6",
-      "room": "A-401"
-    },
-    {
-      "course": "CSE23213-A",
-      "course_name": "Computer architecture and organization",
-      "type": "L",
-      "day": "Wednesday",
-      "start_time": "11:35",
-      "end_time": "12:25",
-      "teacher": "faculty7",
-      "room": "A-401"
-    },
-    {
-      "course": "CSE23213-A",
-      "course_name": "Computer architecture and organization",
-      "type": "L",
-      "day": "Wednesday",
-      "start_time": "12:25",
-      "end_time": "13:15",
-      "teacher": "faculty7",
-      "room": "A-401"
-    },
-    {
-      "course": "CSE23201-A",
-      "course_name": "Introduction to C programming",
       "type": "P",
-      "day": "Wednesday",
-      "start_time": "14:05",
-      "end_time": "15:45",
-      "teacher": "faculty3",
-      "room": "PG-303"
-    },
-    {
-      "course": "CSE23201-A",
-      "course_name": "Introduction to C programming",
-      "type": "P",
-      "day": "Wednesday",
+      "day": "Thursday",
       "start_time": "14:55",
       "end_time": "16:35",
-      "teacher": "faculty3",
-      "room": "PG-303"
-    },
-    {
-      "course": "CSE23203-A",
-      "course_name": "Database and Management System",
-      "type": "L",
-      "day": "Wednesday",
-      "start_time": "15:45",
-      "end_time": "16:35",
-      "teacher": "faculty6",
-      "room": "A-401"
-    },
-    {
-      "course": "CSE23201-A",
-      "course_name": "Introduction to C programming",
-      "type": "L",
-      "day": "Thursday",
-      "start_time": "08:50",
-      "end_time": "09:40",
-      "teacher": "faculty3",
-      "room": "A-401"
-    },
-    {
-      "course": "CSE23201-A",
-      "course_name": "Introduction to C programming",
-      "type": "L",
-      "day": "Thursday",
-      "start_time": "10:45",
-      "end_time": "11:35",
-      "teacher": "faculty3",
-      "room": "A-401"
-    },
-    {
-      "course": "CSE23213-A",
-      "course_name": "Computer architecture and organization",
-      "type": "L",
-      "day": "Thursday",
-      "start_time": "11:35",
-      "end_time": "12:25",
       "teacher": "faculty7",
-      "room": "A-401"
+      "room": "HW-301"
     },
     {
       "course": "CSE23211-A",
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
       "day": "Thursday",
-      "start_time": "12:25",
-      "end_time": "13:15",
-      "teacher": "faculty11",
-      "room": "A-401"
-    },
-    {
-      "course": "CSE214-A",
-      "course_name": "Operating System",
-      "type": "P",
-      "day": "Thursday",
-      "start_time": "14:05",
-      "end_time": "15:45",
-      "teacher": "faculty8",
-      "room": "A-404"
-    },
-    {
-      "course": "CSE214-A",
-      "course_name": "Operating System",
-      "type": "P",
-      "day": "Thursday",
-      "start_time": "14:55",
+      "start_time": "15:45",
       "end_time": "16:35",
-      "teacher": "faculty8",
-      "room": "A-404"
+      "teacher": "faculty9",
+      "room": "C-302"
+    },
+    {
+      "course": "CSE214-A",
+      "course_name": "Operating System",
+      "type": "L",
+      "day": "Friday",
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "teacher": "faculty4",
+      "room": "C-302"
+    },
+    {
+      "course": "CSE23203-A",
+      "course_name": "Database and Management System",
+      "type": "L",
+      "day": "Friday",
+      "start_time": "11:35",
+      "end_time": "12:25",
+      "teacher": "faculty6",
+      "room": "C-302"
     },
     {
       "course": "CSE23203-A",
@@ -402,71 +402,31 @@
       "start_time": "12:25",
       "end_time": "13:15",
       "teacher": "faculty6",
-      "room": "A-401"
+      "room": "C-302"
     },
     {
-      "course": "CSE214-A",
-      "course_name": "Operating System",
+      "course": "CSE23201-A",
+      "course_name": "Introduction to C programming",
       "type": "L",
       "day": "Friday",
-      "start_time": "14:55",
-      "end_time": "15:45",
-      "teacher": "faculty8",
-      "room": "A-401"
+      "start_time": "14:05",
+      "end_time": "14:55",
+      "teacher": "faculty7",
+      "room": "C-302"
     },
     {
       "course": "CSE23211-A",
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
       "day": "Friday",
-      "start_time": "15:45",
-      "end_time": "16:35",
-      "teacher": "faculty11",
-      "room": "A-401"
+      "start_time": "14:55",
+      "end_time": "15:45",
+      "teacher": "faculty9",
+      "room": "C-302"
     }
   ],
   "Y2-B": [
     {
-      "course": "CSE23203-B",
-      "course_name": "Database and Management System",
-      "type": "P",
-      "day": "Monday",
-      "start_time": "08:50",
-      "end_time": "10:30",
-      "teacher": "faculty4",
-      "room": "HW-301"
-    },
-    {
-      "course": "CSE23203-B",
-      "course_name": "Database and Management System",
-      "type": "P",
-      "day": "Monday",
-      "start_time": "09:40",
-      "end_time": "11:20",
-      "teacher": "faculty4",
-      "room": "HW-301"
-    },
-    {
-      "course": "CSE23201-B",
-      "course_name": "Introduction to C programming",
-      "type": "L",
-      "day": "Monday",
-      "start_time": "10:45",
-      "end_time": "11:35",
-      "teacher": "faculty3",
-      "room": "A-303"
-    },
-    {
-      "course": "CSE23211-B",
-      "course_name": "Design And Analysis of Algorithms",
-      "type": "L",
-      "day": "Monday",
-      "start_time": "12:25",
-      "end_time": "13:15",
-      "teacher": "faculty11",
-      "room": "A-303"
-    },
-    {
       "course": "CSE23213-B",
       "course_name": "Computer architecture and organization",
       "type": "T",
@@ -474,77 +434,107 @@
       "start_time": "14:05",
       "end_time": "14:55",
       "teacher": "faculty7",
-      "room": "A-303"
+      "room": "A-202"
+    },
+    {
+      "course": "CSE23203-B",
+      "course_name": "Database and Management System",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "09:40",
+      "end_time": "10:30",
+      "teacher": "faculty4",
+      "room": "A-202"
     },
     {
       "course": "CSE23213-B",
       "course_name": "Computer architecture and organization",
       "type": "L",
       "day": "Tuesday",
-      "start_time": "09:40",
-      "end_time": "10:30",
-      "teacher": "faculty7",
-      "room": "A-303"
-    },
-    {
-      "course": "CSE214-B",
-      "course_name": "Operating System",
-      "type": "L",
-      "day": "Tuesday",
       "start_time": "10:45",
       "end_time": "11:35",
-      "teacher": "faculty6",
-      "room": "A-303"
+      "teacher": "faculty7",
+      "room": "A-202"
     },
     {
-      "course": "CSE214-B",
-      "course_name": "Operating System",
+      "course": "CSE23213-B",
+      "course_name": "Computer architecture and organization",
       "type": "L",
       "day": "Tuesday",
-      "start_time": "11:35",
-      "end_time": "12:25",
-      "teacher": "faculty6",
-      "room": "A-303"
+      "start_time": "12:25",
+      "end_time": "13:15",
+      "teacher": "faculty7",
+      "room": "A-202"
     },
     {
-      "course": "CSE23201-B",
-      "course_name": "Introduction to C programming",
-      "type": "L",
+      "course": "CSE23211-B",
+      "course_name": "Design And Analysis of Algorithms",
+      "type": "P",
       "day": "Tuesday",
       "start_time": "14:05",
-      "end_time": "14:55",
-      "teacher": "faculty3",
-      "room": "A-303"
+      "end_time": "15:45",
+      "teacher": "faculty10",
+      "room": "PG-303"
     },
     {
-      "course": "CSE23201-B",
-      "course_name": "Introduction to C programming",
+      "course": "CSE23211-B",
+      "course_name": "Design And Analysis of Algorithms",
+      "type": "P",
+      "day": "Tuesday",
+      "start_time": "14:55",
+      "end_time": "16:35",
+      "teacher": "faculty10",
+      "room": "PG-303"
+    },
+    {
+      "course": "CSE23203-B",
+      "course_name": "Database and Management System",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "15:45",
+      "end_time": "16:35",
+      "teacher": "faculty4",
+      "room": "A-202"
+    },
+    {
+      "course": "CSE23213-B",
+      "course_name": "Computer architecture and organization",
       "type": "L",
       "day": "Wednesday",
       "start_time": "08:50",
       "end_time": "09:40",
-      "teacher": "faculty3",
-      "room": "A-303"
+      "teacher": "faculty7",
+      "room": "A-202"
     },
     {
-      "course": "CSE23201-B",
-      "course_name": "Introduction to C programming",
-      "type": "P",
+      "course": "CSE23211-B",
+      "course_name": "Design And Analysis of Algorithms",
+      "type": "L",
       "day": "Wednesday",
       "start_time": "09:40",
-      "end_time": "11:20",
-      "teacher": "faculty3",
-      "room": "PG-303"
+      "end_time": "10:30",
+      "teacher": "faculty10",
+      "room": "A-202"
     },
     {
-      "course": "CSE23201-B",
-      "course_name": "Introduction to C programming",
-      "type": "P",
+      "course": "CSE214-B",
+      "course_name": "Operating System",
+      "type": "L",
       "day": "Wednesday",
       "start_time": "10:45",
+      "end_time": "11:35",
+      "teacher": "faculty8",
+      "room": "A-202"
+    },
+    {
+      "course": "CSE23211-B",
+      "course_name": "Design And Analysis of Algorithms",
+      "type": "L",
+      "day": "Wednesday",
+      "start_time": "11:35",
       "end_time": "12:25",
-      "teacher": "faculty3",
-      "room": "PG-303"
+      "teacher": "faculty10",
+      "room": "A-202"
     },
     {
       "course": "CSE23203-B",
@@ -554,541 +544,551 @@
       "start_time": "12:25",
       "end_time": "13:15",
       "teacher": "faculty4",
-      "room": "A-303"
+      "room": "A-202"
+    },
+    {
+      "course": "CSE214-B",
+      "course_name": "Operating System",
+      "type": "P",
+      "day": "Wednesday",
+      "start_time": "14:05",
+      "end_time": "15:45",
+      "teacher": "faculty8",
+      "room": "PG-303"
+    },
+    {
+      "course": "CSE214-B",
+      "course_name": "Operating System",
+      "type": "P",
+      "day": "Wednesday",
+      "start_time": "14:55",
+      "end_time": "16:35",
+      "teacher": "faculty8",
+      "room": "PG-303"
+    },
+    {
+      "course": "CSE23201-B",
+      "course_name": "Introduction to C programming",
+      "type": "L",
+      "day": "Thursday",
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "teacher": "faculty3",
+      "room": "A-202"
     },
     {
       "course": "CSE23203-B",
       "course_name": "Database and Management System",
-      "type": "L",
-      "day": "Wednesday",
-      "start_time": "14:55",
-      "end_time": "15:45",
+      "type": "P",
+      "day": "Thursday",
+      "start_time": "12:25",
+      "end_time": "14:05",
       "teacher": "faculty4",
-      "room": "A-303"
-    },
-    {
-      "course": "CSE23213-B",
-      "course_name": "Computer architecture and organization",
-      "type": "L",
-      "day": "Wednesday",
-      "start_time": "15:45",
-      "end_time": "16:35",
-      "teacher": "faculty7",
-      "room": "A-303"
-    },
-    {
-      "course": "CSE23213-B",
-      "course_name": "Computer architecture and organization",
-      "type": "L",
-      "day": "Thursday",
-      "start_time": "08:50",
-      "end_time": "09:40",
-      "teacher": "faculty7",
-      "room": "A-303"
-    },
-    {
-      "course": "CSE214-B",
-      "course_name": "Operating System",
-      "type": "P",
-      "day": "Thursday",
-      "start_time": "09:40",
-      "end_time": "11:20",
-      "teacher": "faculty6",
-      "room": "A-404"
-    },
-    {
-      "course": "CSE214-B",
-      "course_name": "Operating System",
-      "type": "P",
-      "day": "Thursday",
-      "start_time": "10:45",
-      "end_time": "12:25",
-      "teacher": "faculty6",
-      "room": "A-404"
-    },
-    {
-      "course": "CSE23211-B",
-      "course_name": "Design And Analysis of Algorithms",
-      "type": "L",
-      "day": "Thursday",
-      "start_time": "14:55",
-      "end_time": "15:45",
-      "teacher": "faculty11",
-      "room": "A-303"
-    },
-    {
-      "course": "CSE214-B",
-      "course_name": "Operating System",
-      "type": "L",
-      "day": "Thursday",
-      "start_time": "15:45",
-      "end_time": "16:35",
-      "teacher": "faculty6",
-      "room": "A-303"
-    },
-    {
-      "course": "CSE23211-B",
-      "course_name": "Design And Analysis of Algorithms",
-      "type": "P",
-      "day": "Friday",
-      "start_time": "08:50",
-      "end_time": "10:30",
-      "teacher": "faculty11",
-      "room": "PG-303"
-    },
-    {
-      "course": "CSE23211-B",
-      "course_name": "Design And Analysis of Algorithms",
-      "type": "P",
-      "day": "Friday",
-      "start_time": "09:40",
-      "end_time": "11:20",
-      "teacher": "faculty11",
-      "room": "PG-303"
-    },
-    {
-      "course": "CSE23211-B",
-      "course_name": "Design And Analysis of Algorithms",
-      "type": "L",
-      "day": "Friday",
-      "start_time": "10:45",
-      "end_time": "11:35",
-      "teacher": "faculty11",
-      "room": "A-303"
+      "room": "A-101"
     },
     {
       "course": "CSE23203-B",
       "course_name": "Database and Management System",
-      "type": "L",
-      "day": "Friday",
-      "start_time": "15:45",
-      "end_time": "16:35",
-      "teacher": "faculty4",
-      "room": "A-303"
-    }
-  ],
-  "Y3-A": [
-    {
-      "course": "CSE23301-A",
-      "course_name": "Machine Learning",
-      "type": "L",
-      "day": "Monday",
-      "start_time": "08:50",
-      "end_time": "09:40",
-      "teacher": "faculty7",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23302-A",
-      "course_name": "Computer Networks",
-      "type": "L",
-      "day": "Monday",
-      "start_time": "09:40",
-      "end_time": "10:30",
-      "teacher": "faculty5",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23302-A",
-      "course_name": "Computer Networks",
-      "type": "P",
-      "day": "Monday",
-      "start_time": "11:35",
-      "end_time": "13:15",
-      "teacher": "faculty5",
-      "room": "C-301"
-    },
-    {
-      "course": "CSE23302-A",
-      "course_name": "Computer Networks",
-      "type": "P",
-      "day": "Monday",
-      "start_time": "12:25",
-      "end_time": "14:05",
-      "teacher": "faculty5",
-      "room": "C-301"
-    },
-    {
-      "course": "CSE23302-A",
-      "course_name": "Computer Networks",
-      "type": "L",
-      "day": "Tuesday",
-      "start_time": "10:45",
-      "end_time": "11:35",
-      "teacher": "faculty5",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23304-A",
-      "course_name": "Embedded System",
-      "type": "P",
-      "day": "Tuesday",
-      "start_time": "11:35",
-      "end_time": "13:15",
-      "teacher": "faculty8",
-      "room": "C-301"
-    },
-    {
-      "course": "CSE23304-A",
-      "course_name": "Embedded System",
-      "type": "P",
-      "day": "Tuesday",
-      "start_time": "12:25",
-      "end_time": "14:05",
-      "teacher": "faculty8",
-      "room": "C-301"
-    },
-    {
-      "course": "CSE23311-A",
-      "course_name": "Software Engineering",
-      "type": "L",
-      "day": "Tuesday",
-      "start_time": "14:05",
-      "end_time": "14:55",
-      "teacher": "faculty4",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23304-A",
-      "course_name": "Embedded System",
-      "type": "L",
-      "day": "Wednesday",
-      "start_time": "08:50",
-      "end_time": "09:40",
-      "teacher": "faculty8",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23311-A",
-      "course_name": "Software Engineering",
-      "type": "L",
-      "day": "Wednesday",
-      "start_time": "09:40",
-      "end_time": "10:30",
-      "teacher": "faculty4",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23302-A",
-      "course_name": "Computer Networks",
-      "type": "L",
-      "day": "Wednesday",
-      "start_time": "10:45",
-      "end_time": "11:35",
-      "teacher": "faculty5",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23304-A",
-      "course_name": "Embedded System",
-      "type": "L",
-      "day": "Wednesday",
-      "start_time": "14:55",
-      "end_time": "15:45",
-      "teacher": "faculty8",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23311-A",
-      "course_name": "Software Engineering",
-      "type": "L",
-      "day": "Thursday",
-      "start_time": "09:40",
-      "end_time": "10:30",
-      "teacher": "faculty4",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23304-A",
-      "course_name": "Embedded System",
-      "type": "L",
-      "day": "Thursday",
-      "start_time": "11:35",
-      "end_time": "12:25",
-      "teacher": "faculty8",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23301-A",
-      "course_name": "Machine Learning",
       "type": "P",
       "day": "Thursday",
       "start_time": "14:05",
       "end_time": "15:45",
-      "teacher": "faculty7",
-      "room": "HW-301"
-    },
-    {
-      "course": "CSE23301-A",
-      "course_name": "Machine Learning",
-      "type": "P",
-      "day": "Thursday",
-      "start_time": "14:55",
-      "end_time": "16:35",
-      "teacher": "faculty7",
-      "room": "HW-301"
-    },
-    {
-      "course": "CSE23302-A",
-      "course_name": "Computer Networks",
-      "type": "T",
-      "day": "Friday",
-      "start_time": "08:50",
-      "end_time": "09:40",
-      "teacher": "faculty5",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23301-A",
-      "course_name": "Machine Learning",
-      "type": "L",
-      "day": "Friday",
-      "start_time": "11:35",
-      "end_time": "12:25",
-      "teacher": "faculty7",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23301-A",
-      "course_name": "Machine Learning",
-      "type": "L",
-      "day": "Friday",
-      "start_time": "12:25",
-      "end_time": "13:15",
-      "teacher": "faculty7",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23311-A",
-      "course_name": "Software Engineering",
-      "type": "P",
-      "day": "Friday",
-      "start_time": "14:05",
-      "end_time": "15:45",
       "teacher": "faculty4",
-      "room": "PG-303"
+      "room": "A-101"
     },
     {
-      "course": "CSE23311-A",
-      "course_name": "Software Engineering",
-      "type": "P",
-      "day": "Friday",
-      "start_time": "14:55",
-      "end_time": "16:35",
-      "teacher": "faculty4",
-      "room": "PG-303"
-    }
-  ],
-  "Y3-B": [
-    {
-      "course": "CSE23301-B",
-      "course_name": "Machine Learning",
-      "type": "L",
-      "day": "Monday",
-      "start_time": "08:50",
-      "end_time": "09:40",
-      "teacher": "faculty3",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23304-B",
-      "course_name": "Embedded System",
-      "type": "L",
-      "day": "Monday",
-      "start_time": "09:40",
-      "end_time": "10:30",
-      "teacher": "faculty6",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23304-B",
-      "course_name": "Embedded System",
-      "type": "P",
-      "day": "Monday",
-      "start_time": "11:35",
-      "end_time": "13:15",
-      "teacher": "faculty6",
-      "room": "HW-301"
-    },
-    {
-      "course": "CSE23304-B",
-      "course_name": "Embedded System",
-      "type": "P",
-      "day": "Monday",
-      "start_time": "12:25",
-      "end_time": "14:05",
-      "teacher": "faculty6",
-      "room": "HW-301"
-    },
-    {
-      "course": "CSE23301-B",
-      "course_name": "Machine Learning",
-      "type": "L",
-      "day": "Monday",
-      "start_time": "14:05",
-      "end_time": "14:55",
-      "teacher": "faculty3",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23311-B",
-      "course_name": "Software Engineering",
-      "type": "L",
-      "day": "Tuesday",
-      "start_time": "10:45",
-      "end_time": "11:35",
-      "teacher": "faculty8",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23304-B",
-      "course_name": "Embedded System",
-      "type": "L",
-      "day": "Tuesday",
-      "start_time": "12:25",
-      "end_time": "13:15",
-      "teacher": "faculty6",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23311-B",
-      "course_name": "Software Engineering",
-      "type": "L",
-      "day": "Tuesday",
-      "start_time": "14:05",
-      "end_time": "14:55",
-      "teacher": "faculty8",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23302-B",
-      "course_name": "Computer Networks",
-      "type": "L",
-      "day": "Tuesday",
-      "start_time": "14:55",
-      "end_time": "15:45",
-      "teacher": "faculty5",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23311-B",
-      "course_name": "Software Engineering",
-      "type": "P",
-      "day": "Wednesday",
-      "start_time": "09:40",
-      "end_time": "11:20",
-      "teacher": "faculty8",
-      "room": "C-301"
-    },
-    {
-      "course": "CSE23311-B",
-      "course_name": "Software Engineering",
-      "type": "P",
-      "day": "Wednesday",
-      "start_time": "10:45",
-      "end_time": "12:25",
-      "teacher": "faculty8",
-      "room": "C-301"
-    },
-    {
-      "course": "CSE23304-B",
-      "course_name": "Embedded System",
-      "type": "L",
-      "day": "Wednesday",
-      "start_time": "12:25",
-      "end_time": "13:15",
-      "teacher": "faculty6",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23302-B",
-      "course_name": "Computer Networks",
-      "type": "L",
-      "day": "Wednesday",
-      "start_time": "14:05",
-      "end_time": "14:55",
-      "teacher": "faculty5",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23302-B",
-      "course_name": "Computer Networks",
-      "type": "L",
-      "day": "Thursday",
-      "start_time": "11:35",
-      "end_time": "12:25",
-      "teacher": "faculty5",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23302-B",
-      "course_name": "Computer Networks",
+      "course": "CSE23201-B",
+      "course_name": "Introduction to C programming",
       "type": "P",
       "day": "Thursday",
-      "start_time": "12:25",
-      "end_time": "14:05",
-      "teacher": "faculty5",
-      "room": "C-301"
-    },
-    {
-      "course": "CSE23302-B",
-      "course_name": "Computer Networks",
-      "type": "P",
-      "day": "Thursday",
-      "start_time": "14:05",
-      "end_time": "15:45",
-      "teacher": "faculty5",
-      "room": "C-301"
-    },
-    {
-      "course": "CSE23302-B",
-      "course_name": "Computer Networks",
-      "type": "T",
-      "day": "Friday",
-      "start_time": "10:45",
-      "end_time": "11:35",
-      "teacher": "faculty5",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23301-B",
-      "course_name": "Machine Learning",
-      "type": "L",
-      "day": "Friday",
-      "start_time": "11:35",
-      "end_time": "12:25",
-      "teacher": "faculty3",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23311-B",
-      "course_name": "Software Engineering",
-      "type": "L",
-      "day": "Friday",
-      "start_time": "14:05",
-      "end_time": "14:55",
-      "teacher": "faculty8",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23301-B",
-      "course_name": "Machine Learning",
-      "type": "P",
-      "day": "Friday",
       "start_time": "14:55",
       "end_time": "16:35",
       "teacher": "faculty3",
       "room": "C-301"
     },
     {
-      "course": "CSE23301-B",
-      "course_name": "Machine Learning",
+      "course": "CSE23201-B",
+      "course_name": "Introduction to C programming",
       "type": "P",
-      "day": "Friday",
+      "day": "Thursday",
       "start_time": "15:45",
       "end_time": "17:25",
       "teacher": "faculty3",
       "room": "C-301"
+    },
+    {
+      "course": "CSE23201-B",
+      "course_name": "Introduction to C programming",
+      "type": "L",
+      "day": "Friday",
+      "start_time": "09:40",
+      "end_time": "10:30",
+      "teacher": "faculty3",
+      "room": "A-202"
+    },
+    {
+      "course": "CSE23211-B",
+      "course_name": "Design And Analysis of Algorithms",
+      "type": "L",
+      "day": "Friday",
+      "start_time": "10:45",
+      "end_time": "11:35",
+      "teacher": "faculty10",
+      "room": "A-202"
+    },
+    {
+      "course": "CSE23201-B",
+      "course_name": "Introduction to C programming",
+      "type": "L",
+      "day": "Friday",
+      "start_time": "12:25",
+      "end_time": "13:15",
+      "teacher": "faculty3",
+      "room": "A-202"
+    },
+    {
+      "course": "CSE214-B",
+      "course_name": "Operating System",
+      "type": "L",
+      "day": "Friday",
+      "start_time": "14:05",
+      "end_time": "14:55",
+      "teacher": "faculty8",
+      "room": "A-202"
+    },
+    {
+      "course": "CSE214-B",
+      "course_name": "Operating System",
+      "type": "L",
+      "day": "Friday",
+      "start_time": "14:55",
+      "end_time": "15:45",
+      "teacher": "faculty8",
+      "room": "A-202"
+    }
+  ],
+  "Y3-A": [
+    {
+      "course": "CSE23302-A",
+      "course_name": "Computer Networks",
+      "type": "P",
+      "day": "Monday",
+      "start_time": "10:45",
+      "end_time": "12:25",
+      "teacher": "faculty3",
+      "room": "C-301"
+    },
+    {
+      "course": "CSE23302-A",
+      "course_name": "Computer Networks",
+      "type": "P",
+      "day": "Monday",
+      "start_time": "11:35",
+      "end_time": "13:15",
+      "teacher": "faculty3",
+      "room": "C-301"
+    },
+    {
+      "course": "CSE23311-A",
+      "course_name": "Software Engineering",
+      "type": "L",
+      "day": "Monday",
+      "start_time": "12:25",
+      "end_time": "13:15",
+      "teacher": "faculty8",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23304-A",
+      "course_name": "Embedded System",
+      "type": "L",
+      "day": "Monday",
+      "start_time": "14:55",
+      "end_time": "15:45",
+      "teacher": "faculty2",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23301-A",
+      "course_name": "Machine Learning",
+      "type": "L",
+      "day": "Monday",
+      "start_time": "15:45",
+      "end_time": "16:35",
+      "teacher": "faculty5",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23304-A",
+      "course_name": "Embedded System",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "teacher": "faculty2",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23302-A",
+      "course_name": "Computer Networks",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "12:25",
+      "end_time": "13:15",
+      "teacher": "faculty3",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23311-A",
+      "course_name": "Software Engineering",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "14:55",
+      "end_time": "15:45",
+      "teacher": "faculty8",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23302-A",
+      "course_name": "Computer Networks",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "15:45",
+      "end_time": "16:35",
+      "teacher": "faculty3",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23301-A",
+      "course_name": "Machine Learning",
+      "type": "L",
+      "day": "Wednesday",
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "teacher": "faculty5",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23302-A",
+      "course_name": "Computer Networks",
+      "type": "T",
+      "day": "Wednesday",
+      "start_time": "09:40",
+      "end_time": "10:30",
+      "teacher": "faculty3",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23311-A",
+      "course_name": "Software Engineering",
+      "type": "P",
+      "day": "Wednesday",
+      "start_time": "11:35",
+      "end_time": "13:15",
+      "teacher": "faculty8",
+      "room": "C-301"
+    },
+    {
+      "course": "CSE23311-A",
+      "course_name": "Software Engineering",
+      "type": "P",
+      "day": "Wednesday",
+      "start_time": "12:25",
+      "end_time": "14:05",
+      "teacher": "faculty8",
+      "room": "C-301"
+    },
+    {
+      "course": "CSE23301-A",
+      "course_name": "Machine Learning",
+      "type": "L",
+      "day": "Wednesday",
+      "start_time": "14:55",
+      "end_time": "15:45",
+      "teacher": "faculty5",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23311-A",
+      "course_name": "Software Engineering",
+      "type": "L",
+      "day": "Wednesday",
+      "start_time": "15:45",
+      "end_time": "16:35",
+      "teacher": "faculty8",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23304-A",
+      "course_name": "Embedded System",
+      "type": "L",
+      "day": "Thursday",
+      "start_time": "15:45",
+      "end_time": "16:35",
+      "teacher": "faculty2",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23301-A",
+      "course_name": "Machine Learning",
+      "type": "P",
+      "day": "Friday",
+      "start_time": "10:45",
+      "end_time": "12:25",
+      "teacher": "faculty5",
+      "room": "HW-301"
+    },
+    {
+      "course": "CSE23301-A",
+      "course_name": "Machine Learning",
+      "type": "P",
+      "day": "Friday",
+      "start_time": "11:35",
+      "end_time": "13:15",
+      "teacher": "faculty5",
+      "room": "HW-301"
+    },
+    {
+      "course": "CSE23304-A",
+      "course_name": "Embedded System",
+      "type": "P",
+      "day": "Friday",
+      "start_time": "14:05",
+      "end_time": "15:45",
+      "teacher": "faculty2",
+      "room": "C-301"
+    },
+    {
+      "course": "CSE23304-A",
+      "course_name": "Embedded System",
+      "type": "P",
+      "day": "Friday",
+      "start_time": "14:55",
+      "end_time": "16:35",
+      "teacher": "faculty2",
+      "room": "C-301"
+    },
+    {
+      "course": "CSE23302-A",
+      "course_name": "Computer Networks",
+      "type": "L",
+      "day": "Friday",
+      "start_time": "15:45",
+      "end_time": "16:35",
+      "teacher": "faculty3",
+      "room": "C-104"
+    }
+  ],
+  "Y3-B": [
+    {
+      "course": "CSE23311-B",
+      "course_name": "Software Engineering",
+      "type": "P",
+      "day": "Monday",
+      "start_time": "10:45",
+      "end_time": "12:25",
+      "teacher": "faculty8",
+      "room": "A-101"
+    },
+    {
+      "course": "CSE23311-B",
+      "course_name": "Software Engineering",
+      "type": "P",
+      "day": "Monday",
+      "start_time": "11:35",
+      "end_time": "13:15",
+      "teacher": "faculty8",
+      "room": "A-101"
+    },
+    {
+      "course": "CSE23302-B",
+      "course_name": "Computer Networks",
+      "type": "T",
+      "day": "Monday",
+      "start_time": "15:45",
+      "end_time": "16:35",
+      "teacher": "faculty7",
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23311-B",
+      "course_name": "Software Engineering",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "10:45",
+      "end_time": "11:35",
+      "teacher": "faculty8",
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23301-B",
+      "course_name": "Machine Learning",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "12:25",
+      "end_time": "13:15",
+      "teacher": "faculty5",
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23304-B",
+      "course_name": "Embedded System",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "14:55",
+      "end_time": "15:45",
+      "teacher": "faculty6",
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23301-B",
+      "course_name": "Machine Learning",
+      "type": "P",
+      "day": "Wednesday",
+      "start_time": "09:40",
+      "end_time": "11:20",
+      "teacher": "faculty5",
+      "room": "A-101"
+    },
+    {
+      "course": "CSE23301-B",
+      "course_name": "Machine Learning",
+      "type": "P",
+      "day": "Wednesday",
+      "start_time": "10:45",
+      "end_time": "12:25",
+      "teacher": "faculty5",
+      "room": "A-101"
+    },
+    {
+      "course": "CSE23302-B",
+      "course_name": "Computer Networks",
+      "type": "P",
+      "day": "Wednesday",
+      "start_time": "11:35",
+      "end_time": "13:15",
+      "teacher": "faculty7",
+      "room": "A-101"
+    },
+    {
+      "course": "CSE23302-B",
+      "course_name": "Computer Networks",
+      "type": "P",
+      "day": "Wednesday",
+      "start_time": "12:25",
+      "end_time": "14:05",
+      "teacher": "faculty7",
+      "room": "A-101"
+    },
+    {
+      "course": "CSE23304-B",
+      "course_name": "Embedded System",
+      "type": "L",
+      "day": "Wednesday",
+      "start_time": "14:05",
+      "end_time": "14:55",
+      "teacher": "faculty6",
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23304-B",
+      "course_name": "Embedded System",
+      "type": "L",
+      "day": "Thursday",
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "teacher": "faculty6",
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23302-B",
+      "course_name": "Computer Networks",
+      "type": "L",
+      "day": "Thursday",
+      "start_time": "09:40",
+      "end_time": "10:30",
+      "teacher": "faculty7",
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23301-B",
+      "course_name": "Machine Learning",
+      "type": "L",
+      "day": "Thursday",
+      "start_time": "10:45",
+      "end_time": "11:35",
+      "teacher": "faculty5",
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23302-B",
+      "course_name": "Computer Networks",
+      "type": "L",
+      "day": "Thursday",
+      "start_time": "11:35",
+      "end_time": "12:25",
+      "teacher": "faculty7",
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23304-B",
+      "course_name": "Embedded System",
+      "type": "P",
+      "day": "Thursday",
+      "start_time": "14:55",
+      "end_time": "16:35",
+      "teacher": "faculty6",
+      "room": "A-404"
+    },
+    {
+      "course": "CSE23304-B",
+      "course_name": "Embedded System",
+      "type": "P",
+      "day": "Thursday",
+      "start_time": "15:45",
+      "end_time": "17:25",
+      "teacher": "faculty6",
+      "room": "A-404"
+    },
+    {
+      "course": "CSE23301-B",
+      "course_name": "Machine Learning",
+      "type": "L",
+      "day": "Friday",
+      "start_time": "09:40",
+      "end_time": "10:30",
+      "teacher": "faculty5",
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23311-B",
+      "course_name": "Software Engineering",
+      "type": "L",
+      "day": "Friday",
+      "start_time": "11:35",
+      "end_time": "12:25",
+      "teacher": "faculty8",
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23302-B",
+      "course_name": "Computer Networks",
+      "type": "L",
+      "day": "Friday",
+      "start_time": "12:25",
+      "end_time": "13:15",
+      "teacher": "faculty7",
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23311-B",
+      "course_name": "Software Engineering",
+      "type": "L",
+      "day": "Friday",
+      "start_time": "15:45",
+      "end_time": "16:35",
+      "teacher": "faculty8",
+      "room": "A-303"
     }
   ],
   "Y4-A": [
@@ -1096,40 +1096,40 @@
       "course": "CSE23402-A",
       "course_name": "Fundamentals of Artificial Intelligence",
       "type": "L",
-      "day": "Monday",
-      "start_time": "12:25",
-      "end_time": "13:15",
-      "teacher": "faculty7",
+      "day": "Tuesday",
+      "start_time": "11:35",
+      "end_time": "12:25",
+      "teacher": "faculty5",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23402-A",
+      "course_name": "Fundamentals of Artificial Intelligence",
+      "type": "L",
+      "day": "Thursday",
+      "start_time": "14:05",
+      "end_time": "14:55",
+      "teacher": "faculty5",
       "room": "C-104"
     },
     {
       "course": "CSE23402-A",
       "course_name": "Fundamentals of Artificial Intelligence",
       "type": "T",
-      "day": "Monday",
-      "start_time": "14:55",
-      "end_time": "15:45",
-      "teacher": "faculty7",
+      "day": "Friday",
+      "start_time": "12:25",
+      "end_time": "13:15",
+      "teacher": "faculty5",
       "room": "C-104"
     },
     {
       "course": "CSE23402-A",
       "course_name": "Fundamentals of Artificial Intelligence",
       "type": "L",
-      "day": "Wednesday",
-      "start_time": "09:40",
-      "end_time": "10:30",
-      "teacher": "faculty7",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23402-A",
-      "course_name": "Fundamentals of Artificial Intelligence",
-      "type": "L",
-      "day": "Wednesday",
+      "day": "Friday",
       "start_time": "14:55",
       "end_time": "15:45",
-      "teacher": "faculty7",
+      "teacher": "faculty5",
       "room": "C-104"
     }
   ],
@@ -1138,41 +1138,41 @@
       "course": "CSE23402-B",
       "course_name": "Fundamentals of Artificial Intelligence",
       "type": "L",
-      "day": "Tuesday",
-      "start_time": "11:35",
-      "end_time": "12:25",
+      "day": "Monday",
+      "start_time": "10:45",
+      "end_time": "11:35",
       "teacher": "faculty5",
-      "room": "D-102"
+      "room": "C-103"
+    },
+    {
+      "course": "CSE23402-B",
+      "course_name": "Fundamentals of Artificial Intelligence",
+      "type": "L",
+      "day": "Monday",
+      "start_time": "12:25",
+      "end_time": "13:15",
+      "teacher": "faculty5",
+      "room": "C-103"
+    },
+    {
+      "course": "CSE23402-B",
+      "course_name": "Fundamentals of Artificial Intelligence",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "teacher": "faculty5",
+      "room": "C-103"
     },
     {
       "course": "CSE23402-B",
       "course_name": "Fundamentals of Artificial Intelligence",
       "type": "T",
-      "day": "Tuesday",
-      "start_time": "15:45",
-      "end_time": "16:35",
-      "teacher": "faculty5",
-      "room": "D-102"
-    },
-    {
-      "course": "CSE23402-B",
-      "course_name": "Fundamentals of Artificial Intelligence",
-      "type": "L",
-      "day": "Thursday",
-      "start_time": "14:55",
-      "end_time": "15:45",
-      "teacher": "faculty5",
-      "room": "D-102"
-    },
-    {
-      "course": "CSE23402-B",
-      "course_name": "Fundamentals of Artificial Intelligence",
-      "type": "L",
       "day": "Friday",
-      "start_time": "12:25",
-      "end_time": "13:15",
+      "start_time": "08:50",
+      "end_time": "09:40",
       "teacher": "faculty5",
-      "room": "D-102"
+      "room": "C-103"
     }
   ],
   "Y1-C": [
@@ -1180,27 +1180,17 @@
       "course": "CSE23113-C",
       "course_name": "User Interface Design",
       "type": "L",
+      "day": "Monday",
+      "start_time": "09:40",
+      "end_time": "10:30",
+      "teacher": "faculty9",
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23113-C",
+      "course_name": "User Interface Design",
+      "type": "P",
       "day": "Tuesday",
-      "start_time": "12:25",
-      "end_time": "13:15",
-      "teacher": "faculty9",
-      "room": "A-104"
-    },
-    {
-      "course": "CSE23113-C",
-      "course_name": "User Interface Design",
-      "type": "P",
-      "day": "Wednesday",
-      "start_time": "14:05",
-      "end_time": "15:45",
-      "teacher": "faculty9",
-      "room": "C-301"
-    },
-    {
-      "course": "CSE23113-C",
-      "course_name": "User Interface Design",
-      "type": "P",
-      "day": "Wednesday",
       "start_time": "14:55",
       "end_time": "16:35",
       "teacher": "faculty9",
@@ -1209,12 +1199,22 @@
     {
       "course": "CSE23113-C",
       "course_name": "User Interface Design",
+      "type": "P",
+      "day": "Tuesday",
+      "start_time": "15:45",
+      "end_time": "17:25",
+      "teacher": "faculty9",
+      "room": "C-301"
+    },
+    {
+      "course": "CSE23113-C",
+      "course_name": "User Interface Design",
       "type": "L",
-      "day": "Friday",
+      "day": "Wednesday",
       "start_time": "15:45",
       "end_time": "16:35",
       "teacher": "faculty9",
-      "room": "A-104"
+      "room": "A-303"
     }
   ],
   "Y1-D": [
@@ -1222,41 +1222,41 @@
       "course": "CSE23113-D",
       "course_name": "User Interface Design",
       "type": "L",
+      "day": "Monday",
+      "start_time": "09:40",
+      "end_time": "10:30",
+      "teacher": "faculty2",
+      "room": "D-103"
+    },
+    {
+      "course": "CSE23113-D",
+      "course_name": "User Interface Design",
+      "type": "P",
       "day": "Wednesday",
-      "start_time": "11:35",
+      "start_time": "10:45",
       "end_time": "12:25",
       "teacher": "faculty2",
-      "room": "C-203"
+      "room": "A-404"
+    },
+    {
+      "course": "CSE23113-D",
+      "course_name": "User Interface Design",
+      "type": "P",
+      "day": "Wednesday",
+      "start_time": "11:35",
+      "end_time": "13:15",
+      "teacher": "faculty2",
+      "room": "A-404"
     },
     {
       "course": "CSE23113-D",
       "course_name": "User Interface Design",
       "type": "L",
       "day": "Wednesday",
-      "start_time": "14:55",
-      "end_time": "15:45",
+      "start_time": "12:25",
+      "end_time": "13:15",
       "teacher": "faculty2",
-      "room": "C-203"
-    },
-    {
-      "course": "CSE23113-D",
-      "course_name": "User Interface Design",
-      "type": "P",
-      "day": "Thursday",
-      "start_time": "14:55",
-      "end_time": "16:35",
-      "teacher": "faculty2",
-      "room": "A-403"
-    },
-    {
-      "course": "CSE23113-D",
-      "course_name": "User Interface Design",
-      "type": "P",
-      "day": "Thursday",
-      "start_time": "15:45",
-      "end_time": "17:25",
-      "teacher": "faculty2",
-      "room": "A-403"
+      "room": "D-103"
     }
   ],
   "Y1-E": [
@@ -1265,30 +1265,30 @@
       "course_name": "User Interface Design",
       "type": "P",
       "day": "Monday",
-      "start_time": "12:25",
-      "end_time": "14:05",
+      "start_time": "11:35",
+      "end_time": "13:15",
       "teacher": "faculty2",
-      "room": "A-403"
+      "room": "HW-301"
     },
     {
       "course": "CSE23113-E",
       "course_name": "User Interface Design",
       "type": "P",
       "day": "Monday",
-      "start_time": "14:05",
-      "end_time": "15:45",
+      "start_time": "12:25",
+      "end_time": "14:05",
       "teacher": "faculty2",
-      "room": "A-403"
+      "room": "HW-301"
     },
     {
       "course": "CSE23113-E",
       "course_name": "User Interface Design",
       "type": "L",
-      "day": "Wednesday",
-      "start_time": "08:50",
-      "end_time": "09:40",
+      "day": "Thursday",
+      "start_time": "09:40",
+      "end_time": "10:30",
       "teacher": "faculty2",
-      "room": "C-302"
+      "room": "A-301"
     },
     {
       "course": "CSE23113-E",
@@ -1298,49 +1298,49 @@
       "start_time": "14:05",
       "end_time": "14:55",
       "teacher": "faculty2",
-      "room": "C-302"
+      "room": "A-301"
     }
   ],
   "Y1-F": [
     {
       "course": "CSE23113-F",
       "course_name": "User Interface Design",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "09:40",
+      "end_time": "10:30",
+      "teacher": "faculty10",
+      "room": "C-204"
+    },
+    {
+      "course": "CSE23113-F",
+      "course_name": "User Interface Design",
+      "type": "L",
+      "day": "Tuesday",
+      "start_time": "11:35",
+      "end_time": "12:25",
+      "teacher": "faculty10",
+      "room": "C-204"
+    },
+    {
+      "course": "CSE23113-F",
+      "course_name": "User Interface Design",
       "type": "P",
-      "day": "Monday",
-      "start_time": "14:55",
-      "end_time": "16:35",
-      "teacher": "faculty2",
+      "day": "Friday",
+      "start_time": "11:35",
+      "end_time": "13:15",
+      "teacher": "faculty10",
       "room": "C-301"
     },
     {
       "course": "CSE23113-F",
       "course_name": "User Interface Design",
       "type": "P",
-      "day": "Monday",
-      "start_time": "15:45",
-      "end_time": "17:25",
-      "teacher": "faculty2",
+      "day": "Friday",
+      "start_time": "12:25",
+      "end_time": "14:05",
+      "teacher": "faculty10",
       "room": "C-301"
-    },
-    {
-      "course": "CSE23113-F",
-      "course_name": "User Interface Design",
-      "type": "L",
-      "day": "Friday",
-      "start_time": "08:50",
-      "end_time": "09:40",
-      "teacher": "faculty2",
-      "room": "A-102"
-    },
-    {
-      "course": "CSE23113-F",
-      "course_name": "User Interface Design",
-      "type": "L",
-      "day": "Friday",
-      "start_time": "14:05",
-      "end_time": "14:55",
-      "teacher": "faculty2",
-      "room": "A-102"
     }
   ],
   "Y1-G": [
@@ -1348,41 +1348,41 @@
       "course": "CSE23113-G",
       "course_name": "User Interface Design",
       "type": "L",
-      "day": "Monday",
-      "start_time": "10:45",
-      "end_time": "11:35",
-      "teacher": "faculty2",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23113-G",
-      "course_name": "User Interface Design",
-      "type": "P",
       "day": "Tuesday",
-      "start_time": "11:35",
-      "end_time": "13:15",
+      "start_time": "09:40",
+      "end_time": "10:30",
       "teacher": "faculty2",
-      "room": "PG-303"
-    },
-    {
-      "course": "CSE23113-G",
-      "course_name": "User Interface Design",
-      "type": "P",
-      "day": "Tuesday",
-      "start_time": "12:25",
-      "end_time": "14:05",
-      "teacher": "faculty2",
-      "room": "PG-303"
+      "room": "C-101"
     },
     {
       "course": "CSE23113-G",
       "course_name": "User Interface Design",
       "type": "L",
-      "day": "Thursday",
-      "start_time": "08:50",
-      "end_time": "09:40",
+      "day": "Tuesday",
+      "start_time": "10:45",
+      "end_time": "11:35",
       "teacher": "faculty2",
-      "room": "C-104"
+      "room": "C-101"
+    },
+    {
+      "course": "CSE23113-G",
+      "course_name": "User Interface Design",
+      "type": "P",
+      "day": "Thursday",
+      "start_time": "11:35",
+      "end_time": "13:15",
+      "teacher": "faculty2",
+      "room": "A-403"
+    },
+    {
+      "course": "CSE23113-G",
+      "course_name": "User Interface Design",
+      "type": "P",
+      "day": "Thursday",
+      "start_time": "12:25",
+      "end_time": "14:05",
+      "teacher": "faculty2",
+      "room": "A-403"
     }
   ],
   "Y1-H": [
@@ -1390,41 +1390,41 @@
       "course": "CSE23113-H",
       "course_name": "User Interface Design",
       "type": "L",
-      "day": "Tuesday",
+      "day": "Monday",
       "start_time": "08:50",
       "end_time": "09:40",
-      "teacher": "faculty11",
-      "room": "C-203"
+      "teacher": "faculty2",
+      "room": "A-102"
     },
     {
       "course": "CSE23113-H",
       "course_name": "User Interface Design",
       "type": "L",
-      "day": "Wednesday",
-      "start_time": "10:45",
-      "end_time": "11:35",
-      "teacher": "faculty11",
-      "room": "C-203"
-    },
-    {
-      "course": "CSE23113-H",
-      "course_name": "User Interface Design",
-      "type": "P",
-      "day": "Wednesday",
-      "start_time": "12:25",
-      "end_time": "14:05",
-      "teacher": "faculty11",
-      "room": "A-404"
-    },
-    {
-      "course": "CSE23113-H",
-      "course_name": "User Interface Design",
-      "type": "P",
-      "day": "Wednesday",
+      "day": "Monday",
       "start_time": "14:05",
-      "end_time": "15:45",
-      "teacher": "faculty11",
-      "room": "A-404"
+      "end_time": "14:55",
+      "teacher": "faculty2",
+      "room": "A-102"
+    },
+    {
+      "course": "CSE23113-H",
+      "course_name": "User Interface Design",
+      "type": "P",
+      "day": "Friday",
+      "start_time": "08:50",
+      "end_time": "10:30",
+      "teacher": "faculty2",
+      "room": "PG-303"
+    },
+    {
+      "course": "CSE23113-H",
+      "course_name": "User Interface Design",
+      "type": "P",
+      "day": "Friday",
+      "start_time": "09:40",
+      "end_time": "11:20",
+      "teacher": "faculty2",
+      "room": "PG-303"
     }
   ],
   "Y2-C": [
@@ -1432,40 +1432,30 @@
       "course": "CSE23211-C",
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
-      "day": "Monday",
-      "start_time": "10:45",
-      "end_time": "11:35",
-      "teacher": "faculty9",
-      "room": "D-102"
+      "day": "Tuesday",
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "teacher": "faculty11",
+      "room": "C-201"
     },
     {
       "course": "CSE23211-C",
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
-      "day": "Monday",
+      "day": "Tuesday",
       "start_time": "11:35",
       "end_time": "12:25",
-      "teacher": "faculty9",
-      "room": "D-102"
-    },
-    {
-      "course": "CSE23211-C",
-      "course_name": "Design And Analysis of Algorithms",
-      "type": "L",
-      "day": "Wednesday",
-      "start_time": "10:45",
-      "end_time": "11:35",
-      "teacher": "faculty9",
-      "room": "D-102"
+      "teacher": "faculty11",
+      "room": "C-201"
     },
     {
       "course": "CSE23211-C",
       "course_name": "Design And Analysis of Algorithms",
       "type": "P",
       "day": "Thursday",
-      "start_time": "10:45",
-      "end_time": "12:25",
-      "teacher": "faculty9",
+      "start_time": "09:40",
+      "end_time": "11:20",
+      "teacher": "faculty11",
       "room": "PG-303"
     },
     {
@@ -1473,10 +1463,20 @@
       "course_name": "Design And Analysis of Algorithms",
       "type": "P",
       "day": "Thursday",
-      "start_time": "11:35",
-      "end_time": "13:15",
-      "teacher": "faculty9",
+      "start_time": "10:45",
+      "end_time": "12:25",
+      "teacher": "faculty11",
       "room": "PG-303"
+    },
+    {
+      "course": "CSE23211-C",
+      "course_name": "Design And Analysis of Algorithms",
+      "type": "L",
+      "day": "Friday",
+      "start_time": "09:40",
+      "end_time": "10:30",
+      "teacher": "faculty11",
+      "room": "C-201"
     }
   ],
   "Y2-D": [
@@ -1485,50 +1485,50 @@
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
       "day": "Monday",
-      "start_time": "14:05",
-      "end_time": "14:55",
-      "teacher": "faculty11",
-      "room": "A-204"
+      "start_time": "11:35",
+      "end_time": "12:25",
+      "teacher": "faculty10",
+      "room": "C-102"
+    },
+    {
+      "course": "CSE23211-D",
+      "course_name": "Design And Analysis of Algorithms",
+      "type": "P",
+      "day": "Monday",
+      "start_time": "14:55",
+      "end_time": "16:35",
+      "teacher": "faculty10",
+      "room": "HW-301"
+    },
+    {
+      "course": "CSE23211-D",
+      "course_name": "Design And Analysis of Algorithms",
+      "type": "P",
+      "day": "Monday",
+      "start_time": "15:45",
+      "end_time": "17:25",
+      "teacher": "faculty10",
+      "room": "HW-301"
     },
     {
       "course": "CSE23211-D",
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
-      "day": "Monday",
-      "start_time": "15:45",
-      "end_time": "16:35",
-      "teacher": "faculty11",
-      "room": "A-204"
-    },
-    {
-      "course": "CSE23211-D",
-      "course_name": "Design And Analysis of Algorithms",
-      "type": "P",
       "day": "Thursday",
-      "start_time": "09:40",
-      "end_time": "11:20",
-      "teacher": "faculty11",
-      "room": "HW-301"
-    },
-    {
-      "course": "CSE23211-D",
-      "course_name": "Design And Analysis of Algorithms",
-      "type": "P",
-      "day": "Thursday",
-      "start_time": "10:45",
-      "end_time": "12:25",
-      "teacher": "faculty11",
-      "room": "HW-301"
+      "start_time": "12:25",
+      "end_time": "13:15",
+      "teacher": "faculty10",
+      "room": "C-102"
     },
     {
       "course": "CSE23211-D",
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
       "day": "Friday",
-      "start_time": "11:35",
-      "end_time": "12:25",
-      "teacher": "faculty11",
-      "room": "A-204"
+      "start_time": "09:40",
+      "end_time": "10:30",
+      "teacher": "faculty10",
+      "room": "C-102"
     }
   ],
   "Y2-E": [
@@ -1536,51 +1536,51 @@
       "course": "CSE23211-E",
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
-      "day": "Tuesday",
-      "start_time": "14:05",
-      "end_time": "14:55",
-      "teacher": "faculty10",
-      "room": "A-204"
+      "day": "Monday",
+      "start_time": "08:50",
+      "end_time": "09:40",
+      "teacher": "faculty11",
+      "room": "C-103"
     },
     {
       "course": "CSE23211-E",
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
-      "day": "Tuesday",
+      "day": "Monday",
       "start_time": "15:45",
       "end_time": "16:35",
-      "teacher": "faculty10",
-      "room": "A-204"
-    },
-    {
-      "course": "CSE23211-E",
-      "course_name": "Design And Analysis of Algorithms",
-      "type": "P",
-      "day": "Wednesday",
-      "start_time": "14:05",
-      "end_time": "15:45",
-      "teacher": "faculty10",
-      "room": "A-403"
-    },
-    {
-      "course": "CSE23211-E",
-      "course_name": "Design And Analysis of Algorithms",
-      "type": "P",
-      "day": "Wednesday",
-      "start_time": "14:55",
-      "end_time": "16:35",
-      "teacher": "faculty10",
-      "room": "A-403"
+      "teacher": "faculty11",
+      "room": "C-103"
     },
     {
       "course": "CSE23211-E",
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
-      "day": "Friday",
-      "start_time": "10:45",
-      "end_time": "11:35",
-      "teacher": "faculty10",
-      "room": "A-204"
+      "day": "Tuesday",
+      "start_time": "12:25",
+      "end_time": "13:15",
+      "teacher": "faculty11",
+      "room": "C-103"
+    },
+    {
+      "course": "CSE23211-E",
+      "course_name": "Design And Analysis of Algorithms",
+      "type": "P",
+      "day": "Wednesday",
+      "start_time": "08:50",
+      "end_time": "10:30",
+      "teacher": "faculty11",
+      "room": "C-301"
+    },
+    {
+      "course": "CSE23211-E",
+      "course_name": "Design And Analysis of Algorithms",
+      "type": "P",
+      "day": "Wednesday",
+      "start_time": "09:40",
+      "end_time": "11:20",
+      "teacher": "faculty11",
+      "room": "C-301"
     }
   ],
   "Y2-F": [
@@ -1589,50 +1589,50 @@
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
       "day": "Monday",
+      "start_time": "15:45",
+      "end_time": "16:35",
+      "teacher": "faculty9",
+      "room": "A-202"
+    },
+    {
+      "course": "CSE23211-F",
+      "course_name": "Design And Analysis of Algorithms",
+      "type": "P",
+      "day": "Wednesday",
+      "start_time": "14:05",
+      "end_time": "15:45",
+      "teacher": "faculty9",
+      "room": "A-101"
+    },
+    {
+      "course": "CSE23211-F",
+      "course_name": "Design And Analysis of Algorithms",
+      "type": "P",
+      "day": "Wednesday",
+      "start_time": "14:55",
+      "end_time": "16:35",
+      "teacher": "faculty9",
+      "room": "A-101"
+    },
+    {
+      "course": "CSE23211-F",
+      "course_name": "Design And Analysis of Algorithms",
+      "type": "L",
+      "day": "Thursday",
       "start_time": "09:40",
       "end_time": "10:30",
-      "teacher": "faculty10",
-      "room": "C-201"
+      "teacher": "faculty9",
+      "room": "A-202"
     },
     {
       "course": "CSE23211-F",
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
-      "day": "Tuesday",
+      "day": "Friday",
       "start_time": "08:50",
       "end_time": "09:40",
-      "teacher": "faculty10",
-      "room": "C-201"
-    },
-    {
-      "course": "CSE23211-F",
-      "course_name": "Design And Analysis of Algorithms",
-      "type": "L",
-      "day": "Tuesday",
-      "start_time": "14:55",
-      "end_time": "15:45",
-      "teacher": "faculty10",
-      "room": "C-201"
-    },
-    {
-      "course": "CSE23211-F",
-      "course_name": "Design And Analysis of Algorithms",
-      "type": "P",
-      "day": "Friday",
-      "start_time": "11:35",
-      "end_time": "13:15",
-      "teacher": "faculty10",
-      "room": "HW-301"
-    },
-    {
-      "course": "CSE23211-F",
-      "course_name": "Design And Analysis of Algorithms",
-      "type": "P",
-      "day": "Friday",
-      "start_time": "12:25",
-      "end_time": "14:05",
-      "teacher": "faculty10",
-      "room": "HW-301"
+      "teacher": "faculty9",
+      "room": "A-202"
     }
   ],
   "Y2-G": [
@@ -1641,50 +1641,50 @@
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
       "day": "Monday",
-      "start_time": "12:25",
-      "end_time": "13:15",
+      "start_time": "11:35",
+      "end_time": "12:25",
       "teacher": "faculty9",
-      "room": "D-102"
+      "room": "D-103"
     },
     {
       "course": "CSE23211-G",
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
       "day": "Tuesday",
-      "start_time": "08:50",
-      "end_time": "09:40",
+      "start_time": "10:45",
+      "end_time": "11:35",
       "teacher": "faculty9",
-      "room": "D-102"
+      "room": "D-103"
     },
     {
       "course": "CSE23211-G",
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
+      "day": "Tuesday",
+      "start_time": "14:05",
+      "end_time": "14:55",
+      "teacher": "faculty9",
+      "room": "D-103"
+    },
+    {
+      "course": "CSE23211-G",
+      "course_name": "Design And Analysis of Algorithms",
+      "type": "P",
       "day": "Wednesday",
-      "start_time": "15:45",
-      "end_time": "16:35",
+      "start_time": "10:45",
+      "end_time": "12:25",
       "teacher": "faculty9",
-      "room": "D-102"
+      "room": "A-403"
     },
     {
       "course": "CSE23211-G",
       "course_name": "Design And Analysis of Algorithms",
       "type": "P",
-      "day": "Thursday",
-      "start_time": "14:55",
-      "end_time": "16:35",
+      "day": "Wednesday",
+      "start_time": "11:35",
+      "end_time": "13:15",
       "teacher": "faculty9",
-      "room": "A-101"
-    },
-    {
-      "course": "CSE23211-G",
-      "course_name": "Design And Analysis of Algorithms",
-      "type": "P",
-      "day": "Thursday",
-      "start_time": "15:45",
-      "end_time": "17:25",
-      "teacher": "faculty9",
-      "room": "A-101"
+      "room": "A-403"
     }
   ],
   "Y2-H": [
@@ -1692,30 +1692,30 @@
       "course": "CSE23211-H",
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
-      "day": "Monday",
+      "day": "Tuesday",
       "start_time": "15:45",
       "end_time": "16:35",
-      "teacher": "faculty9",
-      "room": "A-301"
+      "teacher": "faculty10",
+      "room": "A-105"
     },
     {
       "course": "CSE23211-H",
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
-      "day": "Tuesday",
-      "start_time": "14:55",
-      "end_time": "15:45",
-      "teacher": "faculty9",
-      "room": "A-301"
+      "day": "Wednesday",
+      "start_time": "15:45",
+      "end_time": "16:35",
+      "teacher": "faculty10",
+      "room": "A-105"
     },
     {
       "course": "CSE23211-H",
       "course_name": "Design And Analysis of Algorithms",
       "type": "P",
       "day": "Thursday",
-      "start_time": "12:25",
-      "end_time": "14:05",
-      "teacher": "faculty9",
+      "start_time": "10:45",
+      "end_time": "12:25",
+      "teacher": "faculty10",
       "room": "A-101"
     },
     {
@@ -1723,20 +1723,20 @@
       "course_name": "Design And Analysis of Algorithms",
       "type": "P",
       "day": "Thursday",
-      "start_time": "14:05",
-      "end_time": "15:45",
-      "teacher": "faculty9",
+      "start_time": "11:35",
+      "end_time": "13:15",
+      "teacher": "faculty10",
       "room": "A-101"
     },
     {
       "course": "CSE23211-H",
       "course_name": "Design And Analysis of Algorithms",
       "type": "L",
-      "day": "Friday",
-      "start_time": "09:40",
-      "end_time": "10:30",
-      "teacher": "faculty9",
-      "room": "A-301"
+      "day": "Thursday",
+      "start_time": "15:45",
+      "end_time": "16:35",
+      "teacher": "faculty10",
+      "room": "A-105"
     }
   ]
 }

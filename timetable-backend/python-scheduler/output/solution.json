@@ -3,64 +3,64 @@
     {
       "course": "CSE23111-A",
       "type": "L",
-      "slot": "Tuesday_14:55",
-      "teacher": "faculty4",
-      "room": "C-203"
-    },
-    {
-      "course": "CSE23111-A",
-      "type": "L",
-      "slot": "Thursday_11:35",
-      "teacher": "faculty4",
-      "room": "C-203"
-    },
-    {
-      "course": "CSE23111-A",
-      "type": "L",
-      "slot": "Friday_12:25",
-      "teacher": "faculty4",
-      "room": "C-203"
-    },
-    {
-      "course": "CSE23111-A",
-      "type": "P",
-      "slot": "Monday_10:45",
-      "teacher": "faculty4",
-      "room": "PG-303"
-    },
-    {
-      "course": "CSE23111-A",
-      "type": "P",
       "slot": "Monday_11:35",
       "teacher": "faculty4",
-      "room": "PG-303"
+      "room": "A-103"
+    },
+    {
+      "course": "CSE23111-A",
+      "type": "L",
+      "slot": "Wednesday_14:55",
+      "teacher": "faculty4",
+      "room": "A-103"
+    },
+    {
+      "course": "CSE23111-A",
+      "type": "L",
+      "slot": "Thursday_14:55",
+      "teacher": "faculty4",
+      "room": "A-103"
+    },
+    {
+      "course": "CSE23111-A",
+      "type": "P",
+      "slot": "Monday_08:50",
+      "teacher": "faculty4",
+      "room": "A-403"
+    },
+    {
+      "course": "CSE23111-A",
+      "type": "P",
+      "slot": "Monday_09:40",
+      "teacher": "faculty4",
+      "room": "A-403"
     },
     {
       "course": "CSE23113-A",
       "type": "L",
-      "slot": "Monday_14:05",
-      "teacher": "faculty10",
-      "room": "C-203"
+      "slot": "Monday_12:25",
+      "teacher": "faculty11",
+      "room": "A-103"
     },
     {
       "course": "CSE23113-A",
       "type": "L",
-      "slot": "Thursday_15:45",
-      "teacher": "faculty10",
-      "room": "C-203"
+      "slot": "Thursday_12:25",
+      "teacher": "faculty11",
+      "room": "A-103"
     },
     {
       "course": "CSE23113-A",
       "type": "P",
-      "slot": "Thursday_09:40",
-      "teacher": "faculty10",
+      "slot": "Tuesday_14:05",
+      "teacher": "faculty11",
       "room": "A-403"
     },
     {
       "course": "CSE23113-A",
       "type": "P",
-      "slot": "Thursday_10:45",
-      "teacher": "faculty10",
+      "slot": "Tuesday_14:55",
+      "teacher": "faculty11",
       "room": "A-403"
     }
   ],
@@ -68,234 +68,234 @@
     {
       "course": "CSE23111-B",
       "type": "L",
-      "slot": "Tuesday_09:40",
+      "slot": "Monday_14:55",
       "teacher": "faculty6",
-      "room": "A-201"
+      "room": "D-101"
     },
     {
       "course": "CSE23111-B",
       "type": "L",
       "slot": "Tuesday_15:45",
       "teacher": "faculty6",
-      "room": "A-201"
+      "room": "D-101"
     },
     {
       "course": "CSE23111-B",
       "type": "L",
-      "slot": "Friday_10:45",
+      "slot": "Wednesday_09:40",
       "teacher": "faculty6",
-      "room": "A-201"
+      "room": "D-101"
     },
     {
       "course": "CSE23111-B",
       "type": "P",
-      "slot": "Friday_08:50",
+      "slot": "Tuesday_09:40",
       "teacher": "faculty6",
-      "room": "A-403"
+      "room": "PG-303"
     },
     {
       "course": "CSE23111-B",
       "type": "P",
-      "slot": "Friday_09:40",
+      "slot": "Tuesday_10:45",
       "teacher": "faculty6",
-      "room": "A-403"
+      "room": "PG-303"
     },
     {
       "course": "CSE23113-B",
       "type": "L",
-      "slot": "Monday_11:35",
-      "teacher": "faculty10",
-      "room": "A-201"
+      "slot": "Monday_14:05",
+      "teacher": "faculty11",
+      "room": "D-101"
     },
     {
       "course": "CSE23113-B",
       "type": "L",
       "slot": "Wednesday_15:45",
-      "teacher": "faculty10",
-      "room": "A-201"
+      "teacher": "faculty11",
+      "room": "D-101"
     },
     {
       "course": "CSE23113-B",
       "type": "P",
-      "slot": "Thursday_12:25",
-      "teacher": "faculty10",
-      "room": "A-403"
+      "slot": "Thursday_14:55",
+      "teacher": "faculty11",
+      "room": "A-101"
     },
     {
       "course": "CSE23113-B",
       "type": "P",
-      "slot": "Thursday_14:05",
-      "teacher": "faculty10",
-      "room": "A-403"
+      "slot": "Thursday_15:45",
+      "teacher": "faculty11",
+      "room": "A-101"
     }
   ],
   "Y2-A": [
     {
       "course": "CSE23201-A",
       "type": "L",
-      "slot": "Tuesday_15:45",
-      "teacher": "faculty3",
-      "room": "A-401"
+      "slot": "Monday_14:55",
+      "teacher": "faculty7",
+      "room": "C-302"
     },
     {
       "course": "CSE23201-A",
       "type": "L",
-      "slot": "Thursday_08:50",
-      "teacher": "faculty3",
-      "room": "A-401"
+      "slot": "Thursday_12:25",
+      "teacher": "faculty7",
+      "room": "C-302"
     },
     {
       "course": "CSE23201-A",
       "type": "L",
-      "slot": "Thursday_10:45",
-      "teacher": "faculty3",
-      "room": "A-401"
+      "slot": "Friday_14:05",
+      "teacher": "faculty7",
+      "room": "C-302"
     },
     {
       "course": "CSE23201-A",
-      "type": "P",
-      "slot": "Wednesday_14:05",
-      "teacher": "faculty3",
-      "room": "PG-303"
-    },
-    {
-      "course": "CSE23201-A",
-      "type": "P",
-      "slot": "Wednesday_14:55",
-      "teacher": "faculty3",
-      "room": "PG-303"
-    },
-    {
-      "course": "CSE214-A",
-      "type": "L",
-      "slot": "Tuesday_08:50",
-      "teacher": "faculty8",
-      "room": "A-401"
-    },
-    {
-      "course": "CSE214-A",
-      "type": "L",
-      "slot": "Tuesday_09:40",
-      "teacher": "faculty8",
-      "room": "A-401"
-    },
-    {
-      "course": "CSE214-A",
-      "type": "L",
-      "slot": "Friday_14:55",
-      "teacher": "faculty8",
-      "room": "A-401"
-    },
-    {
-      "course": "CSE214-A",
       "type": "P",
       "slot": "Thursday_14:05",
-      "teacher": "faculty8",
-      "room": "A-404"
+      "teacher": "faculty7",
+      "room": "HW-301"
+    },
+    {
+      "course": "CSE23201-A",
+      "type": "P",
+      "slot": "Thursday_14:55",
+      "teacher": "faculty7",
+      "room": "HW-301"
+    },
+    {
+      "course": "CSE214-A",
+      "type": "L",
+      "slot": "Tuesday_14:05",
+      "teacher": "faculty4",
+      "room": "C-302"
+    },
+    {
+      "course": "CSE214-A",
+      "type": "L",
+      "slot": "Thursday_08:50",
+      "teacher": "faculty4",
+      "room": "C-302"
+    },
+    {
+      "course": "CSE214-A",
+      "type": "L",
+      "slot": "Friday_08:50",
+      "teacher": "faculty4",
+      "room": "C-302"
     },
     {
       "course": "CSE214-A",
       "type": "P",
-      "slot": "Thursday_14:55",
-      "teacher": "faculty8",
-      "room": "A-404"
+      "slot": "Wednesday_10:45",
+      "teacher": "faculty4",
+      "room": "HW-301"
     },
     {
-      "course": "CSE23213-A",
-      "type": "L",
+      "course": "CSE214-A",
+      "type": "P",
       "slot": "Wednesday_11:35",
-      "teacher": "faculty7",
-      "room": "A-401"
+      "teacher": "faculty4",
+      "room": "HW-301"
     },
     {
       "course": "CSE23213-A",
       "type": "L",
-      "slot": "Wednesday_12:25",
-      "teacher": "faculty7",
-      "room": "A-401"
+      "slot": "Monday_09:40",
+      "teacher": "faculty3",
+      "room": "C-302"
     },
     {
       "course": "CSE23213-A",
       "type": "L",
-      "slot": "Thursday_11:35",
-      "teacher": "faculty7",
-      "room": "A-401"
+      "slot": "Tuesday_14:55",
+      "teacher": "faculty3",
+      "room": "C-302"
+    },
+    {
+      "course": "CSE23213-A",
+      "type": "L",
+      "slot": "Wednesday_14:05",
+      "teacher": "faculty3",
+      "room": "C-302"
     },
     {
       "course": "CSE23213-A",
       "type": "T",
-      "slot": "Tuesday_10:45",
-      "teacher": "faculty7",
-      "room": "A-401"
+      "slot": "Monday_12:25",
+      "teacher": "faculty3",
+      "room": "C-302"
     },
     {
       "course": "CSE23203-A",
       "type": "L",
-      "slot": "Wednesday_08:50",
+      "slot": "Monday_08:50",
       "teacher": "faculty6",
-      "room": "A-401"
+      "room": "C-302"
     },
     {
       "course": "CSE23203-A",
       "type": "L",
-      "slot": "Wednesday_15:45",
+      "slot": "Friday_11:35",
       "teacher": "faculty6",
-      "room": "A-401"
+      "room": "C-302"
     },
     {
       "course": "CSE23203-A",
       "type": "L",
       "slot": "Friday_12:25",
       "teacher": "faculty6",
-      "room": "A-401"
+      "room": "C-302"
     },
     {
       "course": "CSE23203-A",
       "type": "P",
-      "slot": "Monday_14:55",
+      "slot": "Monday_10:45",
       "teacher": "faculty6",
-      "room": "A-404"
+      "room": "PG-303"
     },
     {
       "course": "CSE23203-A",
       "type": "P",
-      "slot": "Monday_15:45",
+      "slot": "Monday_11:35",
       "teacher": "faculty6",
-      "room": "A-404"
+      "room": "PG-303"
     },
     {
       "course": "CSE23211-A",
       "type": "L",
-      "slot": "Monday_09:40",
-      "teacher": "faculty11",
-      "room": "A-401"
+      "slot": "Thursday_10:45",
+      "teacher": "faculty9",
+      "room": "C-302"
     },
     {
       "course": "CSE23211-A",
       "type": "L",
-      "slot": "Thursday_12:25",
-      "teacher": "faculty11",
-      "room": "A-401"
+      "slot": "Thursday_15:45",
+      "teacher": "faculty9",
+      "room": "C-302"
     },
     {
       "course": "CSE23211-A",
       "type": "L",
-      "slot": "Friday_15:45",
-      "teacher": "faculty11",
-      "room": "A-401"
+      "slot": "Friday_14:55",
+      "teacher": "faculty9",
+      "room": "C-302"
     },
     {
       "course": "CSE23211-A",
       "type": "P",
-      "slot": "Tuesday_12:25",
-      "teacher": "faculty11",
+      "slot": "Tuesday_08:50",
+      "teacher": "faculty9",
       "room": "HW-301"
     },
     {
       "course": "CSE23211-A",
       "type": "P",
-      "slot": "Tuesday_14:05",
-      "teacher": "faculty11",
+      "slot": "Tuesday_09:40",
+      "teacher": "faculty9",
       "room": "HW-301"
     }
   ],
@@ -303,169 +303,169 @@
     {
       "course": "CSE23201-B",
       "type": "L",
-      "slot": "Monday_10:45",
+      "slot": "Thursday_08:50",
       "teacher": "faculty3",
-      "room": "A-303"
+      "room": "A-202"
     },
     {
       "course": "CSE23201-B",
       "type": "L",
-      "slot": "Tuesday_14:05",
+      "slot": "Friday_09:40",
       "teacher": "faculty3",
-      "room": "A-303"
+      "room": "A-202"
     },
     {
       "course": "CSE23201-B",
       "type": "L",
-      "slot": "Wednesday_08:50",
+      "slot": "Friday_12:25",
       "teacher": "faculty3",
-      "room": "A-303"
+      "room": "A-202"
     },
     {
       "course": "CSE23201-B",
       "type": "P",
-      "slot": "Wednesday_09:40",
+      "slot": "Thursday_14:55",
       "teacher": "faculty3",
-      "room": "PG-303"
+      "room": "C-301"
     },
     {
       "course": "CSE23201-B",
       "type": "P",
+      "slot": "Thursday_15:45",
+      "teacher": "faculty3",
+      "room": "C-301"
+    },
+    {
+      "course": "CSE214-B",
+      "type": "L",
       "slot": "Wednesday_10:45",
-      "teacher": "faculty3",
+      "teacher": "faculty8",
+      "room": "A-202"
+    },
+    {
+      "course": "CSE214-B",
+      "type": "L",
+      "slot": "Friday_14:05",
+      "teacher": "faculty8",
+      "room": "A-202"
+    },
+    {
+      "course": "CSE214-B",
+      "type": "L",
+      "slot": "Friday_14:55",
+      "teacher": "faculty8",
+      "room": "A-202"
+    },
+    {
+      "course": "CSE214-B",
+      "type": "P",
+      "slot": "Wednesday_14:05",
+      "teacher": "faculty8",
       "room": "PG-303"
     },
     {
       "course": "CSE214-B",
+      "type": "P",
+      "slot": "Wednesday_14:55",
+      "teacher": "faculty8",
+      "room": "PG-303"
+    },
+    {
+      "course": "CSE23213-B",
       "type": "L",
       "slot": "Tuesday_10:45",
-      "teacher": "faculty6",
-      "room": "A-303"
-    },
-    {
-      "course": "CSE214-B",
-      "type": "L",
-      "slot": "Tuesday_11:35",
-      "teacher": "faculty6",
-      "room": "A-303"
-    },
-    {
-      "course": "CSE214-B",
-      "type": "L",
-      "slot": "Thursday_15:45",
-      "teacher": "faculty6",
-      "room": "A-303"
-    },
-    {
-      "course": "CSE214-B",
-      "type": "P",
-      "slot": "Thursday_09:40",
-      "teacher": "faculty6",
-      "room": "A-404"
-    },
-    {
-      "course": "CSE214-B",
-      "type": "P",
-      "slot": "Thursday_10:45",
-      "teacher": "faculty6",
-      "room": "A-404"
+      "teacher": "faculty7",
+      "room": "A-202"
     },
     {
       "course": "CSE23213-B",
       "type": "L",
-      "slot": "Tuesday_09:40",
+      "slot": "Tuesday_12:25",
       "teacher": "faculty7",
-      "room": "A-303"
+      "room": "A-202"
     },
     {
       "course": "CSE23213-B",
       "type": "L",
-      "slot": "Wednesday_15:45",
+      "slot": "Wednesday_08:50",
       "teacher": "faculty7",
-      "room": "A-303"
-    },
-    {
-      "course": "CSE23213-B",
-      "type": "L",
-      "slot": "Thursday_08:50",
-      "teacher": "faculty7",
-      "room": "A-303"
+      "room": "A-202"
     },
     {
       "course": "CSE23213-B",
       "type": "T",
       "slot": "Monday_14:05",
       "teacher": "faculty7",
-      "room": "A-303"
+      "room": "A-202"
+    },
+    {
+      "course": "CSE23203-B",
+      "type": "L",
+      "slot": "Tuesday_09:40",
+      "teacher": "faculty4",
+      "room": "A-202"
+    },
+    {
+      "course": "CSE23203-B",
+      "type": "L",
+      "slot": "Tuesday_15:45",
+      "teacher": "faculty4",
+      "room": "A-202"
     },
     {
       "course": "CSE23203-B",
       "type": "L",
       "slot": "Wednesday_12:25",
       "teacher": "faculty4",
-      "room": "A-303"
-    },
-    {
-      "course": "CSE23203-B",
-      "type": "L",
-      "slot": "Wednesday_14:55",
-      "teacher": "faculty4",
-      "room": "A-303"
-    },
-    {
-      "course": "CSE23203-B",
-      "type": "L",
-      "slot": "Friday_15:45",
-      "teacher": "faculty4",
-      "room": "A-303"
+      "room": "A-202"
     },
     {
       "course": "CSE23203-B",
       "type": "P",
-      "slot": "Monday_08:50",
+      "slot": "Thursday_12:25",
       "teacher": "faculty4",
-      "room": "HW-301"
+      "room": "A-101"
     },
     {
       "course": "CSE23203-B",
       "type": "P",
-      "slot": "Monday_09:40",
+      "slot": "Thursday_14:05",
       "teacher": "faculty4",
-      "room": "HW-301"
+      "room": "A-101"
     },
     {
       "course": "CSE23211-B",
       "type": "L",
-      "slot": "Monday_12:25",
-      "teacher": "faculty11",
-      "room": "A-303"
+      "slot": "Wednesday_09:40",
+      "teacher": "faculty10",
+      "room": "A-202"
     },
     {
       "course": "CSE23211-B",
       "type": "L",
-      "slot": "Thursday_14:55",
-      "teacher": "faculty11",
-      "room": "A-303"
+      "slot": "Wednesday_11:35",
+      "teacher": "faculty10",
+      "room": "A-202"
     },
     {
       "course": "CSE23211-B",
       "type": "L",
       "slot": "Friday_10:45",
-      "teacher": "faculty11",
-      "room": "A-303"
+      "teacher": "faculty10",
+      "room": "A-202"
     },
     {
       "course": "CSE23211-B",
       "type": "P",
-      "slot": "Friday_08:50",
-      "teacher": "faculty11",
+      "slot": "Tuesday_14:05",
+      "teacher": "faculty10",
       "room": "PG-303"
     },
     {
       "course": "CSE23211-B",
       "type": "P",
-      "slot": "Friday_09:40",
-      "teacher": "faculty11",
+      "slot": "Tuesday_14:55",
+      "teacher": "faculty10",
       "room": "PG-303"
     }
   ],
@@ -473,148 +473,148 @@
     {
       "course": "CSE23301-A",
       "type": "L",
-      "slot": "Monday_08:50",
-      "teacher": "faculty7",
-      "room": "A-105"
+      "slot": "Monday_15:45",
+      "teacher": "faculty5",
+      "room": "C-104"
     },
     {
       "course": "CSE23301-A",
       "type": "L",
+      "slot": "Wednesday_08:50",
+      "teacher": "faculty5",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23301-A",
+      "type": "L",
+      "slot": "Wednesday_14:55",
+      "teacher": "faculty5",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23301-A",
+      "type": "P",
+      "slot": "Friday_10:45",
+      "teacher": "faculty5",
+      "room": "HW-301"
+    },
+    {
+      "course": "CSE23301-A",
+      "type": "P",
       "slot": "Friday_11:35",
-      "teacher": "faculty7",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23301-A",
-      "type": "L",
-      "slot": "Friday_12:25",
-      "teacher": "faculty7",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23301-A",
-      "type": "P",
-      "slot": "Thursday_14:05",
-      "teacher": "faculty7",
-      "room": "HW-301"
-    },
-    {
-      "course": "CSE23301-A",
-      "type": "P",
-      "slot": "Thursday_14:55",
-      "teacher": "faculty7",
+      "teacher": "faculty5",
       "room": "HW-301"
     },
     {
       "course": "CSE23311-A",
       "type": "L",
-      "slot": "Tuesday_14:05",
-      "teacher": "faculty4",
-      "room": "A-105"
+      "slot": "Monday_12:25",
+      "teacher": "faculty8",
+      "room": "C-104"
     },
     {
       "course": "CSE23311-A",
       "type": "L",
-      "slot": "Wednesday_09:40",
-      "teacher": "faculty4",
-      "room": "A-105"
+      "slot": "Tuesday_14:55",
+      "teacher": "faculty8",
+      "room": "C-104"
     },
     {
       "course": "CSE23311-A",
       "type": "L",
-      "slot": "Thursday_09:40",
-      "teacher": "faculty4",
-      "room": "A-105"
-    },
-    {
-      "course": "CSE23311-A",
-      "type": "P",
-      "slot": "Friday_14:05",
-      "teacher": "faculty4",
-      "room": "PG-303"
+      "slot": "Wednesday_15:45",
+      "teacher": "faculty8",
+      "room": "C-104"
     },
     {
       "course": "CSE23311-A",
       "type": "P",
-      "slot": "Friday_14:55",
-      "teacher": "faculty4",
-      "room": "PG-303"
+      "slot": "Wednesday_11:35",
+      "teacher": "faculty8",
+      "room": "C-301"
+    },
+    {
+      "course": "CSE23311-A",
+      "type": "P",
+      "slot": "Wednesday_12:25",
+      "teacher": "faculty8",
+      "room": "C-301"
     },
     {
       "course": "CSE23302-A",
       "type": "L",
-      "slot": "Monday_09:40",
-      "teacher": "faculty5",
-      "room": "A-105"
+      "slot": "Tuesday_12:25",
+      "teacher": "faculty3",
+      "room": "C-104"
     },
     {
       "course": "CSE23302-A",
       "type": "L",
-      "slot": "Tuesday_10:45",
-      "teacher": "faculty5",
-      "room": "A-105"
+      "slot": "Tuesday_15:45",
+      "teacher": "faculty3",
+      "room": "C-104"
     },
     {
       "course": "CSE23302-A",
       "type": "L",
-      "slot": "Wednesday_10:45",
-      "teacher": "faculty5",
-      "room": "A-105"
+      "slot": "Friday_15:45",
+      "teacher": "faculty3",
+      "room": "C-104"
     },
     {
       "course": "CSE23302-A",
       "type": "T",
-      "slot": "Friday_08:50",
-      "teacher": "faculty5",
-      "room": "A-105"
+      "slot": "Wednesday_09:40",
+      "teacher": "faculty3",
+      "room": "C-104"
+    },
+    {
+      "course": "CSE23302-A",
+      "type": "P",
+      "slot": "Monday_10:45",
+      "teacher": "faculty3",
+      "room": "C-301"
     },
     {
       "course": "CSE23302-A",
       "type": "P",
       "slot": "Monday_11:35",
-      "teacher": "faculty5",
-      "room": "C-301"
-    },
-    {
-      "course": "CSE23302-A",
-      "type": "P",
-      "slot": "Monday_12:25",
-      "teacher": "faculty5",
+      "teacher": "faculty3",
       "room": "C-301"
     },
     {
       "course": "CSE23304-A",
       "type": "L",
-      "slot": "Wednesday_08:50",
-      "teacher": "faculty8",
-      "room": "A-105"
+      "slot": "Monday_14:55",
+      "teacher": "faculty2",
+      "room": "C-104"
     },
     {
       "course": "CSE23304-A",
       "type": "L",
-      "slot": "Wednesday_14:55",
-      "teacher": "faculty8",
-      "room": "A-105"
+      "slot": "Tuesday_08:50",
+      "teacher": "faculty2",
+      "room": "C-104"
     },
     {
       "course": "CSE23304-A",
       "type": "L",
-      "slot": "Thursday_11:35",
-      "teacher": "faculty8",
-      "room": "A-105"
+      "slot": "Thursday_15:45",
+      "teacher": "faculty2",
+      "room": "C-104"
     },
     {
       "course": "CSE23304-A",
       "type": "P",
-      "slot": "Tuesday_11:35",
-      "teacher": "faculty8",
+      "slot": "Friday_14:05",
+      "teacher": "faculty2",
       "room": "C-301"
     },
     {
       "course": "CSE23304-A",
       "type": "P",
-      "slot": "Tuesday_12:25",
-      "teacher": "faculty8",
+      "slot": "Friday_14:55",
+      "teacher": "faculty2",
       "room": "C-301"
     }
   ],
@@ -622,178 +622,178 @@
     {
       "course": "CSE23301-B",
       "type": "L",
-      "slot": "Monday_08:50",
-      "teacher": "faculty3",
-      "room": "C-104"
+      "slot": "Tuesday_12:25",
+      "teacher": "faculty5",
+      "room": "A-303"
     },
     {
       "course": "CSE23301-B",
       "type": "L",
-      "slot": "Monday_14:05",
-      "teacher": "faculty3",
-      "room": "C-104"
+      "slot": "Thursday_10:45",
+      "teacher": "faculty5",
+      "room": "A-303"
     },
     {
       "course": "CSE23301-B",
       "type": "L",
-      "slot": "Friday_11:35",
-      "teacher": "faculty3",
-      "room": "C-104"
+      "slot": "Friday_09:40",
+      "teacher": "faculty5",
+      "room": "A-303"
     },
     {
       "course": "CSE23301-B",
       "type": "P",
-      "slot": "Friday_14:55",
-      "teacher": "faculty3",
-      "room": "C-301"
+      "slot": "Wednesday_09:40",
+      "teacher": "faculty5",
+      "room": "A-101"
     },
     {
       "course": "CSE23301-B",
       "type": "P",
-      "slot": "Friday_15:45",
-      "teacher": "faculty3",
-      "room": "C-301"
+      "slot": "Wednesday_10:45",
+      "teacher": "faculty5",
+      "room": "A-101"
     },
     {
       "course": "CSE23311-B",
       "type": "L",
       "slot": "Tuesday_10:45",
       "teacher": "faculty8",
-      "room": "C-104"
+      "room": "A-303"
     },
     {
       "course": "CSE23311-B",
       "type": "L",
-      "slot": "Tuesday_14:05",
+      "slot": "Friday_11:35",
       "teacher": "faculty8",
-      "room": "C-104"
+      "room": "A-303"
     },
     {
       "course": "CSE23311-B",
       "type": "L",
-      "slot": "Friday_14:05",
+      "slot": "Friday_15:45",
       "teacher": "faculty8",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23311-B",
-      "type": "P",
-      "slot": "Wednesday_09:40",
-      "teacher": "faculty8",
-      "room": "C-301"
+      "room": "A-303"
     },
     {
       "course": "CSE23311-B",
       "type": "P",
-      "slot": "Wednesday_10:45",
+      "slot": "Monday_10:45",
       "teacher": "faculty8",
-      "room": "C-301"
+      "room": "A-101"
+    },
+    {
+      "course": "CSE23311-B",
+      "type": "P",
+      "slot": "Monday_11:35",
+      "teacher": "faculty8",
+      "room": "A-101"
     },
     {
       "course": "CSE23302-B",
       "type": "L",
-      "slot": "Tuesday_14:55",
-      "teacher": "faculty5",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23302-B",
-      "type": "L",
-      "slot": "Wednesday_14:05",
-      "teacher": "faculty5",
-      "room": "C-104"
+      "slot": "Thursday_09:40",
+      "teacher": "faculty7",
+      "room": "A-303"
     },
     {
       "course": "CSE23302-B",
       "type": "L",
       "slot": "Thursday_11:35",
-      "teacher": "faculty5",
-      "room": "C-104"
+      "teacher": "faculty7",
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23302-B",
+      "type": "L",
+      "slot": "Friday_12:25",
+      "teacher": "faculty7",
+      "room": "A-303"
     },
     {
       "course": "CSE23302-B",
       "type": "T",
-      "slot": "Friday_10:45",
-      "teacher": "faculty5",
-      "room": "C-104"
+      "slot": "Monday_15:45",
+      "teacher": "faculty7",
+      "room": "A-303"
     },
     {
       "course": "CSE23302-B",
       "type": "P",
-      "slot": "Thursday_12:25",
-      "teacher": "faculty5",
-      "room": "C-301"
+      "slot": "Wednesday_11:35",
+      "teacher": "faculty7",
+      "room": "A-101"
     },
     {
       "course": "CSE23302-B",
       "type": "P",
-      "slot": "Thursday_14:05",
-      "teacher": "faculty5",
-      "room": "C-301"
-    },
-    {
-      "course": "CSE23304-B",
-      "type": "L",
-      "slot": "Monday_09:40",
-      "teacher": "faculty6",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23304-B",
-      "type": "L",
-      "slot": "Tuesday_12:25",
-      "teacher": "faculty6",
-      "room": "C-104"
-    },
-    {
-      "course": "CSE23304-B",
-      "type": "L",
       "slot": "Wednesday_12:25",
+      "teacher": "faculty7",
+      "room": "A-101"
+    },
+    {
+      "course": "CSE23304-B",
+      "type": "L",
+      "slot": "Tuesday_14:55",
       "teacher": "faculty6",
-      "room": "C-104"
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23304-B",
+      "type": "L",
+      "slot": "Wednesday_14:05",
+      "teacher": "faculty6",
+      "room": "A-303"
+    },
+    {
+      "course": "CSE23304-B",
+      "type": "L",
+      "slot": "Thursday_08:50",
+      "teacher": "faculty6",
+      "room": "A-303"
     },
     {
       "course": "CSE23304-B",
       "type": "P",
-      "slot": "Monday_11:35",
+      "slot": "Thursday_14:55",
       "teacher": "faculty6",
-      "room": "HW-301"
+      "room": "A-404"
     },
     {
       "course": "CSE23304-B",
       "type": "P",
-      "slot": "Monday_12:25",
+      "slot": "Thursday_15:45",
       "teacher": "faculty6",
-      "room": "HW-301"
+      "room": "A-404"
     }
   ],
   "Y4-A": [
     {
       "course": "CSE23402-A",
       "type": "L",
-      "slot": "Monday_12:25",
-      "teacher": "faculty7",
+      "slot": "Tuesday_11:35",
+      "teacher": "faculty5",
       "room": "C-104"
     },
     {
       "course": "CSE23402-A",
       "type": "L",
-      "slot": "Wednesday_09:40",
-      "teacher": "faculty7",
+      "slot": "Thursday_14:05",
+      "teacher": "faculty5",
       "room": "C-104"
     },
     {
       "course": "CSE23402-A",
       "type": "L",
-      "slot": "Wednesday_14:55",
-      "teacher": "faculty7",
+      "slot": "Friday_14:55",
+      "teacher": "faculty5",
       "room": "C-104"
     },
     {
       "course": "CSE23402-A",
       "type": "T",
-      "slot": "Monday_14:55",
-      "teacher": "faculty7",
+      "slot": "Friday_12:25",
+      "teacher": "faculty5",
       "room": "C-104"
     }
   ],
@@ -801,58 +801,58 @@
     {
       "course": "CSE23402-B",
       "type": "L",
-      "slot": "Tuesday_11:35",
+      "slot": "Monday_10:45",
       "teacher": "faculty5",
-      "room": "D-102"
+      "room": "C-103"
     },
     {
       "course": "CSE23402-B",
       "type": "L",
-      "slot": "Thursday_14:55",
+      "slot": "Monday_12:25",
       "teacher": "faculty5",
-      "room": "D-102"
+      "room": "C-103"
     },
     {
       "course": "CSE23402-B",
       "type": "L",
-      "slot": "Friday_12:25",
+      "slot": "Tuesday_08:50",
       "teacher": "faculty5",
-      "room": "D-102"
+      "room": "C-103"
     },
     {
       "course": "CSE23402-B",
       "type": "T",
-      "slot": "Tuesday_15:45",
+      "slot": "Friday_08:50",
       "teacher": "faculty5",
-      "room": "D-102"
+      "room": "C-103"
     }
   ],
   "Y1-C": [
     {
       "course": "CSE23113-C",
       "type": "L",
-      "slot": "Tuesday_12:25",
+      "slot": "Monday_09:40",
       "teacher": "faculty9",
-      "room": "A-104"
+      "room": "A-303"
     },
     {
       "course": "CSE23113-C",
       "type": "L",
-      "slot": "Friday_15:45",
+      "slot": "Wednesday_15:45",
       "teacher": "faculty9",
-      "room": "A-104"
+      "room": "A-303"
     },
     {
       "course": "CSE23113-C",
       "type": "P",
-      "slot": "Wednesday_14:05",
+      "slot": "Tuesday_14:55",
       "teacher": "faculty9",
       "room": "C-301"
     },
     {
       "course": "CSE23113-C",
       "type": "P",
-      "slot": "Wednesday_14:55",
+      "slot": "Tuesday_15:45",
       "teacher": "faculty9",
       "room": "C-301"
     }
@@ -861,89 +861,89 @@
     {
       "course": "CSE23113-D",
       "type": "L",
-      "slot": "Wednesday_11:35",
+      "slot": "Monday_09:40",
       "teacher": "faculty2",
-      "room": "C-203"
+      "room": "D-103"
     },
     {
       "course": "CSE23113-D",
       "type": "L",
-      "slot": "Wednesday_14:55",
+      "slot": "Wednesday_12:25",
       "teacher": "faculty2",
-      "room": "C-203"
+      "room": "D-103"
     },
     {
       "course": "CSE23113-D",
       "type": "P",
-      "slot": "Thursday_14:55",
+      "slot": "Wednesday_10:45",
       "teacher": "faculty2",
-      "room": "A-403"
+      "room": "A-404"
     },
     {
       "course": "CSE23113-D",
       "type": "P",
-      "slot": "Thursday_15:45",
+      "slot": "Wednesday_11:35",
       "teacher": "faculty2",
-      "room": "A-403"
+      "room": "A-404"
     }
   ],
   "Y1-E": [
     {
       "course": "CSE23113-E",
       "type": "L",
-      "slot": "Wednesday_08:50",
+      "slot": "Thursday_09:40",
       "teacher": "faculty2",
-      "room": "C-302"
+      "room": "A-301"
     },
     {
       "course": "CSE23113-E",
       "type": "L",
       "slot": "Thursday_14:05",
       "teacher": "faculty2",
-      "room": "C-302"
+      "room": "A-301"
+    },
+    {
+      "course": "CSE23113-E",
+      "type": "P",
+      "slot": "Monday_11:35",
+      "teacher": "faculty2",
+      "room": "HW-301"
     },
     {
       "course": "CSE23113-E",
       "type": "P",
       "slot": "Monday_12:25",
       "teacher": "faculty2",
-      "room": "A-403"
-    },
-    {
-      "course": "CSE23113-E",
-      "type": "P",
-      "slot": "Monday_14:05",
-      "teacher": "faculty2",
-      "room": "A-403"
+      "room": "HW-301"
     }
   ],
   "Y1-F": [
     {
       "course": "CSE23113-F",
       "type": "L",
-      "slot": "Friday_08:50",
-      "teacher": "faculty2",
-      "room": "A-102"
+      "slot": "Tuesday_09:40",
+      "teacher": "faculty10",
+      "room": "C-204"
     },
     {
       "course": "CSE23113-F",
       "type": "L",
-      "slot": "Friday_14:05",
-      "teacher": "faculty2",
-      "room": "A-102"
+      "slot": "Tuesday_11:35",
+      "teacher": "faculty10",
+      "room": "C-204"
     },
     {
       "course": "CSE23113-F",
       "type": "P",
-      "slot": "Monday_14:55",
-      "teacher": "faculty2",
+      "slot": "Friday_11:35",
+      "teacher": "faculty10",
       "room": "C-301"
     },
     {
       "course": "CSE23113-F",
       "type": "P",
-      "slot": "Monday_15:45",
-      "teacher": "faculty2",
+      "slot": "Friday_12:25",
+      "teacher": "faculty10",
       "room": "C-301"
     }
   ],
@@ -951,96 +951,96 @@
     {
       "course": "CSE23113-G",
       "type": "L",
-      "slot": "Monday_10:45",
+      "slot": "Tuesday_09:40",
       "teacher": "faculty2",
-      "room": "C-104"
+      "room": "C-101"
     },
     {
       "course": "CSE23113-G",
       "type": "L",
-      "slot": "Thursday_08:50",
+      "slot": "Tuesday_10:45",
       "teacher": "faculty2",
-      "room": "C-104"
+      "room": "C-101"
     },
     {
       "course": "CSE23113-G",
       "type": "P",
-      "slot": "Tuesday_11:35",
+      "slot": "Thursday_11:35",
       "teacher": "faculty2",
-      "room": "PG-303"
+      "room": "A-403"
     },
     {
       "course": "CSE23113-G",
       "type": "P",
-      "slot": "Tuesday_12:25",
+      "slot": "Thursday_12:25",
       "teacher": "faculty2",
-      "room": "PG-303"
+      "room": "A-403"
     }
   ],
   "Y1-H": [
     {
       "course": "CSE23113-H",
       "type": "L",
-      "slot": "Tuesday_08:50",
-      "teacher": "faculty11",
-      "room": "C-203"
+      "slot": "Monday_08:50",
+      "teacher": "faculty2",
+      "room": "A-102"
     },
     {
       "course": "CSE23113-H",
       "type": "L",
-      "slot": "Wednesday_10:45",
-      "teacher": "faculty11",
-      "room": "C-203"
+      "slot": "Monday_14:05",
+      "teacher": "faculty2",
+      "room": "A-102"
     },
     {
       "course": "CSE23113-H",
       "type": "P",
-      "slot": "Wednesday_12:25",
-      "teacher": "faculty11",
-      "room": "A-404"
+      "slot": "Friday_08:50",
+      "teacher": "faculty2",
+      "room": "PG-303"
     },
     {
       "course": "CSE23113-H",
       "type": "P",
-      "slot": "Wednesday_14:05",
-      "teacher": "faculty11",
-      "room": "A-404"
+      "slot": "Friday_09:40",
+      "teacher": "faculty2",
+      "room": "PG-303"
     }
   ],
   "Y2-C": [
     {
       "course": "CSE23211-C",
       "type": "L",
-      "slot": "Monday_10:45",
-      "teacher": "faculty9",
-      "room": "D-102"
+      "slot": "Tuesday_08:50",
+      "teacher": "faculty11",
+      "room": "C-201"
     },
     {
       "course": "CSE23211-C",
       "type": "L",
-      "slot": "Monday_11:35",
-      "teacher": "faculty9",
-      "room": "D-102"
+      "slot": "Tuesday_11:35",
+      "teacher": "faculty11",
+      "room": "C-201"
     },
     {
       "course": "CSE23211-C",
       "type": "L",
-      "slot": "Wednesday_10:45",
-      "teacher": "faculty9",
-      "room": "D-102"
+      "slot": "Friday_09:40",
+      "teacher": "faculty11",
+      "room": "C-201"
     },
     {
       "course": "CSE23211-C",
       "type": "P",
-      "slot": "Thursday_10:45",
-      "teacher": "faculty9",
+      "slot": "Thursday_09:40",
+      "teacher": "faculty11",
       "room": "PG-303"
     },
     {
       "course": "CSE23211-C",
       "type": "P",
-      "slot": "Thursday_11:35",
-      "teacher": "faculty9",
+      "slot": "Thursday_10:45",
+      "teacher": "faculty11",
       "room": "PG-303"
     }
   ],
@@ -1048,36 +1048,36 @@
     {
       "course": "CSE23211-D",
       "type": "L",
-      "slot": "Monday_14:05",
-      "teacher": "faculty11",
-      "room": "A-204"
+      "slot": "Monday_11:35",
+      "teacher": "faculty10",
+      "room": "C-102"
     },
     {
       "course": "CSE23211-D",
       "type": "L",
-      "slot": "Monday_15:45",
-      "teacher": "faculty11",
-      "room": "A-204"
+      "slot": "Thursday_12:25",
+      "teacher": "faculty10",
+      "room": "C-102"
     },
     {
       "course": "CSE23211-D",
       "type": "L",
-      "slot": "Friday_11:35",
-      "teacher": "faculty11",
-      "room": "A-204"
+      "slot": "Friday_09:40",
+      "teacher": "faculty10",
+      "room": "C-102"
     },
     {
       "course": "CSE23211-D",
       "type": "P",
-      "slot": "Thursday_09:40",
-      "teacher": "faculty11",
+      "slot": "Monday_14:55",
+      "teacher": "faculty10",
       "room": "HW-301"
     },
     {
       "course": "CSE23211-D",
       "type": "P",
-      "slot": "Thursday_10:45",
-      "teacher": "faculty11",
+      "slot": "Monday_15:45",
+      "teacher": "faculty10",
       "room": "HW-301"
     }
   ],
@@ -1085,147 +1085,147 @@
     {
       "course": "CSE23211-E",
       "type": "L",
-      "slot": "Tuesday_14:05",
-      "teacher": "faculty10",
-      "room": "A-204"
+      "slot": "Monday_08:50",
+      "teacher": "faculty11",
+      "room": "C-103"
     },
     {
       "course": "CSE23211-E",
       "type": "L",
-      "slot": "Tuesday_15:45",
-      "teacher": "faculty10",
-      "room": "A-204"
+      "slot": "Monday_15:45",
+      "teacher": "faculty11",
+      "room": "C-103"
     },
     {
       "course": "CSE23211-E",
       "type": "L",
-      "slot": "Friday_10:45",
-      "teacher": "faculty10",
-      "room": "A-204"
+      "slot": "Tuesday_12:25",
+      "teacher": "faculty11",
+      "room": "C-103"
     },
     {
       "course": "CSE23211-E",
       "type": "P",
-      "slot": "Wednesday_14:05",
-      "teacher": "faculty10",
-      "room": "A-403"
+      "slot": "Wednesday_08:50",
+      "teacher": "faculty11",
+      "room": "C-301"
     },
     {
       "course": "CSE23211-E",
       "type": "P",
-      "slot": "Wednesday_14:55",
-      "teacher": "faculty10",
-      "room": "A-403"
+      "slot": "Wednesday_09:40",
+      "teacher": "faculty11",
+      "room": "C-301"
     }
   ],
   "Y2-F": [
     {
       "course": "CSE23211-F",
       "type": "L",
-      "slot": "Monday_09:40",
-      "teacher": "faculty10",
-      "room": "C-201"
+      "slot": "Monday_15:45",
+      "teacher": "faculty9",
+      "room": "A-202"
     },
     {
       "course": "CSE23211-F",
       "type": "L",
-      "slot": "Tuesday_08:50",
-      "teacher": "faculty10",
-      "room": "C-201"
+      "slot": "Thursday_09:40",
+      "teacher": "faculty9",
+      "room": "A-202"
     },
     {
       "course": "CSE23211-F",
       "type": "L",
-      "slot": "Tuesday_14:55",
-      "teacher": "faculty10",
-      "room": "C-201"
+      "slot": "Friday_08:50",
+      "teacher": "faculty9",
+      "room": "A-202"
     },
     {
       "course": "CSE23211-F",
       "type": "P",
-      "slot": "Friday_11:35",
-      "teacher": "faculty10",
-      "room": "HW-301"
+      "slot": "Wednesday_14:05",
+      "teacher": "faculty9",
+      "room": "A-101"
     },
     {
       "course": "CSE23211-F",
       "type": "P",
-      "slot": "Friday_12:25",
-      "teacher": "faculty10",
-      "room": "HW-301"
+      "slot": "Wednesday_14:55",
+      "teacher": "faculty9",
+      "room": "A-101"
     }
   ],
   "Y2-G": [
     {
       "course": "CSE23211-G",
       "type": "L",
-      "slot": "Monday_12:25",
+      "slot": "Monday_11:35",
       "teacher": "faculty9",
-      "room": "D-102"
+      "room": "D-103"
     },
     {
       "course": "CSE23211-G",
       "type": "L",
-      "slot": "Tuesday_08:50",
+      "slot": "Tuesday_10:45",
       "teacher": "faculty9",
-      "room": "D-102"
+      "room": "D-103"
     },
     {
       "course": "CSE23211-G",
       "type": "L",
-      "slot": "Wednesday_15:45",
+      "slot": "Tuesday_14:05",
       "teacher": "faculty9",
-      "room": "D-102"
+      "room": "D-103"
     },
     {
       "course": "CSE23211-G",
       "type": "P",
-      "slot": "Thursday_14:55",
+      "slot": "Wednesday_10:45",
       "teacher": "faculty9",
-      "room": "A-101"
+      "room": "A-403"
     },
     {
       "course": "CSE23211-G",
       "type": "P",
-      "slot": "Thursday_15:45",
+      "slot": "Wednesday_11:35",
       "teacher": "faculty9",
-      "room": "A-101"
+      "room": "A-403"
     }
   ],
   "Y2-H": [
     {
       "course": "CSE23211-H",
       "type": "L",
-      "slot": "Monday_15:45",
-      "teacher": "faculty9",
-      "room": "A-301"
+      "slot": "Tuesday_15:45",
+      "teacher": "faculty10",
+      "room": "A-105"
     },
     {
       "course": "CSE23211-H",
       "type": "L",
-      "slot": "Tuesday_14:55",
-      "teacher": "faculty9",
-      "room": "A-301"
+      "slot": "Wednesday_15:45",
+      "teacher": "faculty10",
+      "room": "A-105"
     },
     {
       "course": "CSE23211-H",
       "type": "L",
-      "slot": "Friday_09:40",
-      "teacher": "faculty9",
-      "room": "A-301"
+      "slot": "Thursday_15:45",
+      "teacher": "faculty10",
+      "room": "A-105"
     },
     {
       "course": "CSE23211-H",
       "type": "P",
-      "slot": "Thursday_12:25",
-      "teacher": "faculty9",
+      "slot": "Thursday_10:45",
+      "teacher": "faculty10",
       "room": "A-101"
     },
     {
       "course": "CSE23211-H",
       "type": "P",
-      "slot": "Thursday_14:05",
-      "teacher": "faculty9",
+      "slot": "Thursday_11:35",
+      "teacher": "faculty10",
       "room": "A-101"
     }
   ]

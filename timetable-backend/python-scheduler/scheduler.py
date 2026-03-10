@@ -1060,6 +1060,7 @@ class Scheduler:
         solver = cp_model.CpSolver()
         solver.parameters.max_time_in_seconds = 120.0
         solver.parameters.num_search_workers = 2
+        solver.parameters.max_memory_in_mb = 256.0
 
         print(f"Solving ({len(self.vars)} variables)...", file=sys.stderr)
 
