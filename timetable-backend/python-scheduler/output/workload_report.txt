@@ -1,18 +1,18 @@
 Faculty Workload Report
 ==============================
 faculty10            — 19 hrs — Overloaded
-faculty11            — 18 hrs — Balanced
-faculty2             — 21 hrs — Overloaded
-faculty3             — 15 hrs — Underloaded
+faculty11            — 19 hrs — Overloaded
+faculty2             — 16 hrs — Balanced
+faculty3             — 14 hrs — Underloaded
 faculty4             — 15 hrs — Underloaded
-faculty5             — 18 hrs — Balanced
-faculty6             — 15 hrs — Underloaded
-faculty7             — 15 hrs — Underloaded
+faculty5             — 17 hrs — Balanced
+faculty6             — 20 hrs — Overloaded
+faculty7             — 17 hrs — Balanced
 faculty8             — 15 hrs — Underloaded
-faculty9             — 19 hrs — Overloaded
+faculty9             — 18 hrs — Balanced
 
 ==============================
 Average Load:    17.0
-Min / Max Load:  15 / 21
-Variance:        4.6
-Fairness Score:  88.2%
+Min / Max Load:  14 / 20
+Variance:        3.6
+Fairness Score:  90.6%
