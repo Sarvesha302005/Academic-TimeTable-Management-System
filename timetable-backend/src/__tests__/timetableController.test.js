@@ -26,7 +26,7 @@ describe('TimetableController', () => {
             expect(res.body.error).toBe('Academic calendar ID is required');
         });
 
-        it('should return 200 on successful generation', async () => {
+        it('should return 202 on successful job start', async () => {
             const mockTimetable = { _id: 't1', metadata: { generationTime: 100 }, statistics: {} };
             timetableService.generateTimetable.mockResolvedValue(mockTimetable);
             Timetable.findById.mockReturnValue({
@@ -45,9 +45,10 @@ describe('TimetableController', () => {
                 .post('/api/timetable/generate')
                 .send({ academicCalendarId: '6574c8f5e4b0f1a2c3d4e5f6' });
 
-            expect(res.status).toBe(200);
+            expect(res.status).toBe(202);
             expect(res.body.success).toBe(true);
-            expect(res.body.message).toBe('Timetable generated successfully');
+            expect(res.body.message).toBe('Timetable generation started');
+            expect(res.body.jobId).toBeDefined();
         });
     });
 
