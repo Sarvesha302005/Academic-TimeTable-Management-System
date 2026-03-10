@@ -291,11 +291,8 @@ class AdminController {
       const analyzerPath = path.join(schedulerDir, 'workload_analyzer.py');
       const reportPath = path.join(schedulerDir, 'output', 'workload_report.json');
 
-      // Determine python command (common practice for Windows/Unix)
-      const pythonCmd =
-        process.platform === 'win32'
-          ? path.join(schedulerDir, 'venv', 'Scripts', 'python.exe')
-          : path.join(schedulerDir, 'venv', 'bin', 'python');
+      // Determine python command from env or use system default
+      const pythonCmd = process.env.PYTHON_PATH || 'python3';
 
       console.log(`Running workload analyzer: ${pythonCmd} ${analyzerPath}`);
 

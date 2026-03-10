@@ -66,6 +66,23 @@ const TimetableGenerator = () => {
             throw new Error(statusRes.data.error || 'Timetable generation failed');
           }
         } catch (err) {
+          // If the server is restarting or Render's load balancer drops the connection (502/Network Error/CORS),
+          // DO NOT clear the interval. Just log it and wait for the backend to wake back up.
+          if (err.message === 'Network Error' || err.response?.status === 502 || err.response?.status === 503) {
+            console.warn('Backend temporarily unreachable (502/Network Error). Retrying on next poll...');
+            setPollingStatus('Backend restarting or busy... waiting for response.');
+            return; // Skip this tick, try again in 3 seconds
+          }
+
+          // But if it's a legitimate 400 error (e.g. jobId not found), then stop polling.
+          if (err.response?.status === 404) {
+            clearInterval(pollInterval);
+            setError('Job ID expired or not found.');
+            setGenerating(false);
+            setPollingStatus('');
+            return;
+          }
+
           clearInterval(pollInterval);
           setError(err.response?.data?.error || err.message || 'Error checking status');
           setGenerating(false);
@@ -74,7 +91,7 @@ const TimetableGenerator = () => {
       }, 3000); // Poll every 3 seconds
 
     } catch (err) {
-      setError(err.response?.data?.error || 'Timetable generation failed');
+      setError(err.response?.data?.error || err.message || 'Timetable generation failed');
       setGenerating(false);
       setPollingStatus('');
     }
