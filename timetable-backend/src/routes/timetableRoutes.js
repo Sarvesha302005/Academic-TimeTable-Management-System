@@ -19,6 +19,18 @@ router.post('/generate',
   timetableController.generateTimetable
 );
 
+// Get job status - Admin only
+router.get('/status/:jobId',
+  requireRole(ROLES.ADMIN),
+  timetableController.getTimetableStatus
+);
+
+// Get job result - Admin only
+router.get('/result/:jobId',
+  requireRole(ROLES.ADMIN),
+  timetableController.getTimetableResult
+);
+
 // Get timetable - Admin only
 router.get('/',
   requireRole(ROLES.ADMIN),

@@ -4,11 +4,14 @@ const Faculty = require('../models/Faculty');
 const AcademicCalendar = require('../models/AcademicCalendar');
 const TimetableAdjustment = require('../models/TimetableAdjustment');
 
+// Global in-memory job store
+const jobs = {};
+
 class TimetableController {
 
   // ================= ADMIN =================
 
-  // Generate timetable (Admin)
+  // Generate timetable (Admin) - Async Job
   async generateTimetable(req, res, next) {
     try {
       const { academicCalendarId } = req.body;
@@ -20,45 +23,113 @@ class TimetableController {
         });
       }
 
-      console.log(`Generating timetable for academicCalendarId: ${academicCalendarId}`);
+      const jobId = Date.now().toString();
 
-      // Call the service - it now returns just the timetable
-      const timetable = await timetableService.generateTimetable(academicCalendarId);
+      jobs[jobId] = {
+        status: 'running',
+        result: null,
+        error: null,
+        academicCalendarId
+      };
 
-      if (!timetable) {
-        return res.status(500).json({
-          success: false,
-          error: 'Timetable generation failed - no data returned'
+      console.log(`Starting background timetable generation for academicCalendarId: ${academicCalendarId}, jobId: ${jobId}`);
+
+      // Run the service asynchronously in the background
+      timetableService.generateTimetable(academicCalendarId)
+        .then(async (timetable) => {
+          if (!timetable) {
+            jobs[jobId].status = 'failed';
+            jobs[jobId].error = 'Timetable generation failed - no data returned';
+            return;
+          }
+
+          console.log(`Job ${jobId} completed successfully. Timetable ID: ${timetable._id}`);
+
+          // Populate the timetable for the result
+          const populatedTimetable = await Timetable.findById(timetable._id)
+            .populate('entries.slot')
+            .populate('entries.course')
+            .populate('entries.faculty')
+            .populate('entries.room')
+            .populate('academicCalendar');
+
+          jobs[jobId].status = 'finished';
+          jobs[jobId].result = {
+            data: populatedTimetable,
+            generationTime: timetable.metadata?.generationTime || 0,
+            statistics: timetable.statistics || {}
+          };
+        })
+        .catch((error) => {
+          console.error(`Error in background generation for job ${jobId}:`, error);
+          jobs[jobId].status = 'failed';
+          jobs[jobId].error = error.message || 'Unknown error occurred during generation';
         });
-      }
 
-      console.log(`Timetable generated successfully with ID: ${timetable._id}`);
-
-      // Populate the timetable for response
-      const populatedTimetable = await Timetable.findById(timetable._id)
-        .populate('entries.slot')
-        .populate('entries.course')
-        .populate('entries.faculty')
-        .populate('entries.room')
-        .populate('academicCalendar');
-
-      if (!populatedTimetable) {
-        return res.status(500).json({
-          success: false,
-          error: 'Timetable generated but not found after population'
-        });
-      }
-
-      res.status(200).json({
+      // Respond immediately with the jobId
+      res.status(202).json({
         success: true,
-        message: 'Timetable generated successfully',
-        data: populatedTimetable,
-        generationTime: timetable.metadata?.generationTime || 0,
-        statistics: timetable.statistics || {}
+        message: 'Timetable generation started',
+        jobId: jobId
       });
 
     } catch (error) {
       console.error('Error in generateTimetable controller:', error);
+      next(error);
+    }
+  }
+
+  // Get job status (Admin)
+  async getTimetableStatus(req, res, next) {
+    try {
+      const { jobId } = req.params;
+      const job = jobs[jobId];
+
+      if (!job) {
+        return res.status(404).json({ success: false, error: 'Job not found' });
+      }
+
+      res.status(200).json({
+        success: true,
+        status: job.status,
+        error: job.error
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  // Get job result (Admin)
+  async getTimetableResult(req, res, next) {
+    try {
+      const { jobId } = req.params;
+      const job = jobs[jobId];
+
+      if (!job) {
+        return res.status(404).json({ success: false, error: 'Job not found' });
+      }
+
+      if (job.status !== 'finished') {
+        return res.status(400).json({
+          success: false,
+          error: `Result not ready. Current status: ${job.status}`
+        });
+      }
+
+      // We can delete the job from memory after retrieving it once,
+      // or keep it for a while. Let's delete it to preserve memory.
+      const result = job.result;
+      delete jobs[jobId];
+
+      res.status(200).json({
+        success: true,
+        message: 'Timetable retrieved successfully',
+        data: result.data,
+        generationTime: result.generationTime,
+        statistics: result.statistics
+      });
+
+    } catch (error) {
       next(error);
     }
   }

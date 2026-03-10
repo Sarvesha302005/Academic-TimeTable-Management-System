@@ -55,6 +55,20 @@ const AcademicCalendarForm = () => {
     }
   };
 
+  const handleDelete = async (id) => {
+    if (!window.confirm('Are you sure you want to delete this calendar?')) return;
+    try {
+      setLoading(true);
+      await adminAPI.deleteAcademicCalendar(id);
+      await fetchCalendars();
+      alert('Academic calendar deleted successfully!');
+    } catch (err) {
+      setError(err.response?.data?.error || 'Failed to delete calendar');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleDayToggle = (day) => {
     setFormData(prev => ({
       ...prev,
@@ -159,7 +173,7 @@ const AcademicCalendarForm = () => {
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Semester</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Start Date</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">End Date</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -170,9 +184,12 @@ const AcademicCalendarForm = () => {
                     <td className="table-cell">{new Date(calendar.startDate).toLocaleDateString()}</td>
                     <td className="table-cell">{new Date(calendar.endDate).toLocaleDateString()}</td>
                     <td className="table-cell">
-                      <span className={`px-2 py-1 rounded-full text-xs ${calendar.isActive ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
-                        {calendar.isActive ? 'Active' : 'Inactive'}
-                      </span>
+                      <button
+                        onClick={() => handleDelete(calendar._id)}
+                        className="text-red-600 hover:text-red-900 font-medium"
+                      >
+                        Delete
+                      </button>
                     </td>
                   </tr>
                 ))}

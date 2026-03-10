@@ -68,12 +68,26 @@ const WorkloadRuleForm = () => {
     }
   };
 
+  const handleDelete = async (id) => {
+    if (!window.confirm('Are you sure you want to delete this workload rule?')) return;
+    try {
+      setLoading(true);
+      await adminAPI.deleteWorkloadRule(id);
+      await fetchRules();
+      alert('Workload rule deleted successfully!');
+    } catch (err) {
+      setError(err.response?.data?.error || 'Failed to delete workload rule');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="space-y-6">
       <div className="card">
         <h2 className="text-2xl font-bold mb-6">Create Workload Rule</h2>
         <ErrorMessage message={error} onClose={() => setError('')} />
-        
+
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
           <div>
             <label className="label">Academic Calendar</label>
@@ -105,7 +119,7 @@ const WorkloadRuleForm = () => {
                 required
               />
             </div>
-            
+
             <div>
               <label className="label">Max Hours Per Day</label>
               <input
@@ -133,7 +147,7 @@ const WorkloadRuleForm = () => {
                 required
               />
             </div>
-            
+
             <div>
               <label className="label">Min Break Between Classes (hours)</label>
               <input
@@ -192,7 +206,7 @@ const WorkloadRuleForm = () => {
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Max/Week</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Max/Day</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Max Consecutive</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -205,9 +219,12 @@ const WorkloadRuleForm = () => {
                     <td className="table-cell">{rule.maxHoursPerDay}</td>
                     <td className="table-cell">{rule.maxConsecutiveHours}</td>
                     <td className="table-cell">
-                      <span className={`px-2 py-1 rounded-full text-xs ${rule.isActive ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
-                        {rule.isActive ? 'Active' : 'Inactive'}
-                      </span>
+                      <button
+                        onClick={() => handleDelete(rule._id)}
+                        className="text-red-600 hover:text-red-900 font-medium"
+                      >
+                        Delete
+                      </button>
                     </td>
                   </tr>
                 ))}

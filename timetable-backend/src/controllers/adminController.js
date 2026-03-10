@@ -172,6 +172,12 @@ class AdminController {
     res.json({ success: true, data: rule });
   }
 
+  async deleteWorkloadRule(req, res) {
+    const rule = await WorkloadRule.findByIdAndDelete(req.params.id);
+    if (!rule) return res.status(404).json({ success: false, error: 'Workload rule not found' });
+    res.json({ success: true, message: 'Workload rule deleted' });
+  }
+
   /* =========================
      LEAVE MANAGEMENT
   ========================= */
@@ -285,13 +291,11 @@ class AdminController {
       const analyzerPath = path.join(schedulerDir, 'workload_analyzer.py');
       const reportPath = path.join(schedulerDir, 'output', 'workload_report.json');
 
-      // Determine python command – prefer env var (set in Docker), fall back to local venv
-      const pythonCmd = process.env.PYTHON_EXECUTABLE || path.join(
-        schedulerDir,
-        'venv',
-        'Scripts',
-        'python.exe'
-      );
+      // Determine python command (common practice for Windows/Unix)
+      const pythonCmd =
+        process.platform === 'win32'
+          ? path.join(schedulerDir, 'venv', 'Scripts', 'python.exe')
+          : path.join(schedulerDir, 'venv', 'bin', 'python');
 
       console.log(`Running workload analyzer: ${pythonCmd} ${analyzerPath}`);
 

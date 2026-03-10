@@ -12,6 +12,7 @@ const TimetableGenerator = () => {
   const [error, setError] = useState('');
   const [timetable, setTimetable] = useState(null);
   const [stats, setStats] = useState(null);
+  const [pollingStatus, setPollingStatus] = useState('');
 
   useEffect(() => {
     fetchCalendars();
@@ -38,8 +39,50 @@ const TimetableGenerator = () => {
     try {
       setGenerating(true);
       setError('');
+      setPollingStatus('Starting generation...');
 
+      // 1. Start the job
       const res = await timetableAPI.generateTimetable(selectedCalendar);
+      const jobId = res.data.jobId;
+
+      if (!jobId) {
+        throw new Error('Failed to start timetable generation block');
+      }
+
+      // 2. Poll for status
+      const pollInterval = setInterval(async () => {
+        try {
+          const statusRes = await timetableAPI.getGenerationStatus(jobId);
+          const status = statusRes.data.status;
+
+          if (status === 'running') {
+            setPollingStatus('Optimizing Timetable... this may take up to 5 minutes.');
+          } else if (status === 'finished') {
+            clearInterval(pollInterval);
+            setPollingStatus('Retrieving Timetable...');
+            fetchResult(jobId);
+          } else if (status === 'failed') {
+            clearInterval(pollInterval);
+            throw new Error(statusRes.data.error || 'Timetable generation failed');
+          }
+        } catch (err) {
+          clearInterval(pollInterval);
+          setError(err.response?.data?.error || err.message || 'Error checking status');
+          setGenerating(false);
+          setPollingStatus('');
+        }
+      }, 3000); // Poll every 3 seconds
+
+    } catch (err) {
+      setError(err.response?.data?.error || 'Timetable generation failed');
+      setGenerating(false);
+      setPollingStatus('');
+    }
+  };
+
+  const fetchResult = async (jobId) => {
+    try {
+      const res = await timetableAPI.getGenerationResult(jobId);
 
       // ✅ timetable only
       setTimetable(res.data.data);
@@ -47,15 +90,16 @@ const TimetableGenerator = () => {
       // ✅ metadata
       setStats({
         generationTime: res.data.generationTime,
-        constraintsSatisfied: res.data.data.metadata?.constraintsSatisfied,
-        totalClasses: res.data.data.statistics?.totalClasses
+        constraintsSatisfied: res.data.data?.metadata?.constraintsSatisfied,
+        totalClasses: res.data.statistics?.totalClasses
       });
 
       alert('Timetable generated successfully!');
     } catch (err) {
-      setError(err.response?.data?.error || 'Timetable generation failed');
+      setError(err.response?.data?.error || 'Failed to fetch timetable result');
     } finally {
       setGenerating(false);
+      setPollingStatus('');
     }
   };
 
@@ -99,10 +143,11 @@ const TimetableGenerator = () => {
         <div className="flex gap-3 mt-4">
           <button
             onClick={handleGenerate}
-            className="btn-primary"
+            className="btn-primary flex items-center gap-2"
             disabled={generating}
           >
-            {generating ? 'Generating...' : 'Generate Timetable'}
+            {generating && <LoadingSpinner size="sm" />}
+            {generating ? (pollingStatus || 'Generating...') : 'Generate Timetable'}
           </button>
 
           <button

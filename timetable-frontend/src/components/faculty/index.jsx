@@ -108,8 +108,17 @@ export const PreferenceForm = () => {
       {success && <div className="alert-success">{success}</div>}
 
       {submitted ? (
-        <div className="p-4 bg-green-50 rounded text-center text-green-700 italic border border-green-200">
-          You have successfully submitted your course preferences for this semester.
+        <div className="space-y-4">
+          <div className="p-4 bg-green-50 rounded text-center text-green-700 italic border border-green-200">
+            You have successfully submitted your course preferences for this semester.
+          </div>
+          <button
+            type="button"
+            className="btn-secondary w-full"
+            onClick={() => setSubmitted(false)}
+          >
+            Edit Preferences
+          </button>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>

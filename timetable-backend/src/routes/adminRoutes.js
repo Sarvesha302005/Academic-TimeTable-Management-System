@@ -49,6 +49,7 @@ router.delete('/room/:id', validateObjectId('id'), adminController.deleteRoom);
 router.post('/workload-rule', workloadRuleValidation, adminController.createWorkloadRule);
 router.get('/workload-rule', adminController.getWorkloadRules);
 router.put('/workload-rule/:id', validateObjectId('id'), workloadRuleValidation, adminController.updateWorkloadRule);
+router.delete('/workload-rule/:id', validateObjectId('id'), adminController.deleteWorkloadRule);
 
 // Leave Management routes
 router.get('/leave/pending', adminController.getPendingLeaves);

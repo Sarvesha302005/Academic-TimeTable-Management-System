@@ -67,6 +67,7 @@ export const adminAPI = {
   createWorkloadRule: (data) => api.post('/admin/workload-rule', data),
   getWorkloadRules: () => api.get('/admin/workload-rule'),
   updateWorkloadRule: (id, data) => api.put(`/admin/workload-rule/${id}`, data),
+  deleteWorkloadRule: (id) => api.delete(`/admin/workload-rule/${id}`),
 
   // Leave Management
   getPendingLeaves: () => api.get('/admin/leave/pending'),
@@ -103,9 +104,10 @@ export const studentAPI = {
 // Timetable APIs
 export const timetableAPI = {
   generateTimetable: (academicCalendarId) => api.post('/timetable/generate', { academicCalendarId }),
+  getGenerationStatus: (jobId) => api.get(`/timetable/status/${jobId}`),
+  getGenerationResult: (jobId) => api.get(`/timetable/result/${jobId}`),
   getTimetable: (params) => api.get('/timetable', { params }),
   getStatistics: (params) => api.get('/timetable/statistics', { params }),
-  getConflicts: (params) => api.get('/timetable/conflicts', { params }),
   getConflicts: (params) => api.get('/timetable/conflicts', { params }),
   getFacultyTimetable: (params) => api.get('/timetable/faculty', { params }),
   getActiveCalendar: () => api.get('/timetable/active-calendar'),
